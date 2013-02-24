@@ -18,17 +18,17 @@
  * @version         $Id: $
  */
  
-define("_MB_SLIDESHOW_OP1","Slideshow width");
-define("_MB_SLIDESHOW_OP2","Slideshow height");
-define("_MB_SLIDESHOW_OP3","Image width");
-define("_MB_SLIDESHOW_OP4","Image height");
-define("_MB_SLIDESHOW_OP5","Select topic");
-define("_MB_SLIDESHOW_OP6","Select type");
-define("_MB_SLIDESHOW_OP7","Limit");
-define("_MB_SLIDESHOW_SLIDESHOW","Slideshow");
-define("_MB_SLIDESHOW_SLIDESHOW1","Slideshow1");
-define("_MB_SLIDESHOW_MARQUEE","Marquee");
+define("_MB_SLIDESHOW_OP1","عرض اسلاید");
+define("_MB_SLIDESHOW_OP2","ارتفاع اسلاید");
+define("_MB_SLIDESHOW_OP3","عرض تصویر");
+define("_MB_SLIDESHOW_OP4","ارتفاع تصویر");
+define("_MB_SLIDESHOW_OP5","انتخاب شاخه");
+define("_MB_SLIDESHOW_OP6","انتخاب نوع");
+define("_MB_SLIDESHOW_OP7","تعداد");
+define("_MB_SLIDESHOW_SLIDESHOW","افکت اسلاید ۱");
+define("_MB_SLIDESHOW_SLIDESHOW1","افکت اسلاید ۲");
+define("_MB_SLIDESHOW_MARQUEE","مارکیو");
 define("_MB_SLIDESHOW_MORE","ادامه مطلب");
-define("_MB_SLIDESHOW_STYLE","Use module style, if it set to no you must add all styles and java in your theme");
+define("_MB_SLIDESHOW_STYLE","استفاده از استایل ماژول. اگر آن را بر روی صفر قرار دهید لود شدن افکت های  اسلاید به وسیله ماژول غیر فعال می شود و شما باید افکت مورد نظر خود را در قالب تنظیم کنید.");
 
 ?>

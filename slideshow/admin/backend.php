@@ -84,13 +84,12 @@ switch ($op) {
 		
 	case 'additem' :
 		$obj = $item_handler->create ();
-		$obj->setVars ( $_REQUEST );
+		$obj->setVars ( $_POST );
 		$obj->setVar ( 'item_create', time () );
 		$obj->setVar ( 'item_order', $item_handler->setitemorder() );
-		$item_handler->uploadimg ( $obj, $_REQUEST ['item_img'] );
-		$item_handler->uploadthumb ( $obj, $_REQUEST ['item_thumb'] );
-		
-		if($_REQUEST['item_default'] == 1) {
+		$obj->setVar ( 'item_img', $item_handler->uploadimg ( $_POST ['item_img'] ) );
+		$obj->setVar ( 'item_thumb', $item_handler->uploadthumb ( $_POST ['item_thumb'] ) );
+		if($_POST['item_default'] == 1) {
 			$item_handler->updateAll ( 'item_default', 0, $obj );
 		}
 		
@@ -111,14 +110,10 @@ switch ($op) {
 		if ($item_id > 0) {
 		   $obj = $item_handler->get ($item_id);
 			$obj->setVars ( $_REQUEST );
-			
 			$obj->setVar ( 'item_order', $item_handler->setitemorder() );
-			$item_handler->uploadimg ( $obj, $_REQUEST ['item_img'] );
-			
 			if($_REQUEST['item_default'] == 1) {
 				$item_handler->updateAll ( 'item_default', 0, $obj );
 			}
-		
 			if (! $item_handler->insert ( $obj )) {
 				redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
 				xoops_cp_footer ();

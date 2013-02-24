@@ -19,28 +19,28 @@
  */
  
 // module info
-define("_MI_SLIDESHOW_TITLE","Slideshow");
-define("_MI_SLIDESHOW_DESC","Make Slideshow");
+define("_MI_SLIDESHOW_TITLE","اسلاید");
+define("_MI_SLIDESHOW_DESC","ساخت اسلاید");
 
 // menu
-define("_AM_SLIDESHOW_HOME","Home");
-define("_AM_SLIDESHOW_TOPIC","Topic");
-define("_AM_SLIDESHOW_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_MARQUEE","Marquee");
+define("_AM_SLIDESHOW_HOME","خانه");
+define("_AM_SLIDESHOW_TOPIC","شاخه");
+define("_AM_SLIDESHOW_SLIDESHOW","اسلاید");
+define("_AM_SLIDESHOW_MARQUEE","مارکیو");
 
 // block
-define("_MI_SLIDESHOW_BLOCK1","Slideshow Block 1");
-define("_MI_SLIDESHOW_BLOCK2","Slideshow Block 2");
-define("_MI_SLIDESHOW_BLOCK3","Slideshow Block 3");
+define("_MI_SLIDESHOW_BLOCK1","بلاک ۱");
+define("_MI_SLIDESHOW_BLOCK2","بلاک ۲");
+define("_MI_SLIDESHOW_BLOCK3","بلاک ۳");
 
 // preferences
-define("_MI_SLIDESHOW_IMAGE_MIME","Mimetypes");
-define("_MI_SLIDESHOW_IMAGE_MIME_DESC","Select mimetypes for upload");
-define("_MI_SLIDESHOW_IMAGE_SIZE","Max size");
-define("_MI_SLIDESHOW_IMAGE_SIZE_DESC","Set Max image size");
-define("_MI_SLIDESHOW_IMAGE_MAXWIDTH","Max widht");
-define("_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC","Set max image widht");
-define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT","Max height");
-define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC","Set max image height");
+define("_MI_SLIDESHOW_IMAGE_MIME","پسوند ها");
+define("_MI_SLIDESHOW_IMAGE_MIME_DESC","پسوند های مجاز برای آپلود");
+define("_MI_SLIDESHOW_IMAGE_SIZE","بیشترین سایز");
+define("_MI_SLIDESHOW_IMAGE_SIZE_DESC","بیشترین سایز تصویر");
+define("_MI_SLIDESHOW_IMAGE_MAXWIDTH","بیشترین عرض");
+define("_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC","بیشترین عرض تصویر");
+define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT","بیشترین ارتفاع");
+define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC","بیشترین ارتفاع تصویر");
 
 ?>

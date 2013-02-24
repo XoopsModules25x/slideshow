@@ -120,7 +120,7 @@ $modversion['config'][] = array(
     'description' => '_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC',
     'formtype' => 'textbox',
     'valuetype' => 'text',
-    'default' => '700');
+    'default' => '1200');
 
 $modversion['config'][] = array(
     'name' => 'img_maxheight',
@@ -128,5 +128,5 @@ $modversion['config'][] = array(
     'description' => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC',
     'formtype' => 'textbox',
     'valuetype' => 'text',
-    'default' => '700');                
+    'default' => '1200');                
 ?>
