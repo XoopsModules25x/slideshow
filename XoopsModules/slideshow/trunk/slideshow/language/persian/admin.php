@@ -19,44 +19,44 @@
  */
  
 //index
-define('_AM_SLIDESHOW_INDEX_INFO',"Index");
-define('_AM_SLIDESHOW_INDEX_TOPICS',"There are %s topics in our database");
-define('_AM_SLIDESHOW_INDEX_ITEMS',"There are %s items in our database");
+define('_AM_SLIDESHOW_INDEX_INFO',"خانه");
+define('_AM_SLIDESHOW_INDEX_TOPICS',"%s شاخه در پیاگاه داده ها قرار دارد");
+define('_AM_SLIDESHOW_INDEX_ITEMS',"%s اسلاید در پایگاه داده ها قرار دارد");
 
 // Add icons
-define("_AM_SLIDESHOW_ADD_MARQUEE","Add Marquee");
-define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow");
-define("_AM_SLIDESHOW_ADD_TOPIC","Add Topic");
+define("_AM_SLIDESHOW_ADD_MARQUEE","اضافه کردن مارکیو");
+define("_AM_SLIDESHOW_ADD_SLIDESHOW","اضافه کردن اسلاید");
+define("_AM_SLIDESHOW_ADD_TOPIC","اضافه کردن شاخه");
 
 // Topic page
-define("_AM_SLIDESHOW_TOPIC_ID","Id");
-define("_AM_SLIDESHOW_TOPIC_TITLE","Title");
-define("_AM_SLIDESHOW_TOPIC_SHOWTYPE","ShowType");
-define("_AM_SLIDESHOW_TOPIC_ACTION","Action");
-define("_AM_SLIDESHOW_TOPIC_FORM","Add new topic");
-define("_AM_SLIDESHOW_TOPIC_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_TOPIC_MARQUEE","Marquee");
+define("_AM_SLIDESHOW_TOPIC_ID","شماره");
+define("_AM_SLIDESHOW_TOPIC_TITLE","عنوان");
+define("_AM_SLIDESHOW_TOPIC_SHOWTYPE","نوع نمایش");
+define("_AM_SLIDESHOW_TOPIC_ACTION","عملکرد");
+define("_AM_SLIDESHOW_TOPIC_FORM","اضافه کردن شاخه جدید");
+define("_AM_SLIDESHOW_TOPIC_SLIDESHOW","اسلاید");
+define("_AM_SLIDESHOW_TOPIC_MARQUEE","مارکیو");
 
 // Item page
-define("_AM_SLIDESHOW_ITEM_ID","Id");
-define("_AM_SLIDESHOW_ITEM_ORDER","Order");	
-define("_AM_SLIDESHOW_ITEM_TITLE","Title");
-define("_AM_SLIDESHOW_ITEM_IMG","Image");
-define("_AM_SLIDESHOW_ITEM_THUMB","Thumb");
-define("_AM_SLIDESHOW_ITEM_TOPIC","Topic");
-define("_AM_SLIDESHOW_ITEM_ACTION","Action");
-define("_AM_SLIDESHOW_ITEM_FORM","Add new item");
-define("_AM_SLIDESHOW_ITEM_TEXT","Text");
-define("_AM_SLIDESHOW_ITEM_LINK","Link");
-define("_AM_SLIDESHOW_ITEM_STATUS","Status");
-define("_AM_SLIDESHOW_ITEM_FORMUPLOAD","Select your image");
-define("_AM_SLIDESHOW_ITEM_DEFAULT","Default");
+define("_AM_SLIDESHOW_ITEM_ID","شماره");
+define("_AM_SLIDESHOW_ITEM_ORDER","چینش");	
+define("_AM_SLIDESHOW_ITEM_TITLE","عنوان");
+define("_AM_SLIDESHOW_ITEM_IMG","تصویر");
+define("_AM_SLIDESHOW_ITEM_THUMB","بند انگشتی");
+define("_AM_SLIDESHOW_ITEM_TOPIC","شاخه");
+define("_AM_SLIDESHOW_ITEM_ACTION","عملکرد");
+define("_AM_SLIDESHOW_ITEM_FORM","اضافه کردن اسلاید جدید");
+define("_AM_SLIDESHOW_ITEM_TEXT","متن");
+define("_AM_SLIDESHOW_ITEM_LINK","لینک");
+define("_AM_SLIDESHOW_ITEM_STATUS","وضعیت");
+define("_AM_SLIDESHOW_ITEM_FORMUPLOAD","انتخاب تصویر");
+define("_AM_SLIDESHOW_ITEM_DEFAULT","پیش فرض");
 
 // Msg
-define("_AM_SLIDESHOW_MSG_EDIT_ERROR","Error in edit");
-define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/topic");
-define("_AM_SLIDESHOW_MSG_NOTINFO","Not select");
-define("_AM_SLIDESHOW_MSG_ERROR","Error");
-define("_AM_SLIDESHOW_MSG_WAIT","Please wait");
+define("_AM_SLIDESHOW_MSG_EDIT_ERROR","خطا در هین ویرایش");
+define("_AM_SLIDESHOW_MSG_DELETE","آیا اطمینان دارید که میخواهید این عنوان را حذف کنید");
+define("_AM_SLIDESHOW_MSG_NOTINFO","تنظیم نشده");
+define("_AM_SLIDESHOW_MSG_ERROR","خطا");
+define("_AM_SLIDESHOW_MSG_WAIT","لطفا صبر کنید");
 
 ?>
