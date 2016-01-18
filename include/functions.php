@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  * XOOPS slideshow module
  *
  * You may not change or alter any portion of this comment or credits
@@ -17,6 +18,23 @@
  * @version         $Id: $
  */
  
-function xoops_module_update_slideshow() {	$db =& Database::getInstance();	$sql = "ALTER TABLE `" . $db->prefix('slideshow_item') . "` ADD `item_thumb` varchar(255) NOT NULL;";	$db->query($sql);
-	return true;}
+function slideshow_CleanVars($global, $key, $default = '', $type = 'int') {
+
+    switch ($type) {
+        case 'string':
+            //$ret = (isset($global[$key])) ? $global[$key] : $default;
+            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_MAGIC_QUOTES ) : $default;
+            break;
+        case 'int':
+        default:
+            //$ret = (isset($global[$key])) ? intval($global[$key]) : intval($default);
+            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_NUMBER_INT ) : $default;
+            break;
+    }
+    if ($ret === false) {
+        return $default;
+    }
+    return $ret;
+}
+
 ?>

@@ -18,24 +18,25 @@
  * @version         $Id: $
  */
  
-$i = 1;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_HOME,
-    'link' => 'admin/index.php',
-	 'icon' => 'images/home.png');
-$i++;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_TOPIC,
-    'link' => 'admin/topic.php',
-	 'icon' => 'images/topic.png');
-$i++;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_SLIDESHOW,
-    'link' => 'admin/slideshow.php',
-	 'icon' => 'images/item.png');
-$i++;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_MARQUEE,
-    'link' => 'admin/marquee.php',
-	 'icon' => 'images/item.png');
+require '../../../mainfile.php';
+require_once XOOPS_ROOT_PATH . '/include/cp_header.php';
+require_once XOOPS_ROOT_PATH . '/class/tree.php';
+include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
+
+include XOOPS_ROOT_PATH . '/modules/slideshow/include/functions.php';
+ 
+if ( file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php'))){
+   include_once $GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/moduleadmin.php');
+   //return true;
+}else{
+   redirect_header("../../../admin.php", 5, _AM_MODULEADMIN_MISSING, false); 
+   //return false;
+}
+
+xoops_load('xoopsformloader');
+ 
+ 
+$item_handler = xoops_getmodulehandler('item', 'slideshow');
+$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+ 
 ?>
