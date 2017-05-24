@@ -17,6 +17,6 @@
  * @version         $Id: $
  */
  
-function xoops_module_update_slideshow() {	$db =& Database::getInstance();	$sql = "ALTER TABLE `" . $db->prefix('slideshow_item') . "` ADD `item_thumb` varchar(255) NOT NULL;";	$db->query($sql);
+function xoops_module_update_slideshow() {	$db = Database::getInstance();	$sql = "ALTER TABLE `" . $db->prefix('slideshow_item') . "` ADD `item_thumb` varchar(255) NOT NULL;";	$db->query($sql);
 	return true;}
 ?>
