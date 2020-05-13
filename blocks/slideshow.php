@@ -43,9 +43,9 @@ function slideshow_list_show($options) {
 		 switch($block['showtype']) {
 			 case 'marquee':
 			    $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/marquee/marquee.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/marquee/setting.js');
-			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/css/marquee/marquee.css');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/setting.js');
+			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
 			    $info ['type'] = 'marquee';
 				 break;
 				 
@@ -76,19 +76,19 @@ function slideshow_list_show($options) {
 					';
 					
 				 $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/slideshow/scrollable.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/slideshow/setting.js');
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/css/slideshow/scrollable.css');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/scrollable.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/setting.js');
+				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/scrollable.css');
 				 $xoTheme->addStylesheet( null, array ('rel' => 'stylesheet'), $style );
 				 $info ['type'] = 'slideshow';
 				 break;
 				 
 			 case 'slideshow1':
 				 $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/slideshow/sliderkit.min.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/slideshow/sliderkitsetting.js');
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/css/slideshow/sliderkit-core.css');	
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/css/slideshow/sliderkit-demos.css');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkit.min.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkitsetting.js');
+				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-core.css');	
+				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-demos.css');
 				 $info ['type'] = 'slideshow';	
 				 break; 
 		 }

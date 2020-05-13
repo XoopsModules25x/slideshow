@@ -12,8 +12,8 @@
     <tbody class="xo-item">
     <{foreach item=item from=$items}>
     <tr class="odd" id="mod_<{$item.item_id}>">
-        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$item.item_id}></td>
-        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$item.item_order}></td>
+        <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_id}></td>
+        <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_order}></td>
         <td class="txtcenter bold">
 	        <{$item.item_title}>
         </td>
@@ -21,10 +21,10 @@
 	        <a title="<{$item.topictitle}>" href="marquee.php?topic=<{$item.item_topic}>"><{$item.topictitle}></a>
         </td>
         <td class="txtcenter width5 bold">
-	         <img class="cursorpointer xo-defaultimg" id="item_default<{$item.item_id}>" onclick="item_setDefault( { op: 'item_default', item_id: <{$item.item_id}> , topic_id: <{$item.item_topic}> }, 'item_default<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_default}>../images/ok.png<{else}>../images/cancel.png<{/if}>" alt=""/>
+	         <img class="cursorpointer xo-defaultimg" id="item_default<{$item.item_id}>" onclick="item_setDefault( { op: 'item_default', item_id: <{$item.item_id}> , topic_id: <{$item.item_topic}> }, 'item_default<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_default}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
         </td>
         <td class="txtcenter width5 bold">
-            <img class="cursorpointer" id="item_status<{$item.item_id}>" onclick="item_setStatus( { op: 'item_status', item_id: <{$item.item_id}> }, 'item_status<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_status}>../images/ok.png<{else}>../images/cancel.png<{/if}>" alt=""/>
+            <img class="cursorpointer" id="item_status<{$item.item_id}>" onclick="item_setStatus( { op: 'item_status', item_id: <{$item.item_id}> }, 'item_status<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_status}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
         </td>
         <td class="txtcenter width10 xo-actions">
             <img class="tooltip" onclick="display_dialog(<{$item.item_id}>, true, true, 'slide', 'slide', 300, 700);" src="<{xoAdminIcons display.png}>" alt="<{$smarty.const._PREVIEW}>" title="<{$smarty.const._PREVIEW}>" />

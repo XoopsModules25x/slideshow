@@ -71,8 +71,8 @@ switch ($op)
         // Define scripts
 		  $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
 		  $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/order.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/admin.js');
+		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/order.js');
+		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/admin.js');
 		  // Add module stylesheet
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
