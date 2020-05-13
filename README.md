@@ -1,6 +1,6 @@
 # XOOPS CMS Module   ![XOOPS CMS](https://avatars2.githubusercontent.com/u/12771439?v=3&s=200)
 
-**Slideshow** is a module to create slideshows for XOOPS modules. 
+**Slideshow** is a XOOPS module to create slideshows
 
 **XOOPS Module Archive:** Modules in this archive are older modules for XOOPS CMS, and therefore some of them might not work with the latest XOOPS and PHP versions. 
 
