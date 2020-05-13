@@ -118,7 +118,7 @@ switch ($op)
         $xoopsTpl->assign('item_pagenav', $item_pagenav);
         
 		  // Call template file
-		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_marquee.html');
+		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_marquee.tpl');
 		  break; 
 }        
 

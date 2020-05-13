@@ -37,7 +37,7 @@ foreach (array_keys( $folder) as $i) {
 }
 $xoopsTpl->assign('renderindex', $index_admin->renderIndex());
 // Call template file
-$xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_index.html');
+$xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_index.tpl');
 // footer
 xoops_cp_footer();
 ?>

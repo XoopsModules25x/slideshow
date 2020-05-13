@@ -1,4 +1,4 @@
-<{includeq file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.html"}>
+<{includeq file="$xoops_rootpath/modules/slideshow/templates/admin/slideshow_header.tpl"}>
 <table id="xo-topic-sort" class="outer" cellspacing="1" width="100%">
     <thead>
     <th><{$smarty.const._AM_SLIDESHOW_TOPIC_ID}></th>

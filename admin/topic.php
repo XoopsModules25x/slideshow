@@ -83,7 +83,7 @@ switch ($op)
         $xoopsTpl->assign('topic_pagenav', $topic_pagenav);
         
         // Call template file
-		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_topic.html');
+		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_topic.tpl');
 	     break;     
 }        
 

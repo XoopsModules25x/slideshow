@@ -2,4 +2,5 @@
 <hr>
 
 - move images,css,js to asssets folder (liomj)
+- change html templates to tpl templates (liomj)
 

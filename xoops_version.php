@@ -68,7 +68,7 @@ $modversion['blocks'][] = array(
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
     'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item1.html');
+    'template' => 'slideshow_item1.tpl');
     
 $modversion['blocks'][] = array(
     'file' => 'slideshow.php',
@@ -77,7 +77,7 @@ $modversion['blocks'][] = array(
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
     'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item2.html'); 
+    'template' => 'slideshow_item2.tpl'); 
 
 $modversion['blocks'][] = array(
     'file' => 'slideshow.php',
@@ -86,7 +86,7 @@ $modversion['blocks'][] = array(
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
     'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item3.html');        
+    'template' => 'slideshow_item3.tpl');        
   
   
 // conf
