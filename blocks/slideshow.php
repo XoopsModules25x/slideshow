@@ -25,7 +25,7 @@ function slideshow_list_show($options) {
     $block['slideheight'] = $options[1];
     $block['imagewidth'] = $options[2];
     $block['imageheight'] = $options[3];
-    $info['topic'] = $options[4];
+    $info['category'] = $options[4];
     $block['showtype'] = $options[5];
     $info['limit'] = $options[6];
     $block['style'] = $options[7];
@@ -116,24 +116,24 @@ function slideshow_list_show($options) {
 
 function slideshow_list_edit($options) {
 	
-	 $topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+	 $category_handler = xoops_getmodulehandler('category', 'slideshow');
 
     $criteria = new CriteriaCompo();
-    $criteria->setSort("topic_id");
+    $criteria->setSort("category_id");
     $criteria->setOrder("ASC");
-    $topics = $topic_handler->getall($criteria);
+    $categories = $category_handler->getall($criteria);
 
 	 $form  =   _MB_SLIDESHOW_OP1 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[0]\" value=\"" . $options[0] . "\" /><br />";
     $form .=   _MB_SLIDESHOW_OP2 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[1]\" value=\"" . $options[1] . "\" /><br />";
     $form .=   _MB_SLIDESHOW_OP3 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[2]\" value=\"" . $options[2] . "\" /><br />";
     $form .=   _MB_SLIDESHOW_OP4 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[3]\" value=\"" . $options[3] . "\" /><br />";
     
-    $topic = new XoopsFormSelect(_MB_SLIDESHOW_OP5, 'options[4]', $options[4]);
+    $category = new XoopsFormSelect(_MB_SLIDESHOW_OP5, 'options[4]', $options[4]);
     $i = 1;
-    foreach (array_keys($topics) as $i) {
-        $topic->addOption($topics[$i]->getVar("topic_id"), $topics[$i]->getVar("topic_title") .' - '. $topics[$i]->getVar("topic_showtype"));
+    foreach (array_keys($categories) as $i) {
+        $category->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") .' - '. $categories[$i]->getVar("category_showtype"));
     }
-    $form .= _MB_SLIDESHOW_OP5 . " : " . $topic->render() . '<br />';
+    $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
     $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
     $type->addOption('slideshow',_MB_SLIDESHOW_SLIDESHOW);

@@ -24,7 +24,7 @@ class slideshow_item extends XoopsObject {
 		$this->initVar ( 'item_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_title', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_text', XOBJ_DTYPE_TXTAREA, '' );
-		$this->initVar ( 'item_topic', XOBJ_DTYPE_INT );
+		$this->initVar ( 'item_category', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_link', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_status', XOBJ_DTYPE_INT , '1');
 		$this->initVar ( 'item_create', XOBJ_DTYPE_INT );
@@ -52,17 +52,17 @@ class slideshow_item extends XoopsObject {
 		}
 		$form->addElement ( new XoopsFormHidden ( 'item_id', $this->getVar ( 'item_id', 'e' ) ) );
 		$form->addElement ( new XoopsFormHidden ( 'item_type', 'marquee' ) );
-		// Topic
-		$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+		// Category
+		$category_handler = xoops_getmodulehandler('category', 'slideshow');
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'topic_showtype', 'marquee' ) );
-		$topics = $topic_handler->getObjects ( $criteria );
-	   $topic_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_TOPIC, 'item_topic', $this->getVar ( 'item_topic' ));
+		$criteria->add ( new Criteria ( 'category_showtype', 'marquee' ) );
+		$categories = $category_handler->getObjects ( $criteria );
+	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
       $i = 1;
-      foreach (array_keys($topics) as $i) {
-         $topic_sel->addOption($topics[$i]->getVar("topic_id"), $topics[$i]->getVar("topic_title") . ' - ' . $topics[$i]->getVar("topic_showtype"));
+      foreach (array_keys($categories) as $i) {
+         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") . ' - ' . $categories[$i]->getVar("category_showtype"));
       }
-		$form->addElement($topic_sel);
+		$form->addElement($category_sel);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
 		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
@@ -89,17 +89,17 @@ class slideshow_item extends XoopsObject {
 		}
 		$form->addElement ( new XoopsFormHidden ( 'item_id', $this->getVar ( 'item_id', 'e' ) ) );
 		$form->addElement ( new XoopsFormHidden ( 'item_type', 'slideshow' ) );
-		// Topic
-		$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+		// Category
+		$category_handler = xoops_getmodulehandler('category', 'slideshow');
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'topic_showtype', 'slideshow' ) );
-		$topics = $topic_handler->getObjects ( $criteria );
-	   $topic_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_TOPIC, 'item_topic', $this->getVar ( 'item_topic' ));
+		$criteria->add ( new Criteria ( 'category_showtype', 'slideshow' ) );
+		$categories = $category_handler->getObjects ( $criteria );
+	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
       $i = 1;
-      foreach (array_keys($topics) as $i) {
-         $topic_sel->addOption($topics[$i]->getVar("topic_id"), $topics[$i]->getVar("topic_title") . ' - ' . $topics[$i]->getVar("topic_showtype"));
+      foreach (array_keys($categories) as $i) {
+         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") . ' - ' . $categories[$i]->getVar("category_showtype"));
       }
-		$form->addElement($topic_sel);
+		$form->addElement($category_sel);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
 		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_TEXT, 'item_text', $this->getVar ( 'item_text', 'e' ), 5, 80 ) );
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
@@ -220,8 +220,8 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 	public function itemSAdminList($info) {
 		$ret = array ();
 		$criteria = new CriteriaCompo ();
-		if($info ['topic']) {
-		$criteria->add ( new Criteria ( 'item_topic', $info ['topic'] ) );
+		if($info ['category']) {
+		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
 		}
 		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
       $criteria->setSort ( $info ['item_sort'] );
@@ -235,14 +235,14 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				
-				if(is_array($info['alltopics'])) {
-					foreach ( array_keys ( $info['alltopics'] ) as $i ) {
-						$list [$i] ['topic_title'] = $info['alltopics'] [$i]->getVar ( "topic_title" );
-						$list [$i] ['topic_id'] = $info['alltopics'] [$i]->getVar ( "topic_id" );
+				if(is_array($info['allcategories'])) {
+					foreach ( array_keys ( $info['allcategories'] ) as $i ) {
+						$list [$i] ['category_title'] = $info['allcategories'] [$i]->getVar ( "category_title" );
+						$list [$i] ['category_id'] = $info['allcategories'] [$i]->getVar ( "category_id" );
 					}
 				}
 				$tab ['imgurl'] = XOOPS_URL . '/uploads/slideshow/image/' . $root->getVar ( 'item_img' );
-				$tab ['topictitle'] = $list [$root->getVar ( 'item_topic' )] ['topic_title'];
+				$tab ['categorytitle'] = $list [$root->getVar ( 'item_category' )] ['category_title'];
 				$ret [] = $tab;
 			}	
 		}
@@ -259,7 +259,7 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 	public function itemBlockList($info) {
 		$ret = array ();
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'item_topic', $info ['topic'] ) );
+		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
 		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
 		$criteria->add ( new Criteria ( 'item_status', '1' ) );
 		$criteria->setSort ( 'item_order' );

@@ -20,22 +20,22 @@
  
 //index
 define('_AM_SLIDESHOW_INDEX_INFO',"Index");
-define('_AM_SLIDESHOW_INDEX_TOPICS',"There are %s topics in our database");
+define('_AM_SLIDESHOW_INDEX_CATEGORIES',"There are %s categories in our database");
 define('_AM_SLIDESHOW_INDEX_ITEMS',"There are %s items in our database");
 
 // Add icons
 define("_AM_SLIDESHOW_ADD_MARQUEE","Add Marquee");
 define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow");
-define("_AM_SLIDESHOW_ADD_TOPIC","Add Topic");
+define("_AM_SLIDESHOW_ADD_CATEGORY","Add Category");
 
-// Topic page
-define("_AM_SLIDESHOW_TOPIC_ID","Id");
-define("_AM_SLIDESHOW_TOPIC_TITLE","Title");
-define("_AM_SLIDESHOW_TOPIC_SHOWTYPE","ShowType");
-define("_AM_SLIDESHOW_TOPIC_ACTION","Action");
-define("_AM_SLIDESHOW_TOPIC_FORM","Add new topic");
-define("_AM_SLIDESHOW_TOPIC_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_TOPIC_MARQUEE","Marquee");
+// Category page
+define("_AM_SLIDESHOW_CATEGORY_ID","Id");
+define("_AM_SLIDESHOW_CATEGORY_TITLE","Title");
+define("_AM_SLIDESHOW_CATEGORY_SHOWTYPE","ShowType");
+define("_AM_SLIDESHOW_CATEGORY_ACTION","Action");
+define("_AM_SLIDESHOW_CATEGORY_FORM","Add new category");
+define("_AM_SLIDESHOW_CATEGORY_SLIDESHOW","Slideshow");
+define("_AM_SLIDESHOW_CATEGORY_MARQUEE","Marquee");
 
 // Item page
 define("_AM_SLIDESHOW_ITEM_ID","Id");
@@ -43,7 +43,7 @@ define("_AM_SLIDESHOW_ITEM_ORDER","Order");
 define("_AM_SLIDESHOW_ITEM_TITLE","Title");
 define("_AM_SLIDESHOW_ITEM_IMG","Image");
 define("_AM_SLIDESHOW_ITEM_THUMB","Thumb");
-define("_AM_SLIDESHOW_ITEM_TOPIC","Topic");
+define("_AM_SLIDESHOW_ITEM_CATEGORY","Category");
 define("_AM_SLIDESHOW_ITEM_ACTION","Action");
 define("_AM_SLIDESHOW_ITEM_FORM","Add new item");
 define("_AM_SLIDESHOW_ITEM_TEXT","Text");
@@ -54,7 +54,7 @@ define("_AM_SLIDESHOW_ITEM_DEFAULT","Default");
 
 // Msg
 define("_AM_SLIDESHOW_MSG_EDIT_ERROR","Error in edit");
-define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/topic");
+define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/category");
 define("_AM_SLIDESHOW_MSG_NOTINFO","Not select");
 define("_AM_SLIDESHOW_MSG_ERROR","Error");
 define("_AM_SLIDESHOW_MSG_WAIT","Please wait");

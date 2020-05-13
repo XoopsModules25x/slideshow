@@ -25,9 +25,9 @@ $adminmenu[$i] = array(
 	 'icon' => 'assets/images/home.png');
 $i++;
 $adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_TOPIC,
-    'link' => 'admin/topic.php',
-	 'icon' => 'assets/images/topic.png');
+    'title' => _AM_SLIDESHOW_CATEGORY,
+    'link' => 'admin/category.php',
+	 'icon' => 'assets/images/category.png');
 $i++;
 $adminmenu[$i] = array(
     'title' => _AM_SLIDESHOW_SLIDESHOW,

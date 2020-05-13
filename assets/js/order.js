@@ -19,7 +19,7 @@
 
 $(document).ready(
         function() {
-           // Controls Drag + Drop for topics       
+           // Controls Drag + Drop for categories       
            $('#xo-item-sort tbody.xo-item').sortable({
                 placeholder: 'ui-state-highlight',
                 update: function(event, ui) {

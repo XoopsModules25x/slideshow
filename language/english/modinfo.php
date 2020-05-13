@@ -24,7 +24,7 @@ define("_MI_SLIDESHOW_DESC","Make Slideshow");
 
 // menu
 define("_AM_SLIDESHOW_HOME","Home");
-define("_AM_SLIDESHOW_TOPIC","Topic");
+define("_AM_SLIDESHOW_CATEGORY","Category");
 define("_AM_SLIDESHOW_SLIDESHOW","Slideshow");
 define("_AM_SLIDESHOW_MARQUEE","Marquee");
 

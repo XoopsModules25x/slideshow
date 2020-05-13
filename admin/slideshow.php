@@ -81,11 +81,11 @@ switch ($op)
         $info['item_sort'] = 'item_order';
         $info['item_order'] = 'DESC';
         
-        // get item from topic
-        if (isset($_REQUEST['topic'])) {
-            $info['topic'] = $_REQUEST['topic'];
+        // get item from category
+        if (isset($_REQUEST['category'])) {
+            $info['category'] = $_REQUEST['category'];
         } else {
-            $info['topic'] = null;
+            $info['category'] = null;
         }
         
         // get limited information
@@ -103,7 +103,7 @@ switch ($op)
         }
         
         $info ['type'] = 'slideshow';
-        $info['alltopics'] = $topic_handler->getall();
+        $info['allcategories'] = $category_handler->getall();
         $items = $item_handler->itemSAdminList($info);
         $item_numrows = $item_handler->itemCount($info);
 

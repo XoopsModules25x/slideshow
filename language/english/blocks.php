@@ -22,7 +22,7 @@ define("_MB_SLIDESHOW_OP1","Slideshow width");
 define("_MB_SLIDESHOW_OP2","Slideshow height");
 define("_MB_SLIDESHOW_OP3","Image width");
 define("_MB_SLIDESHOW_OP4","Image height");
-define("_MB_SLIDESHOW_OP5","Select topic");
+define("_MB_SLIDESHOW_OP5","Select category");
 define("_MB_SLIDESHOW_OP6","Select type");
 define("_MB_SLIDESHOW_OP7","Limit");
 define("_MB_SLIDESHOW_SLIDESHOW","Slideshow");

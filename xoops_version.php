@@ -58,7 +58,7 @@ $modversion = array(
 // sql
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
 $modversion['tables'][1] = "slideshow_item";
-$modversion['tables'][2] = "slideshow_topic";
+$modversion['tables'][2] = "slideshow_category";
 
 // block
 $modversion['blocks'][] = array(

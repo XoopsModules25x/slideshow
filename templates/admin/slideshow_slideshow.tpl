@@ -5,7 +5,7 @@
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ORDER}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_IMG}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_TOPIC}></th>
+    <th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_DEFAULT}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ACTION}></th>
@@ -22,10 +22,10 @@
 		        <img style="max-width: 100px; max-height: 100px;" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
         </td>
         <td class="txtcenter bold">
-	        <a title="<{$item.topictitle}>" href="slideshow.php?topic=<{$item.item_topic}>"><{$item.topictitle}></a>
+	        <a title="<{$item.categorytitle}>" href="slideshow.php?category=<{$item.item_category}>"><{$item.categorytitle}></a>
         </td>
         <td class="txtcenter width5 bold">
-	         <img class="cursorpointer xo-defaultimg" id="item_default<{$item.item_id}>" onclick="item_setDefault( { op: 'item_default', item_id: <{$item.item_id}> , topic_id: <{$item.item_topic}> }, 'item_default<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_default}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
+	         <img class="cursorpointer xo-defaultimg" id="item_default<{$item.item_id}>" onclick="item_setDefault( { op: 'item_default', item_id: <{$item.item_id}> , category_id: <{$item.item_category}> }, 'item_default<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_default}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
         </td>
         <td class="txtcenter width5 bold">
             <img class="cursorpointer" id="item_status<{$item.item_id}>" onclick="item_setStatus( { op: 'item_status', item_id: <{$item.item_id}> }, 'item_status<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_status}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
@@ -43,7 +43,7 @@
 <{foreach item=item from=$items}>
 	<div id="dialog<{$item.item_id}>" title="<{$item.item_title}>" style='display:none;'>
 	<div class="marg5 pad5 ui-state-default ui-corner-all">
-		<{$smarty.const._AM_SLIDESHOW_ITEM_TOPIC}> : <span class="bold"><a href="slideshow.php?topic=<{$item.item_topic}>"><{$item.topictitle}></a></span>
+		<{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}> : <span class="bold"><a href="slideshow.php?category=<{$item.item_category}>"><{$item.categorytitle}></a></span>
 	</div>
 	<div class="marg5 pad5 ui-state-highlight ui-corner-all">
 	   <div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}> : <{$item.item_title}></span></div>

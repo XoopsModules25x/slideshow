@@ -33,30 +33,30 @@ if (! isset ( $_REQUEST )) {
 }
  
 switch ($op) {
-	case 'addtopic' :
-	   $obj = $topic_handler->create ();
+	case 'addcategory' :
+	   $obj = $category_handler->create ();
 		$obj->setVars ( $_REQUEST );
-		$obj->setVar ( 'topic_created', time () );
+		$obj->setVar ( 'category_created', time () );
 		
-		if (! $topic_handler->insert ( $obj )) {
+		if (! $category_handler->insert ( $obj )) {
 			redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
 			xoops_cp_footer ();
 			exit ();
 		}
 		
 		// Redirect page
-		redirect_header ( 'topic.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
 		xoops_cp_footer ();
 		exit ();
 		break;
 		
-	case 'edittopic' :
-		$topic_id = slideshow_CleanVars ( $_REQUEST, 'topic_id', 0, 'int' );
-		if ($topic_id > 0) {
-			$obj = $topic_handler->get ( $topic_id );
+	case 'editcategory' :
+		$category_id = slideshow_CleanVars ( $_REQUEST, 'category_id', 0, 'int' );
+		if ($category_id > 0) {
+			$obj = $category_handler->get ( $category_id );
 			$obj->setVars ( $_POST );
 			
-			if (! $topic_handler->insert ( $obj )) {
+			if (! $category_handler->insert ( $obj )) {
 				redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
 				xoops_cp_footer ();
 				exit ();
@@ -64,20 +64,20 @@ switch ($op) {
 		}	
 		
 		// Redirect page
-		redirect_header ( 'topic.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
 		xoops_cp_footer ();
 		exit ();
 		break;
 	
-	case 'deletetopic' :
-	   $topic_id = slideshow_CleanVars ( $_REQUEST, 'topic_id', 0, 'int' );
-	   $obj = $topic_handler->get ( $topic_id );
-		if (! $topic_handler->delete ( $obj )) {
+	case 'deletecategory' :
+	   $category_id = slideshow_CleanVars ( $_REQUEST, 'category_id', 0, 'int' );
+	   $obj = $category_handler->get ( $category_id );
+		if (! $category_handler->delete ( $obj )) {
 			echo $obj->getHtmlErrors ();
 		}
 		
 		// Redirect page
-		redirect_header ( 'topic.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
 		xoops_cp_footer ();
 		exit ();
 		break;
@@ -155,10 +155,10 @@ switch ($op) {
 		
 	case 'item_default' :
 		$item_id = slideshow_CleanVars ( $_REQUEST, 'item_id', 0, 'int' );
-		$topic_id = slideshow_CleanVars ( $_REQUEST, 'topic_id', 0, 'int' );
+		$category_id = slideshow_CleanVars ( $_REQUEST, 'category_id', 0, 'int' );
 		if ($item_id > 0) {
 			$criteria = new CriteriaCompo ();
-			$criteria->add ( new Criteria ( 'item_topic', $topic_id ) );
+			$criteria->add ( new Criteria ( 'item_category', $category_id ) );
 			$item_handler->updateAll ( 'item_default', 0, $criteria );
 			$obj = & $item_handler->get ( $item_id );
 			$obj->setVar ( 'item_default', 1 );
