@@ -1,5 +1,6 @@
 <h5>1.x        [NOT RELEASED]</h5>  Dev: Xoops 2.5.9, PHP 7.2.0
 <hr>
+- fix empty category drop down (liomj)
 - disable slideshowform if no category created (liomj)
 - remove item_thumb (liomj)
 - remove showType from Category (liomj)

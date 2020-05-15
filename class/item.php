@@ -54,7 +54,6 @@ class slideshow_item extends XoopsObject {
 		// Category
 		$category_handler = xoops_getmodulehandler('category', 'slideshow');
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'category_showtype', 'slideshow' ) );
 		$categories = $category_handler->getObjects ( $criteria );
 	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
       $i = 1;
