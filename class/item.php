@@ -31,7 +31,6 @@ class slideshow_item extends XoopsObject {
 		$this->initVar ( 'item_uid', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_order', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_img', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_thumb', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_default', XOBJ_DTYPE_INT , '0');
 		$this->initVar ( 'item_type', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'dohtml', XOBJ_DTYPE_INT, 1 );
@@ -77,15 +76,6 @@ class slideshow_item extends XoopsObject {
 			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
 		}
 		$form->addElement ( $fileseltray_item_img );
-		// thumb
-      $item_thumb = $this->getVar ( 'item_thumb' ) ? $this->getVar ( 'item_thumb' ) : 'blank.gif';
-		$thumbdir = '/uploads/slideshow/thumb/';
-		$fileseltray_item_thumb = new XoopsFormElementTray ( _AM_SLIDESHOW_ITEM_THUMB, '<br />' );
-		$fileseltray_item_thumb->addElement ( new XoopsFormLabel ( '', "<img style='max-width: 200px; max-height: 200px;' src='" . XOOPS_URL . $thumbdir . $item_thumb . "' name='image_item' id='image_item' alt='' />" ) );
-		if ($this->isNew ()) {
-			$fileseltray_item_thumb->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_thumb', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
-		}
-		$form->addElement ( $fileseltray_item_thumb );
       // Button 
 		$button_tray = new XoopsFormElementTray ( '', '' );
 		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );
@@ -138,33 +128,6 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 		if ($uploader_img->fetchMedia ( 'item_img' )) {
 			 $uploader_img->setPrefix ( 'slideshow_' );
 			 $uploader_img->fetchMedia ( 'item_img' );
-			 if (! $uploader_img->upload ()) {
-				 redirect_header ( 'slideshow.php?op=new_item', 1, $uploader_img->getErrors ());
-				 xoops_cp_footer ();
-			    exit ();
-			 } else {
-				 return $uploader_img->getSavedFileName ();
-			 }
-		} else {
-			 if (isset ( $image )) {
-				 return $image;
-			 }	
-		}
-		return '';
-	}
-	
-	public function uploadthumb($obj, $thumb) {
-		include_once XOOPS_ROOT_PATH . "/class/uploader.php";
-		$uploader_img = new XoopsMediaUploader ( 
-			XOOPS_ROOT_PATH . '/uploads/slideshow/thumb/', 
-			xoops_getModuleOption ( 'img_mime', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_size', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_maxwidth', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_maxheight', 'slideshow' ) 
-		);
-		if ($uploader_img->fetchMedia ( 'item_thumb' )) {
-			 $uploader_img->setPrefix ( 'slideshow_' );
-			 $uploader_img->fetchMedia ( 'item_thumb' );
 			 if (! $uploader_img->upload ()) {
 				 redirect_header ( 'slideshow.php?op=new_item', 1, $uploader_img->getErrors ());
 				 xoops_cp_footer ();
@@ -233,7 +196,6 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				$tab ['imgurl'] = XOOPS_URL . '/uploads/slideshow/image/' . $root->getVar ( 'item_img' );
-				$tab ['thumburl'] = XOOPS_URL . '/uploads/slideshow/thumb/' . $root->getVar ( 'item_thumb' );
 				$ret [] = $tab;
 			}		
 		}	

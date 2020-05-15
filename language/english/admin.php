@@ -39,7 +39,6 @@ define("_AM_SLIDESHOW_ITEM_ID","Id");
 define("_AM_SLIDESHOW_ITEM_ORDER","Order");	
 define("_AM_SLIDESHOW_ITEM_TITLE","Title");
 define("_AM_SLIDESHOW_ITEM_IMG","Image");
-define("_AM_SLIDESHOW_ITEM_THUMB","Thumb");
 define("_AM_SLIDESHOW_ITEM_CATEGORY","Category");
 define("_AM_SLIDESHOW_ITEM_ACTION","Action");
 define("_AM_SLIDESHOW_ITEM_FORM","Add new item");

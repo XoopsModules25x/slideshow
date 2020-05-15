@@ -88,7 +88,6 @@ switch ($op) {
 		$obj->setVar ( 'item_create', time () );
 		$obj->setVar ( 'item_order', $item_handler->setitemorder() );
 		$obj->setVar ( 'item_img', $item_handler->uploadimg ( $_POST ['item_img'] ) );
-		$obj->setVar ( 'item_thumb', $item_handler->uploadthumb ( $_POST ['item_thumb'] ) );
 		if($_POST['item_default'] == 1) {
 			$item_handler->updateAll ( 'item_default', 0, $obj );
 		}
@@ -130,7 +129,6 @@ switch ($op) {
 	   $item_id = slideshow_CleanVars ( $_REQUEST, 'item_id', 0, 'int' );
 	   $obj = $item_handler->get ( $item_id );
 	   unlink(XOOPS_URL . '/uploads/slideshow/image/' .$obj->getVar ( 'item_img'));
-	   unlink(XOOPS_URL . '/uploads/slideshow/thumb/' .$obj->getVar ( 'item_thumb'));
 		if (! $item_handler->delete ( $obj )) {
 			echo $obj->getHtmlErrors ();
 		}

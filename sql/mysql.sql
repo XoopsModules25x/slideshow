@@ -9,7 +9,6 @@ CREATE TABLE `slideshow_item` (
 	`item_uid` int(11) NOT NULL,
 	`item_order` int(11) NOT NULL,
 	`item_img` varchar(255) NOT NULL,
-	`item_thumb` varchar(255) NOT NULL,
 	`item_default` tinyint(1) NOT NULL,
 	`item_type` varchar (60)   NOT NULL ,
 	PRIMARY KEY (`item_id`),
