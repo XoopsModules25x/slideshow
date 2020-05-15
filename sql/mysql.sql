@@ -20,7 +20,6 @@ CREATE TABLE `slideshow_item` (
 CREATE TABLE `slideshow_category` (
 	`category_id` int (11) unsigned NOT NULL  auto_increment,
 	`category_title` varchar (255)   NOT NULL ,
-	`category_showtype` varchar (60)   NOT NULL ,
 	`category_created` int (10)   NOT NULL default '0',
 	PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM;

@@ -30,11 +30,9 @@ define("_AM_SLIDESHOW_ADD_CATEGORY","Add Category");
 // Category page
 define("_AM_SLIDESHOW_CATEGORY_ID","Id");
 define("_AM_SLIDESHOW_CATEGORY_TITLE","Title");
-define("_AM_SLIDESHOW_CATEGORY_SHOWTYPE","ShowType");
 define("_AM_SLIDESHOW_CATEGORY_ACTION","Action");
 define("_AM_SLIDESHOW_CATEGORY_FORM","Add new category");
 define("_AM_SLIDESHOW_CATEGORY_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_CATEGORY_MARQUEE","Marquee");
 
 // Item page
 define("_AM_SLIDESHOW_ITEM_ID","Id");

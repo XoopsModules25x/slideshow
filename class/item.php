@@ -40,44 +40,7 @@ class slideshow_item extends XoopsObject {
 		$this->db = $GLOBALS ['xoopsDB'];
 		$this->table = $this->db->prefix ( 'slideshow_item' );
 	}
-		
-	public function getMarqueeForm() {	
-		$form = new XoopsThemeForm ( _AM_SLIDESHOW_ITEM_FORM, 'item', 'backend.php', 'post' );
-		$form->setExtra ( 'enctype="multipart/form-data"' );
-		if ($this->isNew ()) {
-			$form->addElement ( new XoopsFormHidden ( 'op', 'additem' ) );
-			$form->addElement ( new XoopsFormHidden ( 'item_uid', $GLOBALS ['xoopsUser']->getVar ( 'uid' ) ) );
-		} else {
-			$form->addElement ( new XoopsFormHidden ( 'op', 'edititem' ) );
-		}
-		$form->addElement ( new XoopsFormHidden ( 'item_id', $this->getVar ( 'item_id', 'e' ) ) );
-		$form->addElement ( new XoopsFormHidden ( 'item_type', 'marquee' ) );
-		// Category
-		$category_handler = xoops_getmodulehandler('category', 'slideshow');
-		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'category_showtype', 'marquee' ) );
-		$categories = $category_handler->getObjects ( $criteria );
-	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
-      $i = 1;
-      foreach (array_keys($categories) as $i) {
-         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") . ' - ' . $categories[$i]->getVar("category_showtype"));
-      }
-		$form->addElement($category_sel);
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
-      // Button 
-		$button_tray = new XoopsFormElementTray ( '', '' );
-		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );
-		$button_tray->addElement ( $submit_btn );
-		$cancel_btn = new XoopsFormButton ( '', 'cancel', _CANCEL, 'cancel' );
-		$cancel_btn->setExtra ( 'onclick="javascript:history.go(-1);"' );
-		$button_tray->addElement ( $cancel_btn );
-		$form->addElement ( $button_tray );
-		$form->display ();
-	}
-			
+				
 	public function getSlideshowForm() {	
 		$form = new XoopsThemeForm ( _AM_SLIDESHOW_ITEM_FORM, 'item', 'backend.php', 'post' );
 		$form->setExtra ( 'enctype="multipart/form-data"' );

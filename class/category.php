@@ -23,7 +23,6 @@ class slideshow_category extends XoopsObject {
 	public function slideshow_category() {
 		$this->initVar ( 'category_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'category_title', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'category_showtype', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'category_created', XOBJ_DTYPE_INT );
 		
 		$this->db = $GLOBALS ['xoopsDB'];
@@ -41,11 +40,6 @@ class slideshow_category extends XoopsObject {
 		$form->addElement ( new XoopsFormHidden ( 'category_id', $this->getVar ( 'category_id', 'e' ) ) );
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_CATEGORY_TITLE, 'category_title', 50, 255, $this->getVar ( 'category_title', 'e' ) ), true );
       
-      if ($this->isNew ()) {
-	      $select = new XoopsFormSelect(_AM_SLIDESHOW_CATEGORY_SHOWTYPE, 'category_showtype',$this->getVar ( 'category_showtype', 'e' ));
-			$select->addOption("slideshow", _AM_SLIDESHOW_CATEGORY_SLIDESHOW);
-			$form->addElement($select);
-      }
 		// Submit buttons
 		$button_tray = new XoopsFormElementTray ( '', '' );
 		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );
