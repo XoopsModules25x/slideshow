@@ -63,32 +63,13 @@ $modversion['tables'][2] = "slideshow_category";
 // block
 $modversion['blocks'][] = array(
     'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK1,
+    'name' => _MI_SLIDESHOW_BLOCK,
     'description' => '',
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
     'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item1.tpl');
-    
-$modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK2,
-    'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item2.tpl'); 
-
-$modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK2,
-    'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item3.tpl');        
-  
-  
+    'template' => 'slideshow_item.tpl');
+           
 // conf
 $modversion['config'][] = array(
     'name' => 'img_mime',

@@ -131,7 +131,7 @@ function slideshow_list_edit($options) {
     $category = new XoopsFormSelect(_MB_SLIDESHOW_OP5, 'options[4]', $options[4]);
     $i = 1;
     foreach (array_keys($categories) as $i) {
-        $category->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") .' - '. $categories[$i]->getVar("category_showtype"));
+        $category->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
     }
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     

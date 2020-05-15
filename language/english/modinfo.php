@@ -29,9 +29,7 @@ define("_AM_SLIDESHOW_SLIDESHOW","Slideshow");
 define("_AM_SLIDESHOW_MARQUEE","Marquee");
 
 // block
-define("_MI_SLIDESHOW_BLOCK1","Slideshow Block 1");
-define("_MI_SLIDESHOW_BLOCK2","Slideshow Block 2");
-define("_MI_SLIDESHOW_BLOCK3","Slideshow Block 3");
+define("_MI_SLIDESHOW_BLOCK","Slideshow Block");
 
 // preferences
 define("_MI_SLIDESHOW_IMAGE_MIME","Mimetypes");
