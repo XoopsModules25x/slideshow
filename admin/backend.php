@@ -45,7 +45,7 @@ switch ($op) {
 		}
 		
 		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;
@@ -64,7 +64,7 @@ switch ($op) {
 		}	
 		
 		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;
@@ -77,7 +77,7 @@ switch ($op) {
 		}
 		
 		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;
@@ -99,7 +99,7 @@ switch ($op) {
 		}
 		
 		// Redirect page
-		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;
@@ -120,7 +120,7 @@ switch ($op) {
 			}
 		}
 		// Redirect page
-		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;	
@@ -133,7 +133,7 @@ switch ($op) {
 			echo $obj->getHtmlErrors ();
 		}
 		// Redirect page
-		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_WAIT );
+		redirect_header ( 'index.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS );
 		xoops_cp_footer ();
 		exit ();
 		break;	

@@ -57,5 +57,7 @@ define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/catego
 define("_AM_SLIDESHOW_MSG_NOTINFO","Not select");
 define("_AM_SLIDESHOW_MSG_ERROR","Error");
 define("_AM_SLIDESHOW_MSG_WAIT","Please wait");
-
+define("_AM_SLIDESHOW_MSG_INSERTSUCCESS","Added Successfully");
+define("_AM_SLIDESHOW_MSG_EDITSUCCESS","Updated Successfully");
+define("_AM_SLIDESHOW_MSG_DELETESUCCESS","Deleted Successfully");
 ?>

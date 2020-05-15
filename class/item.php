@@ -63,7 +63,7 @@ class slideshow_item extends XoopsObject {
 		$form->addElement($category_sel);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
 		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_TEXT, 'item_text', $this->getVar ( 'item_text', 'e' ), 5, 80 ) );
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
 		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
 		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
       // Image
