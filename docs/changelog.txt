@@ -1,6 +1,6 @@
 <h5>1.x        [NOT RELEASED]</h5>  Dev: Xoops 2.5.9, PHP 7.2.0
 <hr>
-
+- remove marquee from admin (liomj)
 - rename topic to category (liomj)
 - move images,css,js to asssets folder (liomj)
 - change html templates to tpl templates (liomj)

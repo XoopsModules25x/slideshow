@@ -33,9 +33,4 @@ $adminmenu[$i] = array(
     'title' => _AM_SLIDESHOW_SLIDESHOW,
     'link' => 'admin/slideshow.php',
 	 'icon' => 'assets/images/item.png');
-$i++;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_MARQUEE,
-    'link' => 'admin/marquee.php',
-	 'icon' => 'assets/images/item.png');
 ?>

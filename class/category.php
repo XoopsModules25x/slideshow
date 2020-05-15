@@ -44,7 +44,6 @@ class slideshow_category extends XoopsObject {
       if ($this->isNew ()) {
 	      $select = new XoopsFormSelect(_AM_SLIDESHOW_CATEGORY_SHOWTYPE, 'category_showtype',$this->getVar ( 'category_showtype', 'e' ));
 			$select->addOption("slideshow", _AM_SLIDESHOW_CATEGORY_SLIDESHOW);
-			$select->addOption("marquee", _AM_SLIDESHOW_CATEGORY_MARQUEE);
 			$form->addElement($select);
       }
 		// Submit buttons

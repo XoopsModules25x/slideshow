@@ -24,7 +24,6 @@ define('_AM_SLIDESHOW_INDEX_CATEGORIES',"There are %s categories in our database
 define('_AM_SLIDESHOW_INDEX_ITEMS',"There are %s items in our database");
 
 // Add icons
-define("_AM_SLIDESHOW_ADD_MARQUEE","Add Marquee");
 define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow");
 define("_AM_SLIDESHOW_ADD_CATEGORY","Add Category");
 
