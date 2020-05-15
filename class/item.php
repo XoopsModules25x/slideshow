@@ -58,7 +58,7 @@ class slideshow_item extends XoopsObject {
 	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
       $i = 1;
       foreach (array_keys($categories) as $i) {
-         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title") . ' - ' . $categories[$i]->getVar("category_showtype"));
+         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
       }
 		$form->addElement($category_sel);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
