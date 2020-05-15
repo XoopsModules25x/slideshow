@@ -26,9 +26,17 @@ $op = slideshow_CleanVars($_REQUEST, 'op', '', 'string');
 switch ($op)
 {
 	 case 'new_item':
-        $obj = $item_handler->create();
-		  $obj->getSlideshowForm();
-        break;
+	 	if (!$totalCategories = $category_handler->categoryCount() ) {
+		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
+		xoops_cp_footer();
+		exit();
+		}
+		else
+		{
+		$obj = $item_handler->create();
+		$obj->getSlideshowForm();
+        break;	
+		}
 
     case 'edit_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
@@ -67,6 +75,11 @@ switch ($op)
         break;   
      
       default:     
+		  if (!$totalCategories = $category_handler->categoryCount() ) {
+		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
+		xoops_cp_footer();
+		exit();
+		}
       
         // Define scripts
 		  $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');

@@ -33,6 +33,9 @@ define("_AM_SLIDESHOW_CATEGORY_TITLE","Title");
 define("_AM_SLIDESHOW_CATEGORY_ACTION","Action");
 define("_AM_SLIDESHOW_CATEGORY_FORM","Add new category");
 define("_AM_SLIDESHOW_CATEGORY_SLIDESHOW","Slideshow");
+define('_AM_SLIDESHOW_CATEGORY_EMPTY', 'Error: There are no category created yet. Before you can create a new slideshow, you must create a category first.');
+define('_AM_SLIDESHOW_CATEGORY_DELETECONFIRM', "Are you sure you want to delete <span class='bold red'>%s</span></b> category and <b>ALL</b> of its Slideshow? This action is not reversible !!");
+
 
 // Item page
 define("_AM_SLIDESHOW_ITEM_ID","Id");
