@@ -99,7 +99,7 @@ class slideshow_item extends XoopsObject {
 class slideshowItemHandler extends XoopsPersistableObjectHandler {
 	
 	public function slideshowItemHandler($db) {
-		parent::XoopsPersistableObjectHandler ( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );
+		parent::__construct( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );
 	}
 	
 	public function setitemorder() {

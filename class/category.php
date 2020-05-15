@@ -64,7 +64,7 @@ class slideshow_category extends XoopsObject {
 class slideshowCategoryHandler extends XoopsPersistableObjectHandler {
 	
 	public function slideshowCategoryHandler($db) {
-		parent::XoopsPersistableObjectHandler ( $db, 'slideshow_category', 'slideshow_category', 'category_id', 'category_title' );
+		parent::__construct( $db, 'slideshow_category', 'slideshow_category', 'category_id', 'category_title' );
 	}
 	
 	public function categoryList($info) {
