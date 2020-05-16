@@ -16,7 +16,7 @@
 			<div class="sliderkit-news">
 				<a href="#" title="<{$item.item_title}>"><img src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a>
 				<h3><a title="<{$item.item_title}>" href="<{$item.item_link}>"><{$item.item_title}></a></h3>
-				<p><{$item.item_text|truncate:200}> <a title="<{$item.item_title}>" class="sliderkit-news-readmore" href="<{$item.item_link}>">التفاصيل</a></p>
+				<p><{$item.item_text|truncate:200}> <a title="<{$item.item_title}>" class="sliderkit-news-readmore" href="<{$item.item_link}>"><{$smarty.const._MB_SLIDESHOW_MORE}></a></p>
 			</div>
 		</div>
       <{/foreach}>
