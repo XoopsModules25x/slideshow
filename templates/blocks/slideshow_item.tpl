@@ -1,4 +1,4 @@
-<{if $block.showtype == slideshow}>
+<{if $block.showtype == scrollable}>
 <div class="slider">
 	<div class="main">
 		<div class="pages">
@@ -39,7 +39,7 @@
 	</div>
 <{/if}>
 
-<{if $block.showtype == slideshow1}>
+<{if $block.showtype == sliderkit}>
 <div class="sliderkit newslider-vertical">
 	<div class="sliderkit-nav">
 		<div class="sliderkit-nav-clip">

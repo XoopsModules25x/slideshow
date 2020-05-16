@@ -62,7 +62,7 @@ $modversion['tables'][2] = "slideshow_category";
 
 // block
 $modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
+    'file' => 'slideshow_block.php',
     'name' => _MI_SLIDESHOW_BLOCK,
     'description' => '',
     'show_func' => 'slideshow_list_show',

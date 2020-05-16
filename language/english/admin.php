@@ -24,25 +24,25 @@ define('_AM_SLIDESHOW_INDEX_CATEGORIES',"There are %s categories in our database
 define('_AM_SLIDESHOW_INDEX_ITEMS',"There are %s items in our database");
 
 // Add icons
-define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow");
-define("_AM_SLIDESHOW_ADD_CATEGORY","Add Category");
+define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow Image");
+define("_AM_SLIDESHOW_ADD_CATEGORY","Add Slideshow Category");
 
 // Category page
 define("_AM_SLIDESHOW_CATEGORY_ID","Id");
 define("_AM_SLIDESHOW_CATEGORY_TITLE","Title");
 define("_AM_SLIDESHOW_CATEGORY_ACTION","Action");
-define("_AM_SLIDESHOW_CATEGORY_FORM","Add new category");
+define("_AM_SLIDESHOW_CATEGORY_FORM","Add new Slideshow Category");
 define("_AM_SLIDESHOW_CATEGORY_SLIDESHOW","Slideshow");
 define('_AM_SLIDESHOW_CATEGORY_EMPTY', 'Error: There are no category created yet. Before you can create a new slideshow, you must create a category first.');
-define('_AM_SLIDESHOW_CATEGORY_DELETECONFIRM', "Are you sure you want to delete <span class='bold red'>%s</span></b> category and <b>ALL</b> of its Slideshow? This action is not reversible !!");
+define('_AM_SLIDESHOW_CATEGORY_DELETECONFIRM', "Are you sure you want to delete <span class='bold red'>%s</span></b> category and <b>ALL</b> of its Slideshow Images? This action is not reversible !!");
 
 
 // Item page
 define("_AM_SLIDESHOW_ITEM_ID","Id");
 define("_AM_SLIDESHOW_ITEM_ORDER","Order");	
 define("_AM_SLIDESHOW_ITEM_TITLE","Title");
-define("_AM_SLIDESHOW_ITEM_IMG","Image");
-define("_AM_SLIDESHOW_ITEM_CATEGORY","Category");
+define("_AM_SLIDESHOW_ITEM_IMG","Slideshow Image");
+define("_AM_SLIDESHOW_ITEM_CATEGORY","Slideshow Category");
 define("_AM_SLIDESHOW_ITEM_ACTION","Action");
 define("_AM_SLIDESHOW_ITEM_FORM","Add new item");
 define("_AM_SLIDESHOW_ITEM_TEXT","Text");

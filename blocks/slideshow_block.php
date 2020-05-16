@@ -49,7 +49,7 @@ function slideshow_list_show($options) {
 			    $info ['type'] = 'marquee';
 				 break;
 				 
-			 case 'slideshow':
+			 case 'scrollable':
 			     $style = '
 		         .slider {
 						width: '. $block['slidewidth'] .'px;
@@ -83,7 +83,7 @@ function slideshow_list_show($options) {
 				 $info ['type'] = 'slideshow';
 				 break;
 				 
-			 case 'slideshow1':
+			 case 'sliderkit':
 				 $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkit.min.js');
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkitsetting.js');
@@ -102,7 +102,7 @@ function slideshow_list_show($options) {
 				 $info ['type'] = 'slideshow';
 				 break;
 				 
-			 case 'slideshow1':
+			 case 'sliderkit':
 				 $info ['type'] = 'slideshow';	
 				 break; 
 		 }
@@ -136,8 +136,8 @@ function slideshow_list_edit($options) {
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
     $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-    $type->addOption('slideshow',_MB_SLIDESHOW_SLIDESHOW);
-    $type->addOption('slideshow1',_MB_SLIDESHOW_SLIDESHOW1);
+    $type->addOption('scrollable',_MB_SLIDESHOW_SCROLLABLE);
+    $type->addOption('sliderkit',_MB_SLIDESHOW_SLIDERKIT);
     $type->addOption('marquee',_MB_SLIDESHOW_MARQUEE);
     $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
