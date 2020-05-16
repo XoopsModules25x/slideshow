@@ -46,7 +46,6 @@ function slideshow_list_show($options) {
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee.js');
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/setting.js');
 			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
-			    $info ['type'] = 'marquee';
 				 break;
 				 
 			 case 'scrollable':
@@ -80,7 +79,6 @@ function slideshow_list_show($options) {
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/setting.js');
 				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/scrollable.css');
 				 $xoTheme->addStylesheet( null, array ('rel' => 'stylesheet'), $style );
-				 $info ['type'] = 'slideshow';
 				 break;
 				 
 			 case 'sliderkit':
@@ -89,21 +87,17 @@ function slideshow_list_show($options) {
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkitsetting.js');
 				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-core.css');	
 				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-demos.css');
-				 $info ['type'] = 'slideshow';	
 				 break; 
 		 }
 	 } else {
 		 switch($block['showtype']) {
 			 case 'marquee':
-			    $info ['type'] = 'marquee';
 				 break;
 				 
 			 case 'slideshow':
-				 $info ['type'] = 'slideshow';
 				 break;
 				 
 			 case 'sliderkit':
-				 $info ['type'] = 'slideshow';	
 				 break; 
 		 }
 	 }	
