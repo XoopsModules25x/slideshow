@@ -17,8 +17,8 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-class slideshow_item extends XoopsObject {
+
+class slideshow_item extends \XoopsObject {
 	
 	public function slideshow_item() {
 		$this->initVar ( 'item_id', XOBJ_DTYPE_INT );
@@ -96,7 +96,7 @@ class slideshow_item extends XoopsObject {
 	}
 }
 
-class slideshowItemHandler extends XoopsPersistableObjectHandler {
+class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 	
 	public function slideshowItemHandler($db) {
 		parent::__construct( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );

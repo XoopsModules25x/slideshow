@@ -18,7 +18,7 @@
  * @version         $Id: $
  */
  
-class slideshow_category extends XoopsObject {
+class slideshow_category extends \XoopsObject {
 
 	public function slideshow_category() {
 		$this->initVar ( 'category_id', XOBJ_DTYPE_INT );
@@ -61,7 +61,7 @@ class slideshow_category extends XoopsObject {
 	}
 }
 
-class slideshowCategoryHandler extends XoopsPersistableObjectHandler {
+class slideshowCategoryHandler extends \XoopsPersistableObjectHandler {
 	
 	public function slideshowCategoryHandler($db) {
 		parent::__construct( $db, 'slideshow_category', 'slideshow_category', 'category_id', 'category_title' );
