@@ -177,7 +177,7 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 	
 	public function itemCount($info = null) {
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
+		//$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
 		return $this->getCount ( $criteria );
 	}
 	
@@ -185,7 +185,7 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 		$ret = array ();
 		$criteria = new CriteriaCompo ();
 		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
-		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
+		//$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
 		$criteria->add ( new Criteria ( 'item_status', '1' ) );
 		$criteria->setSort ( 'item_order' );
 		$criteria->setOrder ( 'DESC' );

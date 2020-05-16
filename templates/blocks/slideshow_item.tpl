@@ -1,4 +1,31 @@
-<{if $block.showtype == scrollable}>
+<{if $block.showtype == 'sliderkit'}>
+<div class="sliderkit newslider-vertical">
+	<div class="sliderkit-nav">
+		<div class="sliderkit-nav-clip">
+			<ul>
+			PPPPPPPPPPPPPPPP
+			<{foreach item=item from=$block.items}>
+				<li><a href="<{$item.item_link}>" title="<{$item.item_title}>"><{$item.item_title}></a></li>
+			<{/foreach}>
+			</ul>
+		</div>
+	</div>
+	<div class="sliderkit-panels">
+	   <{foreach item=item from=$block.items}>
+		<div class="sliderkit-panel">
+			<div class="sliderkit-news">
+				<a href="#" title="<{$item.item_title}>"><img src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a>
+				<h3><a title="<{$item.item_title}>" href="<{$item.item_link}>"><{$item.item_title}></a></h3>
+				<p><{$item.item_text|truncate:200}> <a title="<{$item.item_title}>" class="sliderkit-news-readmore" href="<{$item.item_link}>">التفاصيل</a></p>
+			</div>
+		</div>
+      <{/foreach}>
+	</div>
+</div>
+<{/if}>
+
+
+<{if $block.showtype == 'scrollable'}>
 <div class="slider">
 	<div class="main">
 		<div class="pages">
@@ -29,7 +56,7 @@
 </div>	
 <{/if}>
 
-<{if $block.showtype == marquee}>
+<{if $block.showtype == 'marquee'}>
 	<div class="marquee-block">
 		<ul id="marquee2" class="marquee">
 			<{foreach item=item from=$block.items}>
@@ -39,27 +66,3 @@
 	</div>
 <{/if}>
 
-<{if $block.showtype == sliderkit}>
-<div class="sliderkit newslider-vertical">
-	<div class="sliderkit-nav">
-		<div class="sliderkit-nav-clip">
-			<ul>
-			<{foreach item=item from=$block.items}>
-				<li><a href="<{$item.item_link}>" title="<{$item.item_title}>"><{$item.item_title}></a></li>
-			<{/foreach}>
-			</ul>
-		</div>
-	</div>
-	<div class="sliderkit-panels">
-	   <{foreach item=item from=$block.items}>
-		<div class="sliderkit-panel">
-			<div class="sliderkit-news">
-				<a href="#" title="<{$item.item_title}>"><img src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a>
-				<h3><a title="<{$item.item_title}>" href="<{$item.item_link}>"><{$item.item_title}></a></h3>
-				<p><{$item.item_text|truncate:200}> <a title="<{$item.item_title}>" class="sliderkit-news-readmore" href="<{$item.item_link}>">التفاصيل</a></p>
-			</div>
-		</div>
-      <{/foreach}>
-	</div>
-</div>
-<{/if}>
