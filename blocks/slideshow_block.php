@@ -48,56 +48,15 @@ function slideshow_list_show($options) {
 			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
 				 break;
 				 
-			 case 'scrollable':
-			     $style = '
-		         .slider {
-						width: '. $block['slidewidth'] .'px;
-						height: '. $block['slideheight']*1.06 .'px;
-					}
-					.slider .main {
-						height: '. $block['slideheight']*1.06 .'px;
-					}
-					.slider .page {
-						width: '. $block['slidewidth'] .'px;
-						height: '. $block['slideheight'] .'px;
-					}	
-					.slider .scrollable {
-						width: '. $block['slidewidth'] .'px;
-						height: '. $block['slideheight'] .'px;
-					}
-					.slider .item {
-						width: '. $block['slidewidth'] .'px;
-						height: '. $block['slideheight'] .'px;
-					}
-					.slider .item .itemleft img {
-						width: '. $block['slidewidth']/2 .'px;
-					}
-					';
-					
-				 $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/scrollable.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/setting.js');
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/scrollable.css');
-				 $xoTheme->addStylesheet( null, array ('rel' => 'stylesheet'), $style );
-				 break;
-				 
-			 case 'sliderkit':
-				 //$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkit.min.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkitsetting.js');
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-core.css');	
-				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-demos.css');
+			 case '':
 				 break; 
 		 }
 	 } else {
 		 switch($block['showtype']) {
 			 case 'marquee':
 				 break;
-				 
-			 case 'slideshow':
-				 break;
-				 
-			 case 'sliderkit':
+
+			 case '':
 				 break; 
 		 }
 	 }	
@@ -130,8 +89,6 @@ function slideshow_list_edit($options) {
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
     $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-    $type->addOption('scrollable',_MB_SLIDESHOW_SCROLLABLE);
-    $type->addOption('sliderkit',_MB_SLIDESHOW_SLIDERKIT);
     $type->addOption('marquee',_MB_SLIDESHOW_MARQUEE);
     $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";

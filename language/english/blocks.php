@@ -25,8 +25,6 @@ define("_MB_SLIDESHOW_OP4","Image height");
 define("_MB_SLIDESHOW_OP5","Select Slideshow category");
 define("_MB_SLIDESHOW_OP6","Select Slideshow type");
 define("_MB_SLIDESHOW_OP7","Limit");
-define("_MB_SLIDESHOW_SCROLLABLE","Scrollable");
-define("_MB_SLIDESHOW_SLIDERKIT","Sliderkit");
 define("_MB_SLIDESHOW_MARQUEE","Marquee");
 define("_MB_SLIDESHOW_MORE","Read More");
 define("_MB_SLIDESHOW_STYLE","Use module style, if it set to no you must add all styles and java in your theme");
