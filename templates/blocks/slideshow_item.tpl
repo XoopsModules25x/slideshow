@@ -3,7 +3,6 @@
 	<div class="sliderkit-nav">
 		<div class="sliderkit-nav-clip">
 			<ul>
-			PPPPPPPPPPPPPPPP
 			<{foreach item=item from=$block.items}>
 				<li><a href="<{$item.item_link}>" title="<{$item.item_title}>"><{$item.item_title}></a></li>
 			<{/foreach}>
