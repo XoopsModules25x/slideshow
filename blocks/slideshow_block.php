@@ -82,7 +82,7 @@ function slideshow_list_show($options) {
 				 break;
 				 
 			 case 'sliderkit':
-				 $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
+				 //$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkit.min.js');
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slideshow/sliderkitsetting.js');
 				 $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slideshow/sliderkit-core.css');	
