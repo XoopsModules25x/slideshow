@@ -67,7 +67,7 @@ $modversion['blocks'][] = array(
     'description' => '',
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
+    'options' => '1200|400|1200|400|1|sliderkit|10|1',
     'template' => 'slideshow_item.tpl');
            
 // conf

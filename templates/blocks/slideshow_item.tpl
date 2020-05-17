@@ -1,5 +1,5 @@
 <{if $block.showtype == 'sliderkit'}>
-<div class="sliderkit newslider-vertical">
+<div class="sliderkit newslider-vertical" width="<{$block.slidewidth}>" height="<{$block.slideheight}>">
 	<div class="sliderkit-nav">
 		<div class="sliderkit-nav-clip">
 			<ul>
@@ -13,7 +13,7 @@
 	   <{foreach item=item from=$block.items}>
 		<div class="sliderkit-panel">
 			<div class="sliderkit-news">
-				<a href="#" title="<{$item.item_title}>"><img src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a>
+				<a href="#" title="<{$item.item_title}>"><img src="<{$item.imgurl}>" alt="<{$item.item_title}>" class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>"  /></a>
 				<h3><a title="<{$item.item_title}>" href="<{$item.item_link}>"><{$item.item_title}></a></h3>
 				<p><{$item.item_text|truncate:200}> <a title="<{$item.item_title}>" class="sliderkit-news-readmore" href="<{$item.item_link}>"><{$smarty.const._MB_SLIDESHOW_MORE}></a></p>
 			</div>
@@ -25,7 +25,7 @@
 
 
 <{if $block.showtype == 'scrollable'}>
-<div class="slider">
+<div class="slider" width="<{$block.slidewidth}>" height="<{$block.slideheight}>">
 	<div class="main">
 		<div class="pages">
 			<div class="page">
@@ -56,10 +56,10 @@
 <{/if}>
 
 <{if $block.showtype == 'marquee'}>
-	<div class="marquee-block">
+	<div class="marquee-block" width="<{$block.slidewidth}>" height="<{$block.slideheight}>">
 		<ul id="marquee2" class="marquee">
 			<{foreach item=item from=$block.items}>
-			<li><a title="<{$item.item_title}>" href="<{$item.item_link}>"><img class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /><{$item.item_title}></a></li>
+			<li><a title="<{$item.item_title}>" href="<{$item.item_link}>"><img class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a><br><{$item.item_title}></li>
 			<{/foreach}>
 		</ul>
 	</div>
