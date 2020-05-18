@@ -42,21 +42,40 @@ function slideshow_list_show($options) {
 	 if($block['style']) {
 		 switch($block['showtype']) {
 			 case 'marquee':
-			    $xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
+			    //$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/setting.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee-setting.js');
 			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
 				 break;
 				 
-			 case '':
-				 break; 
+			 case 'nivo':
+				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/nivo/jquery.nivo.slider.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/nivo/nivo-setting.js');
+			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/nivo-slider.css');
+				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/default/default.css');
+				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/light/light.css');
+				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/dark/dark.css');
+				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/bar/bar.css');
+			    break;
+				 
+			case 'slick':
+				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick.min.js');
+			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick-setting.js');
+			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick.css');
+				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick-theme.css');
+				break; 
 		 }
 	 } else {
 		 switch($block['showtype']) {
 			 case 'marquee':
 				 break;
 
-			 case '':
+			 case 'nivo':
+				 break; 
+				 
+			 case 'slick':
 				 break; 
 		 }
 	 }	
@@ -89,11 +108,21 @@ function slideshow_list_edit($options) {
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
     $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-    $type->addOption('marquee',_MB_SLIDESHOW_MARQUEE);
+    $type->addOption('nivo',_MB_SLIDESHOW_NIVOSLIDER);
+	$type->addOption('slick',_MB_SLIDESHOW_SLICKSLIDER);
+	$type->addOption('marquee',_MB_SLIDESHOW_MARQUEESLIDER);
     $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
     
-    if ($options[7] == false){		  $checked_yes = '';		  $checked_no = 'checked="checked"';	 }else{		  $checked_yes = 'checked="checked"';		  $checked_no = '';	 }	 $form .= _MB_SLIDESHOW_STYLE . " : <input name=\"options[7]\" value=\"1\" type=\"radio\" " . $checked_yes . "/>" . _YES . "&nbsp;\n";	 $form .= "<input name=\"options[7]\" value=\"0\" type=\"radio\" " . $checked_no . "/>" . _NO . "<br />\n";
+    if ($options[7] == false){
+		  $checked_yes = '';
+		  $checked_no = 'checked="checked"';
+	 }else{
+		  $checked_yes = 'checked="checked"';
+		  $checked_no = '';
+	 }
+	 $form .= _MB_SLIDESHOW_STYLE . " : <input name=\"options[7]\" value=\"1\" type=\"radio\" " . $checked_yes . "/>" . _YES . "&nbsp;\n";
+	 $form .= "<input name=\"options[7]\" value=\"0\" type=\"radio\" " . $checked_no . "/>" . _NO . "<br />\n";
 	
     array_shift($options);
     array_shift($options);

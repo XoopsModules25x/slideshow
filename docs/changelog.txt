@@ -1,5 +1,6 @@
 <h5>1.x        [NOT RELEASED]</h5>  Dev: Xoops 2.5.9, PHP 7.2.0
 - fix deprecated constructor (liomj)
+- add nivo slider and slick slider (liomj)
 - remove sliderkit and slider scrollable (liomj)
 - remove redundant block (liomj) 
 - update redirection message language (liomj)
