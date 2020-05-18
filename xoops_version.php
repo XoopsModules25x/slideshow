@@ -60,6 +60,17 @@ $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
 $modversion['tables'][1] = "slideshow_item";
 $modversion['tables'][2] = "slideshow_category";
 
+$modversion['templates'] = [
+    ['file' => 'admin/slideshow_category.tpl', 'description' => ''],
+    ['file' => 'admin/slideshow_header.tpl', 'description' => ''],
+	['file' => 'admin/slideshow_footer.tpl', 'description' => ''],
+    ['file' => 'admin/slideshow_slideshow.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_item.tpl', 'description' => ''],
+	['file' => 'blocks/slideshow_marqueeslider.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_nivoslider.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_slickslider.tpl', 'description' => ''],
+];
+
 // block
 $modversion['blocks'][] = array(
     'file' => 'slideshow_block.php',
@@ -67,8 +78,8 @@ $modversion['blocks'][] = array(
     'description' => '',
     'show_func' => 'slideshow_list_show',
     'edit_func' => 'slideshow_list_edit',
-    'options' => '1200|400|1200|400|1|marquee|10|1',
-    'template' => 'slideshow_item.tpl');
+    'options' => '1200|400|1200|400|1|nivo|10|1',
+    'template' => 'slideshow_block.tpl');
            
 // conf
 $modversion['config'][] = array(
