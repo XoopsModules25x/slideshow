@@ -1,5 +1,6 @@
-Read Me First
+Credits
 =============
-
 Originally created by  Mohtava Project <http://www.mohtava.com>, Hossein Azizabadi <djvoltan@gmail.com>
-
+Nivo Slider - http://nivo.dev7studios.com
+Slick Slider - https://kenwheeler.github.io/slick/
+XOOPS Community
