@@ -20,7 +20,8 @@
 
 class slideshow_item extends \XoopsObject {
 	
-	public function slideshow_item() {
+	public function __construct() {
+		parent::__construct();
 		$this->initVar ( 'item_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_title', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_text', XOBJ_DTYPE_TXTAREA, '' );
@@ -98,7 +99,7 @@ class slideshow_item extends \XoopsObject {
 
 class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 	
-	public function slideshowItemHandler($db) {
+	public function __construct(\XoopsDatabase $db) {
 		parent::__construct( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );
 	}
 	
