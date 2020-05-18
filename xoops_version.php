@@ -22,18 +22,18 @@ $modversion = array(
     // Main setting
     'name' => _MI_SLIDESHOW_TITLE,
     'description' => _MI_SLIDESHOW_DESC,
-    'version' => 1.1,
-    'author' => 'Hossein Azizabadi',
+    'version' => 2.0,
+    'author' => 'Hossein Azizabadi, Michael Beck, Lio MJ,',
     'credits' => 'MOHTAVA',
     'license' => 'GNU GPL 2.0',
     'license_url' => 'www.gnu.org/licenses/gpl-2.0.html/',
     'image' => 'assets/images/logo.png',
     'dirname' => 'slideshow',
-    'release_date' => '2011/11/2',
-    'module_website_url' => "http://www.mohtava.com/",
-    'module_website_name' => "MOHTAVA",
+    'release_date' => '2020/06/01',
+    'module_website_url' => "https://www.xoops.org/",
+    'module_website_name' => "XOOPS Project",
     'help' => 'help',
-    'module_status' => "Final",
+    'module_status' => "Alpha",
     // Admin things
     'system_menu' => 1,
     'hasAdmin' => 1,
@@ -47,10 +47,15 @@ $modversion = array(
     'hasSearch' => 0,
     // Commentaires 
     'hasComments' => 0,
+    // ------------------- Min Requirements -------------------
+    'min_php'             => '7.1',
+    'min_xoops'           => '2.5.10',
+    'min_admin'           => '1.2',
+    'min_db'              => [
+        'mysql' => '5.5',
+    ],
     // for module admin class
-    'min_php' => '5.2',
-    'min_xoops' => '2.5',
-    'dirmoduleadmin' => 'Frameworks/moduleclasses',
+	'dirmoduleadmin' => 'Frameworks/moduleclasses',
 	 'icons16' => 'Frameworks/moduleclasses/icons/16',
 	 'icons32' => 'Frameworks/moduleclasses/icons/32'
 );

@@ -1,4 +1,5 @@
-<h5>1.x        [NOT RELEASED]</h5>  Dev: Xoops 2.5.9, PHP 7.2.0
+<h5>Slideshow 2.0 </h5>  Dev: Xoops 2.5.10, PHP 7.2.0
+
 - fix deprecated constructor (liomj)
 - add nivo slider and slick slider (liomj)
 - remove sliderkit and slider scrollable (liomj)
