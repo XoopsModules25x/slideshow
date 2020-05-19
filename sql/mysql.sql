@@ -9,7 +9,6 @@ CREATE TABLE `slideshow_item` (
 	`item_uid` int(11) NOT NULL,
 	`item_order` int(11) NOT NULL,
 	`item_img` varchar(255) NOT NULL,
-	`item_default` tinyint(1) NOT NULL,
 	`item_type` varchar (60) NOT NULL,
 	`item_startdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`item_enddate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

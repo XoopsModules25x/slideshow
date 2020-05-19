@@ -7,6 +7,8 @@
 - add nivo slider and slick slider (liomj)
 - remove sliderkit and slider scrollable (liomj)
 - remove redundant block (liomj) 
+- remove item_default (liomj)
+- fix admin after crud redirection (liomj) 
 - update redirection message language (liomj)
 - fix Notice: Should call parent::__construct (liomj)
 - fix empty category drop down (liomj)

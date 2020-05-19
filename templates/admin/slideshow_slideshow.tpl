@@ -2,46 +2,44 @@
 <table id="xo-item-sort" class="outer" cellspacing="1" width="100%">
     <thead>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ID}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_ORDER}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_IMG}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_DEFAULT}></th>
+    <th><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ORDER}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_LANGUAGECODE}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_STARTDATE}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ENDDATE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_LANGUAGECODE}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ACTION}></th>
     </thead>
     <tbody class="xo-item">
     <{foreach item=item from=$items}>
     <tr class="odd" id="mod_<{$item.item_id}>">
         <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$item.item_id}></td>
-        <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_order}></td>
-        <td class="txtcenter bold">
-	        <{$item.item_title}>
-        </td>
-        <td class="txtcenter bold">
+                <td class="txtcenter bold">
 		        <img style="max-width: 100px; max-height: 100px;" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
+        </td>
+		<td class="txtcenter bold">
+	        <{$item.item_title}>
         </td>
         <td class="txtcenter bold">
 	        <a title="<{$item.categorytitle}>" href="slideshow.php?category=<{$item.item_category}>"><{$item.categorytitle}></a>
         </td>
-        <td class="txtcenter width5 bold">
-	         <img class="cursorpointer xo-defaultimg" id="item_default<{$item.item_id}>" onclick="item_setDefault( { op: 'item_default', item_id: <{$item.item_id}> , category_id: <{$item.item_category}> }, 'item_default<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_default}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
-        </td>
+		<td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_order}></td>
         <td class="txtcenter width5 bold">
             <img class="cursorpointer" id="item_status<{$item.item_id}>" onclick="item_setStatus( { op: 'item_status', item_id: <{$item.item_id}> }, 'item_status<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_status}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
         </td>
-		 <td class="txtcenter width5 bold">
-	        <{$item.item_languagecode}>
-        </td> 
 		<td class="txtcenter width5 bold">
 	        <{$item.item_startdate}>
         </td> 
 		<td class="txtcenter width5 bold">
 	        <{$item.item_enddate}>
-        </td> 
+        </td>
+		<td class="txtcenter width5 bold">
+	        <{if $item.item_languagecode}>
+            <{$item.item_languagecode}>        
+			<{else}>-<{/if}>
+		</td> 		
         <td class="txtcenter width10 xo-actions">
             <img class="tooltip" onclick="display_dialog(<{$item.item_id}>, true, true, 'slide', 'slide', 400, 700);" src="<{xoAdminIcons display.png}>" alt="<{$smarty.const._PREVIEW}>" title="<{$smarty.const._PREVIEW}>" />
             <a href="slideshow.php?op=edit_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>

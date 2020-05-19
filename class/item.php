@@ -32,7 +32,6 @@ class slideshow_item extends \XoopsObject {
 		$this->initVar ( 'item_uid', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_order', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_img', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_default', XOBJ_DTYPE_INT , '0');
 		$this->initVar ( 'item_type', XOBJ_DTYPE_TXTBOX );
 	    $this->initVar ( 'item_languagecode', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_startdate', XOBJ_DTYPE_TIMESTAMP);
@@ -65,7 +64,7 @@ class slideshow_item extends \XoopsObject {
          $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
       }
 		$form->addElement($category_sel);
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true);
 		
 	  // Image
       $item_img = $this->getVar ( 'item_img' ) ? $this->getVar ( 'item_img' ) : 'blank.gif';
@@ -73,18 +72,16 @@ class slideshow_item extends \XoopsObject {
 		$fileseltray_item_img = new XoopsFormElementTray ( _AM_SLIDESHOW_ITEM_IMG, '<br />' );
 		$fileseltray_item_img->addElement ( new XoopsFormLabel ( '', "<img style='max-width: 500px; max-height: 500px;' src='" . XOOPS_URL . $imgdir . $item_img . "' name='image_item' id='image_item' alt='' />" ) );
 		if ($this->isNew ()) {
-			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
+			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), true );
 		}
 		$form->addElement ( $fileseltray_item_img );
 		
-		
-		$form->addElement ( new \XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_CAPTION, 'item_caption', $this->getVar ( 'item_caption', 'e' ), 5, 80 ) );
-		$form->addElement ( new \XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
-		$form->addElement ( new \XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
-		$form->addElement ( new \XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
-		$form->addElement ( new \XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
-        $form->addElement ( new \XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))));
-		$form->addElement ( new \XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))));
+		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_CAPTION, 'item_caption', $this->getVar ( 'item_caption', 'e' ), 5, 80 ) );
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
+		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ),true);
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
+        $form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))),true);
+		$form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))),true);
 	  
       // Button 
 		$button_tray = new XoopsFormElementTray ( '', '' );
