@@ -56,8 +56,10 @@
 		<{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}> : <span class="bold"><a href="slideshow.php?category=<{$item.item_category}>"><{$item.categorytitle}></a></span>
 	</div>
 	<div class="marg5 pad5 ui-state-highlight ui-corner-all">
-	   <div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}> : <{$item.item_title}></span></div>
-		<div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_CAPTION}> : </span><img class="ui-state-highlight right" width="300" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /><{$item.item_caption}></div>
+	   <div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}> : <{$item.item_title}></span><br><img class="ui-state-highlight left" width="300" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></div>
+	   <{if $item.item_caption}>
+		<div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_CAPTION}> : </span><{$item.item_caption}></div>
+	   <{/if}>
 		<div class="clear"></div>
    </div>
 	</div>
