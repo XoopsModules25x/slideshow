@@ -8,6 +8,9 @@
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_DEFAULT}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
+    <th><{$smarty.const._AM_SLIDESHOW_ITEM_LANGUAGECODE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_STARTDATE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ENDDATE}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ACTION}></th>
     </thead>
     <tbody class="xo-item">
@@ -30,6 +33,15 @@
         <td class="txtcenter width5 bold">
             <img class="cursorpointer" id="item_status<{$item.item_id}>" onclick="item_setStatus( { op: 'item_status', item_id: <{$item.item_id}> }, 'item_status<{$item.item_id}>', 'backend.php' )" src="<{if $item.item_status}>../assets/images/ok.png<{else}>../assets/images/cancel.png<{/if}>" alt=""/>
         </td>
+		 <td class="txtcenter width5 bold">
+	        <{$item.item_languagecode}>
+        </td> 
+		<td class="txtcenter width5 bold">
+	        <{$item.item_startdate}>
+        </td> 
+		<td class="txtcenter width5 bold">
+	        <{$item.item_enddate}>
+        </td> 
         <td class="txtcenter width10 xo-actions">
             <img class="tooltip" onclick="display_dialog(<{$item.item_id}>, true, true, 'slide', 'slide', 400, 700);" src="<{xoAdminIcons display.png}>" alt="<{$smarty.const._PREVIEW}>" title="<{$smarty.const._PREVIEW}>" />
             <a href="slideshow.php?op=edit_item&amp;item_id=<{$item.item_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
@@ -47,7 +59,7 @@
 	</div>
 	<div class="marg5 pad5 ui-state-highlight ui-corner-all">
 	   <div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}> : <{$item.item_title}></span></div>
-		<div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_TEXT}> : </span><img class="ui-state-highlight right" width="300" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /><{$item.item_text}></div>
+		<div class="pad5"><span class="bold"><{$smarty.const._AM_SLIDESHOW_ITEM_CAPTION}> : </span><img class="ui-state-highlight right" width="300" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /><{$item.item_caption}></div>
 		<div class="clear"></div>
    </div>
 	</div>

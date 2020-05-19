@@ -45,11 +45,14 @@ define("_AM_SLIDESHOW_ITEM_IMG","Slideshow Image");
 define("_AM_SLIDESHOW_ITEM_CATEGORY","Slideshow Category");
 define("_AM_SLIDESHOW_ITEM_ACTION","Action");
 define("_AM_SLIDESHOW_ITEM_FORM","Add new item");
-define("_AM_SLIDESHOW_ITEM_TEXT","Text");
+define("_AM_SLIDESHOW_ITEM_CAPTION","Caption");
 define("_AM_SLIDESHOW_ITEM_LINK","Link");
 define("_AM_SLIDESHOW_ITEM_STATUS","Status");
 define("_AM_SLIDESHOW_ITEM_FORMUPLOAD","Select your image");
 define("_AM_SLIDESHOW_ITEM_DEFAULT","Default");
+define("_AM_SLIDESHOW_ITEM_LANGUAGECODE","Language Code");
+define("_AM_SLIDESHOW_ITEM_STARTDATE","Start Date");
+define("_AM_SLIDESHOW_ITEM_ENDDATE","End Date");
 
 // Msg
 define("_AM_SLIDESHOW_MSG_EDIT_ERROR","Error in edit");

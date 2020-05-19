@@ -24,7 +24,7 @@ class slideshow_item extends \XoopsObject {
 		parent::__construct();
 		$this->initVar ( 'item_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_title', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_text', XOBJ_DTYPE_TXTAREA, '' );
+		$this->initVar ( 'item_caption', XOBJ_DTYPE_TXTAREA, '' );
 		$this->initVar ( 'item_category', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_link', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_status', XOBJ_DTYPE_INT , '1');
@@ -34,6 +34,9 @@ class slideshow_item extends \XoopsObject {
 		$this->initVar ( 'item_img', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_default', XOBJ_DTYPE_INT , '0');
 		$this->initVar ( 'item_type', XOBJ_DTYPE_TXTBOX );
+	    $this->initVar ( 'item_languagecode', XOBJ_DTYPE_TXTBOX );
+		$this->initVar ( 'item_startdate', XOBJ_DTYPE_TIMESTAMP);
+		$this->initVar ( 'item_enddate', XOBJ_DTYPE_TIMESTAMP);
 		$this->initVar ( 'dohtml', XOBJ_DTYPE_INT, 1 );
 		$this->initVar ( 'dobr', XOBJ_DTYPE_INT, 1 );
 		
@@ -63,11 +66,8 @@ class slideshow_item extends \XoopsObject {
       }
 		$form->addElement($category_sel);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
-		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_TEXT, 'item_text', $this->getVar ( 'item_text', 'e' ), 5, 80 ) );
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
-      // Image
+		
+	  // Image
       $item_img = $this->getVar ( 'item_img' ) ? $this->getVar ( 'item_img' ) : 'blank.gif';
 		$imgdir = '/uploads/slideshow/image/';
 		$fileseltray_item_img = new XoopsFormElementTray ( _AM_SLIDESHOW_ITEM_IMG, '<br />' );
@@ -76,6 +76,16 @@ class slideshow_item extends \XoopsObject {
 			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
 		}
 		$form->addElement ( $fileseltray_item_img );
+		
+		
+		$form->addElement ( new \XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_CAPTION, 'item_caption', $this->getVar ( 'item_caption', 'e' ), 5, 80 ) );
+		$form->addElement ( new \XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
+		$form->addElement ( new \XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
+		$form->addElement ( new \XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
+		$form->addElement ( new \XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
+        $form->addElement ( new \XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))));
+		$form->addElement ( new \XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))));
+	  
       // Button 
 		$button_tray = new XoopsFormElementTray ( '', '' );
 		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );

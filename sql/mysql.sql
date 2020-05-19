@@ -1,7 +1,7 @@
 CREATE TABLE `slideshow_item` (
 	`item_id` int(10) NOT NULL auto_increment,
 	`item_title` varchar(255) NOT NULL,
-	`item_text` text,
+	`item_caption` text,
 	`item_category` int(11) NOT NULL,
 	`item_link` varchar(255) NOT NULL,
 	`item_status` tinyint(1) NOT NULL,
@@ -10,7 +10,10 @@ CREATE TABLE `slideshow_item` (
 	`item_order` int(11) NOT NULL,
 	`item_img` varchar(255) NOT NULL,
 	`item_default` tinyint(1) NOT NULL,
-	`item_type` varchar (60)   NOT NULL ,
+	`item_type` varchar (60) NOT NULL,
+	`item_startdate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	`item_enddate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `item_languagecode` varchar (60) NOT NULL,
 	PRIMARY KEY (`item_id`),
 	KEY `select` (`item_category`, `item_status`, `item_type`),
 	KEY `order` (`item_order`)
