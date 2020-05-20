@@ -66,8 +66,7 @@ function slickslider_list_show($options) {
 
 function slickslider_list_edit($options) {
 	
-	 $category_handler = xoops_getmodulehandler('category', 'slideshow');
-
+	$category_handler = xoops_getmodulehandler('category', 'slideshow');
     $criteria = new CriteriaCompo();
     $criteria->setSort("category_id");
     $criteria->setOrder("ASC");
@@ -84,7 +83,6 @@ function slickslider_list_edit($options) {
         $category->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
     }
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
-    
     $form .= "<input name=\"options[5]\" value=\"slick\" type=\"hidden\"/>";
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
     
@@ -108,6 +106,7 @@ function slickslider_list_edit($options) {
     }
     $form .= "&nbsp;<input type='radio' name='options[8]' value='0'" . $chk . ' >' . _NO . '<br>';
   
+    
     array_shift($options);
     array_shift($options);
     array_shift($options);
