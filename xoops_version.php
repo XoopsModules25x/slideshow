@@ -82,7 +82,7 @@ $modversion['blocks'][] = [
     'description' => '',
     'show_func' => 'nivoslider_list_show',
     'edit_func' => 'nivoslider_list_edit',
-    'options' => '1200|400|1200|400|1|nivo|10|1',
+    'options' => '1200|400|1200|400|1|nivo|10|1|1',
     'template' => 'slideshow_nivoslider.tpl',
 ]; 
 
@@ -92,7 +92,7 @@ $modversion['blocks'][] = [
     'description' => '',
     'show_func' => 'slickslider_list_show',
     'edit_func' => 'slickslider_list_edit',
-    'options' => '1200|400|1200|400|1|slick|10|1',
+    'options' => '1200|400|1200|400|1|slick|10|1|1',
     'template' => 'slideshow_slickslider.tpl',
 ];   
  
