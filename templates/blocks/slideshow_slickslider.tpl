@@ -1,5 +1,5 @@
 <{if $block.showtype == 'slick'}>
-<div class='slider single-item text-center'>
+<div class='slider <{$block.sliderstyle}> text-center'>
 <{foreach item=item from=$block.items}>
 <{if $smarty.now|date_format:"%Y-%m-%d %H:%M:%S" >= $item.item_startdate AND $smarty.now|date_format:"%Y-%m-%d %H:%M:%S" <= $item.item_enddate}>
 	<{if $item.item_status =='1'}>

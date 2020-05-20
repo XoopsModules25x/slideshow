@@ -26,6 +26,7 @@ define('_MB_SLIDESHOW_OP5', '<b>Select Slideshow category</b>');
 define('_MB_SLIDESHOW_OP6', '<b>Select Slideshow type</b>');
 define('_MB_SLIDESHOW_OP7', '<b>Limit</b>');
 define('_MB_SLIDESHOW_OP8', '<b>Display Caption?</b>');
+define('_MB_SLIDESHOW_OP9', '<b>Slider Style Class</b>');
 define('_MB_SLIDESHOW_NIVOSLIDER', 'Nivo Slideshow');
 define('_MB_SLIDESHOW_SLICKSLIDER', 'Slick Slideshow');
 define('_MB_SLIDESHOW_STYLE', '<b>Use module style, if it set to no you must add all styles and java in your theme</b>');
