@@ -22,18 +22,18 @@ $modversion = array(
     // Main setting
     'name' => _MI_SLIDESHOW_TITLE,
     'description' => _MI_SLIDESHOW_DESC,
-    'version' => 1.1,
-    'author' => 'Hossein Azizabadi',
-    'credits' => 'MOHTAVA',
+    'version' => 2.0,
+    'author' => 'Hossein Azizabadi, Michael Beck, Lio MJ,',
+    'credits' => 'Mohtava Project', 'Nivo Slider', 'Slick Slider',
     'license' => 'GNU GPL 2.0',
     'license_url' => 'www.gnu.org/licenses/gpl-2.0.html/',
-    'image' => 'images/logo.png',
+    'image' => 'assets/images/logo.png',
     'dirname' => 'slideshow',
-    'release_date' => '2011/11/2',
-    'module_website_url' => "http://www.mohtava.com/",
-    'module_website_name' => "MOHTAVA",
+    'release_date' => '2020/09/01',
+    'module_website_url' => "https://www.xoops.org/",
+    'module_website_name' => "XOOPS Project",
     'help' => 'help',
-    'module_status' => "Final",
+    'module_status' => "Alpha",
     // Admin things
     'system_menu' => 1,
     'hasAdmin' => 1,
@@ -47,10 +47,15 @@ $modversion = array(
     'hasSearch' => 0,
     // Commentaires 
     'hasComments' => 0,
+    // ------------------- Min Requirements -------------------
+    'min_php'             => '7.1',
+    'min_xoops'           => '2.5.10',
+    'min_admin'           => '1.2',
+    'min_db'              => [
+        'mysql' => '5.5',
+    ],
     // for module admin class
-    'min_php' => '5.2',
-    'min_xoops' => '2.5',
-    'dirmoduleadmin' => 'Frameworks/moduleclasses',
+	'dirmoduleadmin' => 'Frameworks/moduleclasses',
 	 'icons16' => 'Frameworks/moduleclasses/icons/16',
 	 'icons32' => 'Frameworks/moduleclasses/icons/32'
 );
@@ -58,37 +63,50 @@ $modversion = array(
 // sql
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
 $modversion['tables'][1] = "slideshow_item";
-$modversion['tables'][2] = "slideshow_topic";
+$modversion['tables'][2] = "slideshow_category";
 
-// block
-$modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK1,
-    'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item1.html');
-    
-$modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK2,
-    'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item2.html'); 
+$modversion['templates'] = [
+    ['file' => 'admin/slideshow_category.tpl', 'description' => ''],
+    ['file' => 'admin/slideshow_header.tpl', 'description' => ''],
+	['file' => 'admin/slideshow_footer.tpl', 'description' => ''],
+    ['file' => 'admin/slideshow_slideshow.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_item.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_nivoslider.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_slickslider.tpl', 'description' => ''],
+];
 
-$modversion['blocks'][] = array(
-    'file' => 'slideshow.php',
-    'name' => _MI_SLIDESHOW_BLOCK2,
+// blocks
+$modversion['blocks'][] = [
+    'file' => 'nivoslider_block.php',
+    'name' => _MI_SLIDESHOW_NIVOSLIDER,
     'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
-    'options' => '400|400|200|200|1|slideshow|10|1',
-    'template' => 'slideshow_item3.html');        
-  
-  
+    'show_func' => 'nivoslider_list_show',
+    'edit_func' => 'nivoslider_list_edit',
+    'options' => '1200|400|1200|400|1|nivo|10|1|1',
+    'template' => 'slideshow_nivoslider.tpl',
+]; 
+
+$modversion['blocks'][] = [
+    'file' => 'slickslider_block.php',
+    'name' => _MI_SLIDESHOW_SLICKSLIDER,
+    'description' => '',
+    'show_func' => 'slickslider_list_show',
+    'edit_func' => 'slickslider_list_edit',
+    'options' => '1200|400|1200|400|1|slick|10|1|1',
+    'template' => 'slideshow_slickslider.tpl',
+];   
+ 
+// ------------------- Config Options -----------------------------//
+$modversion['config'][] = [
+    'name'        => 'slideshow_configs',
+    'title'       => '_MI_SLIDESHOW_CONFCAT_IMAGE',
+    'description' => '_MI_SLIDESHOW_CONFCAT_IMAGE_DSC',
+    'formtype'    => 'line_break',
+    'valuetype'   => 'textbox',
+    'default'     => 'odd',
+    'category'    => 'group_header',
+];
+
 // conf
 $modversion['config'][] = array(
     'name' => 'img_mime',

@@ -29,9 +29,5 @@ function xoops_module_install_slideshow() {
 		mkdir($dir, 0777);	   chmod($dir, 0777);
 	}
 	
-	$dir = XOOPS_ROOT_PATH."/uploads/slideshow/thumb";
-	if(!is_dir($dir)) {
-		mkdir($dir, 0777);	   chmod($dir, 0777);
-	}
 }
 ?>

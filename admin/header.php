@@ -37,6 +37,6 @@ xoops_load('xoopsformloader');
  
  
 $item_handler = xoops_getmodulehandler('item', 'slideshow');
-$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+$category_handler = xoops_getmodulehandler('category', 'slideshow');
  
 ?>

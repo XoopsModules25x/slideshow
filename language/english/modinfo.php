@@ -24,21 +24,21 @@ define("_MI_SLIDESHOW_DESC","Make Slideshow");
 
 // menu
 define("_AM_SLIDESHOW_HOME","Home");
-define("_AM_SLIDESHOW_TOPIC","Topic");
-define("_AM_SLIDESHOW_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_MARQUEE","Marquee");
+define("_AM_SLIDESHOW_CATEGORY","Slideshow Category");
+define("_AM_SLIDESHOW_SLIDESHOW","Slideshow Images");
 
 // block
-define("_MI_SLIDESHOW_BLOCK1","Slideshow Block 1");
-define("_MI_SLIDESHOW_BLOCK2","Slideshow Block 2");
-define("_MI_SLIDESHOW_BLOCK3","Slideshow Block 3");
+define("_MI_SLIDESHOW_NIVOSLIDER","Nivo Slider Slideshow");
+define("_MI_SLIDESHOW_SLICKSLIDER","Slick Slider Slideshow");
 
 // preferences
+define('_MI_SLIDESHOW_CONFCAT_IMAGE', '<b>:: Slideshow Image Upload Preferences ::</b>');
+define('_MI_SLIDESHOW_CONFCAT_IMAGE_DSC', '');
 define("_MI_SLIDESHOW_IMAGE_MIME","Mimetypes");
 define("_MI_SLIDESHOW_IMAGE_MIME_DESC","Select mimetypes for upload");
 define("_MI_SLIDESHOW_IMAGE_SIZE","Max size");
 define("_MI_SLIDESHOW_IMAGE_SIZE_DESC","Set Max image size");
-define("_MI_SLIDESHOW_IMAGE_MAXWIDTH","Max widht");
+define("_MI_SLIDESHOW_IMAGE_MAXWIDTH","Max width");
 define("_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC","Set max image widht");
 define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT","Max height");
 define("_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC","Set max image height");

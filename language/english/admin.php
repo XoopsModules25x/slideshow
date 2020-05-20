@@ -20,43 +20,49 @@
  
 //index
 define('_AM_SLIDESHOW_INDEX_INFO',"Index");
-define('_AM_SLIDESHOW_INDEX_TOPICS',"There are %s topics in our database");
+define('_AM_SLIDESHOW_INDEX_CATEGORIES',"There are %s categories in our database");
 define('_AM_SLIDESHOW_INDEX_ITEMS',"There are %s items in our database");
 
 // Add icons
-define("_AM_SLIDESHOW_ADD_MARQUEE","Add Marquee");
-define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow");
-define("_AM_SLIDESHOW_ADD_TOPIC","Add Topic");
+define("_AM_SLIDESHOW_ADD_SLIDESHOW","Add Slideshow Image");
+define("_AM_SLIDESHOW_ADD_CATEGORY","Add Slideshow Category");
 
-// Topic page
-define("_AM_SLIDESHOW_TOPIC_ID","Id");
-define("_AM_SLIDESHOW_TOPIC_TITLE","Title");
-define("_AM_SLIDESHOW_TOPIC_SHOWTYPE","ShowType");
-define("_AM_SLIDESHOW_TOPIC_ACTION","Action");
-define("_AM_SLIDESHOW_TOPIC_FORM","Add new topic");
-define("_AM_SLIDESHOW_TOPIC_SLIDESHOW","Slideshow");
-define("_AM_SLIDESHOW_TOPIC_MARQUEE","Marquee");
+// Category page
+define("_AM_SLIDESHOW_CATEGORY_ID","Id");
+define("_AM_SLIDESHOW_CATEGORY_TITLE","Title");
+define("_AM_SLIDESHOW_CATEGORY_ACTION","Action");
+define("_AM_SLIDESHOW_CATEGORY_FORM","Add new Slideshow Category");
+define("_AM_SLIDESHOW_CATEGORY_SLIDESHOW","Slideshow");
+define('_AM_SLIDESHOW_CATEGORY_EMPTY', 'Error: There are no category created yet. Before you can create a new slideshow, you must create a category first.');
+define('_AM_SLIDESHOW_CATEGORY_DELETECONFIRM', "Are you sure you want to delete <span class='bold red'>%s</span></b> category and <b>ALL</b> of its Slideshow Images? This action is not reversible !!");
+
 
 // Item page
 define("_AM_SLIDESHOW_ITEM_ID","Id");
 define("_AM_SLIDESHOW_ITEM_ORDER","Order");	
 define("_AM_SLIDESHOW_ITEM_TITLE","Title");
-define("_AM_SLIDESHOW_ITEM_IMG","Image");
-define("_AM_SLIDESHOW_ITEM_THUMB","Thumb");
-define("_AM_SLIDESHOW_ITEM_TOPIC","Topic");
+define("_AM_SLIDESHOW_ITEM_IMG","Slideshow Image");
+define("_AM_SLIDESHOW_ITEM_CATEGORY","Slideshow Category");
 define("_AM_SLIDESHOW_ITEM_ACTION","Action");
 define("_AM_SLIDESHOW_ITEM_FORM","Add new item");
-define("_AM_SLIDESHOW_ITEM_TEXT","Text");
+define("_AM_SLIDESHOW_ITEM_CAPTION","Caption");
 define("_AM_SLIDESHOW_ITEM_LINK","Link");
-define("_AM_SLIDESHOW_ITEM_STATUS","Status");
+define("_AM_SLIDESHOW_ITEM_STATUS","Active");
 define("_AM_SLIDESHOW_ITEM_FORMUPLOAD","Select your image");
-define("_AM_SLIDESHOW_ITEM_DEFAULT","Default");
+define("_AM_SLIDESHOW_ITEM_LANGUAGECODE","Language Code");
+define("_AM_SLIDESHOW_ITEM_STARTDATE","Start Date");
+define("_AM_SLIDESHOW_ITEM_ENDDATE","End Date");
+define('_AM_SLIDESHOW_TARGET', 'Open Link in');
+define('_AM_SLIDESHOW_TARGET_0', 'Same Window');
+define('_AM_SLIDESHOW_TARGET_1', 'New Window');
 
 // Msg
 define("_AM_SLIDESHOW_MSG_EDIT_ERROR","Error in edit");
-define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/topic");
+define("_AM_SLIDESHOW_MSG_DELETE","Are you sure you want delete this item/category");
 define("_AM_SLIDESHOW_MSG_NOTINFO","Not select");
 define("_AM_SLIDESHOW_MSG_ERROR","Error");
 define("_AM_SLIDESHOW_MSG_WAIT","Please wait");
-
+define("_AM_SLIDESHOW_MSG_INSERTSUCCESS","Added Successfully");
+define("_AM_SLIDESHOW_MSG_EDITSUCCESS","Updated Successfully");
+define("_AM_SLIDESHOW_MSG_DELETESUCCESS","Deleted Successfully");
 ?>

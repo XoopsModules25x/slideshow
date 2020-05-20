@@ -29,7 +29,7 @@ $folder = array(
 );
 $index_admin = new ModuleAdmin();
 $index_admin->addInfoBox(_AM_SLIDESHOW_INDEX_INFO);
-$index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_TOPICS, $topic_handler->topicCount());
+$index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_CATEGORIES, $category_handler->categoryCount());
 $index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_ITEMS, $item_handler->itemCount());
 foreach (array_keys( $folder) as $i) {
     $index_admin->addConfigBoxLine($folder[$i], 'folder');
@@ -37,7 +37,7 @@ foreach (array_keys( $folder) as $i) {
 }
 $xoopsTpl->assign('renderindex', $index_admin->renderIndex());
 // Call template file
-$xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_index.html');
+$xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_index.tpl');
 // footer
 xoops_cp_footer();
 ?>
