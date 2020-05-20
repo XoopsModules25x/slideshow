@@ -25,9 +25,9 @@ define("_MB_SLIDESHOW_OP4","Image height");
 define("_MB_SLIDESHOW_OP5","Select Slideshow category");
 define("_MB_SLIDESHOW_OP6","Select Slideshow type");
 define("_MB_SLIDESHOW_OP7","Limit");
-define("_MB_SLIDESHOW_MARQUEESLIDER","Marquee Slider");
-define("_MB_SLIDESHOW_NIVOSLIDER","Nivo Slider");
-define("_MB_SLIDESHOW_SLICKSLIDER","Slick Slider");
+define("_MB_SLIDESHOW_MARQUEESLIDER","Marquee Slideshow");
+define("_MB_SLIDESHOW_NIVOSLIDER","Nivo Slideshow");
+define("_MB_SLIDESHOW_SLICKSLIDER","Slick Slideshow");
 define("_MB_SLIDESHOW_MORE","Read More");
 define("_MB_SLIDESHOW_STYLE","Use module style, if it set to no you must add all styles and java in your theme");
 

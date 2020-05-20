@@ -20,7 +20,8 @@
  
 class slideshow_category extends \XoopsObject {
 
-	public function slideshow_category() {
+	public function __construct() {
+		parent::__construct();
 		$this->initVar ( 'category_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'category_title', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'category_created', XOBJ_DTYPE_INT );
@@ -63,7 +64,7 @@ class slideshow_category extends \XoopsObject {
 
 class slideshowCategoryHandler extends \XoopsPersistableObjectHandler {
 	
-	public function slideshowCategoryHandler($db) {
+	public function __construct(\XoopsDatabase $db) {
 		parent::__construct( $db, 'slideshow_category', 'slideshow_category', 'category_id', 'category_title' );
 	}
 	

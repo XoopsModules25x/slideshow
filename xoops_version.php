@@ -76,16 +76,38 @@ $modversion['templates'] = [
     ['file' => 'blocks/slideshow_slickslider.tpl', 'description' => ''],
 ];
 
-// block
-$modversion['blocks'][] = array(
-    'file' => 'slideshow_block.php',
-    'name' => _MI_SLIDESHOW_BLOCK,
+// blocks
+$modversion['blocks'][] = [
+    'file' => 'nivoslider_block.php',
+    'name' => _MI_SLIDESHOW_NIVOSLIDER,
     'description' => '',
-    'show_func' => 'slideshow_list_show',
-    'edit_func' => 'slideshow_list_edit',
+    'show_func' => 'nivoslider_list_show',
+    'edit_func' => 'nivoslider_list_edit',
     'options' => '1200|400|1200|400|1|nivo|10|1',
-    'template' => 'slideshow_block.tpl');
-           
+    'template' => 'slideshow_nivoslider.tpl',
+]; 
+
+$modversion['blocks'][] = [
+    'file' => 'slickslider_block.php',
+    'name' => _MI_SLIDESHOW_SLICKSLIDER,
+    'description' => '',
+    'show_func' => 'slickslider_list_show',
+    'edit_func' => 'slickslider_list_edit',
+    'options' => '1200|400|1200|400|1|slick|10|1',
+    'template' => 'slideshow_slickslider.tpl',
+];   
+
+$modversion['blocks'][] = [
+    'file' => 'marqueeslider_block.php',
+    'name' => _MI_SLIDESHOW_MARQUEESLIDER,
+    'description' => '',
+    'show_func' => 'marqueeslider_list_show',
+    'edit_func' => 'marqueeslider_list_edit',
+    'options' => '1200|400|1200|400|1|marquee|10|1',
+    'template' => 'slideshow_marqueeslider.tpl',
+];   
+
+          
 // conf
 $modversion['config'][] = array(
     'name' => 'img_mime',

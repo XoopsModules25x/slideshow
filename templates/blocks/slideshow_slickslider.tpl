@@ -1,3 +1,4 @@
+<{if $block.showtype == 'slick'}>
 <div class='container-fluid'>
 	<div class='row'>
 	<div class='slick-slider responsive center-block text-center'>
@@ -7,3 +8,4 @@
 <{/foreach}>
 
 </div></div></div>
+<{/if}>

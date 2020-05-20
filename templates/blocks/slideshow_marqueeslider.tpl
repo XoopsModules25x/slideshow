@@ -1,4 +1,4 @@
-
+<{if $block.showtype == 'marquee'}>
 	<div class="marquee-block" width="<{$block.slidewidth}>" height="<{$block.slideheight}>">
 		<ul id="marquee2" class="marquee">
 			<{foreach item=item from=$block.items}>
@@ -6,3 +6,4 @@
 			<{/foreach}>
 		</ul>
 	</div>
+<{/if}>

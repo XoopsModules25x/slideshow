@@ -28,7 +28,9 @@ define("_AM_SLIDESHOW_CATEGORY","Slideshow Category");
 define("_AM_SLIDESHOW_SLIDESHOW","Slideshow Images");
 
 // block
-define("_MI_SLIDESHOW_BLOCK","Slideshow Block");
+define("_MI_SLIDESHOW_MARQUEESLIDER","Marquee Slideshow");
+define("_MI_SLIDESHOW_NIVOSLIDER","Nivo Slideshow");
+define("_MI_SLIDESHOW_SLICKSLIDER","Slick Slideshow");
 
 // preferences
 define("_MI_SLIDESHOW_IMAGE_MIME","Mimetypes");

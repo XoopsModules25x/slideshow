@@ -18,7 +18,7 @@
  * @version         $Id: $
  */
  
-function slideshow_list_show($options) {
+function slickslider_list_show($options) {
 	 global $xoTheme;
 	 $block = array();
 	 $block['slidewidth'] = $options[0];
@@ -86,7 +86,7 @@ function slideshow_list_show($options) {
 	 return $block;
 }
 
-function slideshow_list_edit($options) {
+function slickslider_list_edit($options) {
 	
 	 $category_handler = xoops_getmodulehandler('category', 'slideshow');
 
@@ -108,9 +108,7 @@ function slideshow_list_edit($options) {
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
     $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-    $type->addOption('nivo',_MB_SLIDESHOW_NIVOSLIDER);
 	$type->addOption('slick',_MB_SLIDESHOW_SLICKSLIDER);
-	$type->addOption('marquee',_MB_SLIDESHOW_MARQUEESLIDER);
     $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
     

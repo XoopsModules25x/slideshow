@@ -1,3 +1,4 @@
+<{if $block.showtype == 'nivo'}>
 <div class="slider-wrapper theme-light">
    <div id="slider" class="nivoSlider">
 <{foreach item=item from=$block.items}>
@@ -7,3 +8,4 @@
 
 </div>
 <div style="clear: both;"></div>
+<{/if}>
