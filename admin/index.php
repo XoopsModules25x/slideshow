@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -17,14 +18,13 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
-
 require 'header.php';
 xoops_cp_header();
 // Add module stylesheet
 $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
 // module admin
 $index_admin = new ModuleAdmin();
-$folder      = [
+$folder = [
     XOOPS_ROOT_PATH . '/uploads/slideshow/',
 ];
 $index_admin = new ModuleAdmin();
@@ -33,6 +33,7 @@ $index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_CATEG
 $index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_ITEMS, $item_handler->itemCount());
 foreach (array_keys($folder) as $i) {
     $index_admin->addConfigBoxLine($folder[$i], 'folder');
+
     $index_admin->addConfigBoxLine([$folder[$i], '777'], 'chmod');
 }
 $xoopsTpl->assign('renderindex', $index_admin->renderIndex());

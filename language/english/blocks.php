@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -17,7 +18,6 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
-
 define('_MB_SLIDESHOW_OP1', '<b>Slideshow width</b>');
 define('_MB_SLIDESHOW_OP2', '<b>Slideshow height</b>');
 define('_MB_SLIDESHOW_OP3', '<b>Image width</b>');

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -17,7 +18,6 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
-
 require 'header.php';
 xoops_cp_header();
 
@@ -27,55 +27,60 @@ switch ($op) {
     case 'new_item':
         if (!$totalCategories = $category_handler->categoryCount()) {
             xoops_error(_AM_SLIDESHOW_CATEGORY_EMPTY);
+
             xoops_cp_footer();
+
             exit();
-        } else {
+        }
             $obj = $item_handler->create();
             $obj->getSlideshowForm();
-            break;
-        }
-
-    // no break
+        break;
     case 'edit_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             $obj = $item_handler->get($item_id);
+
             $obj->getSlideshowForm();
         } else {
             redirect_header('item.php', 1, _AM_SLIDESHOW_MSG_EDIT_ERROR);
         }
         break;
-
     case 'delete_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             // Prompt message
+
             xoops_confirm(['item_id' => $item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
+
             xoops_cp_footer();
         }
         break;
-
     case 'order':
         if (isset($_POST['mod'])) {
             $i = 1;
+
             foreach ($_POST['mod'] as $order) {
                 if ($order > 0) {
                     $contentorder = $item_handler->get($order);
+
                     $contentorder->setVar('item_order', $i);
+
                     if (!$item_handler->insert($contentorder)) {
                         $error = true;
                     }
+
                     $i++;
                 }
             }
         }
         exit;
         break;
-
     default:
         if (!$totalCategories = $category_handler->categoryCount()) {
             xoops_error(_AM_SLIDESHOW_CATEGORY_EMPTY);
+
             xoops_cp_footer();
+
             exit();
         }
 
@@ -88,8 +93,8 @@ switch ($op) {
         $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
         $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
 
-        $info               = [];
-        $info['item_sort']  = 'item_order';
+        $info = [];
+        $info['item_sort'] = 'item_order';
         $info['item_order'] = 'DESC';
 
         // get item from category
@@ -113,13 +118,14 @@ switch ($op) {
             $info['item_start'] = 0;
         }
 
-        $info ['type']         = 'slideshow';
+        $info['type'] = 'slideshow';
         $info['allcategories'] = $category_handler->getall();
-        $items                 = $item_handler->itemSAdminList($info);
-        $item_numrows          = $item_handler->itemCount($info);
+        $items = $item_handler->itemSAdminList($info);
+        $item_numrows = $item_handler->itemCount($info);
 
         if ($item_numrows > $info['item_limit']) {
             $item_pagenav = new XoopsPageNav($item_numrows, $info['item_limit'], $info['item_start'], 'start', 'limit=' . $info['item_limit']);
+
             $item_pagenav = $item_pagenav->renderNav(4);
         } else {
             $item_pagenav = '';

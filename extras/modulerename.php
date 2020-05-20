@@ -1,4 +1,5 @@
 <?php
+
 /*
 Usage:
     Copy modulerename.php in <xoops_root>
@@ -20,7 +21,7 @@ $patterns = [
     'Slideshow' => 'Newname',
 ];
 
-$patKeys   = array_keys($patterns);
+$patKeys = array_keys($patterns);
 $patValues = array_values($patterns);
 
 // work around for PHP < 5.0.x
@@ -30,15 +31,19 @@ if (!function_exists('file_put_contents')) {
      * @param      $data
      * @param bool $file_append
      */
+
     function file_put_contents($filename, $data, $file_append = false)
     {
         $fp = fopen($filename, (!$file_append ? 'w+' : 'a+'));
+
         if (!$fp) {
             trigger_error('file_put_contents cannot write in file.', E_USER_ERROR);
 
             return;
         }
+
         fwrite($fp, $data);
+
         fclose($fp);
     }
 }
@@ -50,21 +55,25 @@ if (!function_exists('file_put_contents')) {
 function renameFileFolder($path)
 {
     global $patKeys;
+
     global $patValues;
 
     $newPath = str_replace($patKeys[0], $patValues[0], $path);
 
     if (is_dir($path)) {
         // create new dir
+
         mkdir($newPath);
 
         // check all files in dir, and process it
+
         if ($handle = opendir($path)) {
             while ($file = readdir($handle)) {
                 if ('.' != $file && '..' != $file) {
                     renameFileFolder("$path/$file");
                 }
             }
+
             closedir($handle);
         }
     } else {
@@ -72,8 +81,11 @@ function renameFileFolder($path)
             copy($path, $newPath);
         } else {
             // file, read it
+
             $content = file_get_contents($path);
+
             $content = str_replace($patKeys, $patValues, $content);
+
             file_put_contents($newPath, $content);
         }
     }

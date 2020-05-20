@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -17,7 +18,6 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
-
 require '../../mainfile.php';
 include XOOPS_ROOT_PATH . '/header.php';
 

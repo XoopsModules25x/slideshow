@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *

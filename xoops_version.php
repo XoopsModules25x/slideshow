@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -17,51 +18,50 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
-
-$moduleDirName      = basename(__DIR__);
+$moduleDirName = basename(__DIR__);
 $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
 $modversion = [
     // Main setting
-    'version'             => 2.01,
-    'module_status'       => 'Alpha 1',
-    'release_date'        => '2020/05/20',
-    'name'                => _MI_SLIDESHOW_TITLE,
-    'description'         => _MI_SLIDESHOW_DESC,
-    'version'             => 2.0,
-    'author'              => 'Hossein Azizabadi, Michael Beck, Lio MJ,',
-    'credits'             => 'Mohtava Project', 'Nivo Slider', 'Slick Slider',
-    'license'             => 'GNU GPL 2.0',
-    'license_url'         => 'www.gnu.org/licenses/gpl-2.0.html/',
-    'image'               => 'assets/images/logo.png',
-    'dirname'             => $moduleDirName,
-    'module_website_url'  => 'https://www.xoops.org/',
+    'version' => 2.01,
+    'module_status' => 'Alpha 1',
+    'release_date' => '2020/05/20',
+    'name' => _MI_SLIDESHOW_TITLE,
+    'description' => _MI_SLIDESHOW_DESC,
+    'version' => 2.0,
+    'author' => 'Hossein Azizabadi, Michael Beck, Lio MJ,',
+    'credits' => 'Mohtava Project', 'Nivo Slider', 'Slick Slider',
+    'license' => 'GNU GPL 2.0',
+    'license_url' => 'www.gnu.org/licenses/gpl-2.0.html/',
+    'image' => 'assets/images/logo.png',
+    'dirname' => $moduleDirName,
+    'module_website_url' => 'https://www.xoops.org/',
     'module_website_name' => 'XOOPS Project',
-    'help'                => 'help',
+    'help' => 'help',
     // Admin things
-    'system_menu'         => 1,
-    'hasAdmin'            => 1,
-    'adminindex'          => 'admin/index.php',
-    'adminmenu'           => 'admin/menu.php',
+    'system_menu' => 1,
+    'hasAdmin' => 1,
+    'adminindex' => 'admin/index.php',
+    'adminmenu' => 'admin/menu.php',
     // Modules scripts
-    'onInstall'           => 'include/install.php',
+    'onInstall' => 'include/install.php',
     // Main menu
-    'hasMain'             => 0,
+    'hasMain' => 0,
     // Recherche
-    'hasSearch'           => 0,
+    'hasSearch' => 0,
     // Commentaires
-    'hasComments'         => 0,
+    'hasComments' => 0,
     // ------------------- Min Requirements -------------------
-    'min_php'             => '7.1',
-    'min_xoops'           => '2.5.10',
-    'min_admin'           => '1.2',
-    'min_db'              => [
+    'min_php' => '7.1',
+    'min_xoops' => '2.5.10',
+    'min_admin' => '1.2',
+    'min_db' => [
         'mysql' => '5.5',
     ],
     // ------------------- Mysql -----------------------------
-    'sqlfile'             => ['mysql' => 'sql/mysql.sql'],
+    'sqlfile' => ['mysql' => 'sql/mysql.sql'],
     // ------------------- Tables ----------------------------
-    'tables'              => [
+    'tables' => [
         $moduleDirName . '_' . 'item',
         $moduleDirName . '_' . 'category',
     ],
@@ -79,78 +79,78 @@ $modversion['templates'] = [
 
 // blocks
 $modversion['blocks'][] = [
-    'file'        => 'nivoslider_block.php',
-    'name'        => _MI_SLIDESHOW_NIVOSLIDER,
+    'file' => 'nivoslider_block.php',
+    'name' => _MI_SLIDESHOW_NIVOSLIDER,
     'description' => '',
-    'show_func'   => 'nivoslider_list_show',
-    'edit_func'   => 'nivoslider_list_edit',
-    'options'     => '1200|400|1200|400|1|nivo|10|1|1',
-    'template'    => 'slideshow_nivoslider.tpl',
+    'show_func' => 'nivoslider_list_show',
+    'edit_func' => 'nivoslider_list_edit',
+    'options' => '1200|400|1200|400|1|nivo|10|1|1',
+    'template' => 'slideshow_nivoslider.tpl',
 ];
 
 $modversion['blocks'][] = [
-    'file'        => 'slickslider_block.php',
-    'name'        => _MI_SLIDESHOW_SLICKSLIDER,
+    'file' => 'slickslider_block.php',
+    'name' => _MI_SLIDESHOW_SLICKSLIDER,
     'description' => '',
-    'show_func'   => 'slickslider_list_show',
-    'edit_func'   => 'slickslider_list_edit',
-    'options'     => '1200|400|1200|400|1|slick|10|1|1',
-    'template'    => 'slideshow_slickslider.tpl',
+    'show_func' => 'slickslider_list_show',
+    'edit_func' => 'slickslider_list_edit',
+    'options' => '1200|400|1200|400|1|slick|10|1|1',
+    'template' => 'slideshow_slickslider.tpl',
 ];
 
 // ------------------- Config Options -----------------------------//
 $modversion['config'][] = [
-    'name'        => 'slideshow_configs',
-    'title'       => '_MI_SLIDESHOW_CONFCAT_IMAGE',
+    'name' => 'slideshow_configs',
+    'title' => '_MI_SLIDESHOW_CONFCAT_IMAGE',
     'description' => '_MI_SLIDESHOW_CONFCAT_IMAGE_DSC',
-    'formtype'    => 'line_break',
-    'valuetype'   => 'textbox',
-    'default'     => 'odd',
-    'category'    => 'group_header',
+    'formtype' => 'line_break',
+    'valuetype' => 'textbox',
+    'default' => 'odd',
+    'category' => 'group_header',
 ];
 
 // conf
 $modversion['config'][] = [
-    'name'        => 'img_mime',
-    'title'       => '_MI_SLIDESHOW_IMAGE_MIME',
+    'name' => 'img_mime',
+    'title' => '_MI_SLIDESHOW_IMAGE_MIME',
     'description' => '_MI_SLIDESHOW_IMAGE_MIME_DESC',
-    'formtype'    => 'select_multi',
-    'valuetype'   => 'array',
-    'default'     => ['image/gif', 'image/jpeg', 'image/png'],
-    'options'     => [
-        'bmp'  => 'image/bmp',
-        'gif'  => 'image/gif',
+    'formtype' => 'select_multi',
+    'valuetype' => 'array',
+    'default' => ['image/gif', 'image/jpeg', 'image/png'],
+    'options' => [
+        'bmp' => 'image/bmp',
+        'gif' => 'image/gif',
         'jpeg' => 'image/pjpeg',
         'jpeg' => 'image/jpeg',
-        'jpg'  => 'image/jpeg',
-        'jpe'  => 'image/jpeg',
-        'png'  => 'image/png',
+        'jpg' => 'image/jpeg',
+        'jpe' => 'image/jpeg',
+        'png' => 'image/png',
     ],
 ];
 
 $modversion['config'][] = [
-    'name'        => 'img_size',
-    'title'       => '_MI_SLIDESHOW_IMAGE_SIZE',
+    'name' => 'img_size',
+    'title' => '_MI_SLIDESHOW_IMAGE_SIZE',
     'description' => '_MI_SLIDESHOW_IMAGE_SIZE_DESC',
-    'formtype'    => 'textbox',
-    'valuetype'   => 'text',
-    'default'     => '5242880',
+    'formtype' => 'textbox',
+    'valuetype' => 'text',
+    'default' => '5242880',
 ];
 
 $modversion['config'][] = [
-    'name'        => 'img_maxwidth',
-    'title'       => '_MI_SLIDESHOW_IMAGE_MAXWIDTH',
+    'name' => 'img_maxwidth',
+    'title' => '_MI_SLIDESHOW_IMAGE_MAXWIDTH',
     'description' => '_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC',
-    'formtype'    => 'textbox',
-    'valuetype'   => 'text',
-    'default'     => '1200',
+    'formtype' => 'textbox',
+    'valuetype' => 'text',
+    'default' => '1200',
 ];
 
 $modversion['config'][] = [
-    'name'        => 'img_maxheight',
-    'title'       => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT',
+    'name' => 'img_maxheight',
+    'title' => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT',
     'description' => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC',
-    'formtype'    => 'textbox',
-    'valuetype'   => 'text',
-    'default'     => '1200',
+    'formtype' => 'textbox',
+    'valuetype' => 'text',
+    'default' => '1200',
 ];
