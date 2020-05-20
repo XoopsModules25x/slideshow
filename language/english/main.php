@@ -18,4 +18,4 @@
  * @version         $Id: $
  */
 
-define("_MD_SLIDESHOW_DEFAULT", "Slideshow");
+define('_MD_SLIDESHOW_DEFAULT', 'Slideshow');

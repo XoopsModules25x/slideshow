@@ -32,10 +32,10 @@ $modversion = [
     'image'               => 'assets/images/logo.png',
     'dirname'             => 'slideshow',
     'release_date'        => '2020/09/01',
-    'module_website_url'  => "https://www.xoops.org/",
-    'module_website_name' => "XOOPS Project",
+    'module_website_url'  => 'https://www.xoops.org/',
+    'module_website_name' => 'XOOPS Project',
     'help'                => 'help',
-    'module_status'       => "Alpha",
+    'module_status'       => 'Alpha',
     // Admin things
     'system_menu'         => 1,
     'hasAdmin'            => 1,
@@ -63,9 +63,9 @@ $modversion = [
 ];
 
 // sql
-$modversion['sqlfile']['mysql'] = "sql/mysql.sql";
-$modversion['tables'][1]        = "slideshow_item";
-$modversion['tables'][2]        = "slideshow_category";
+$modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
+$modversion['tables'][1]        = 'slideshow_item';
+$modversion['tables'][2]        = 'slideshow_category';
 
 $modversion['templates'] = [
     ['file' => 'admin/slideshow_category.tpl', 'description' => ''],
@@ -116,15 +116,15 @@ $modversion['config'][] = [
     'description' => '_MI_SLIDESHOW_IMAGE_MIME_DESC',
     'formtype'    => 'select_multi',
     'valuetype'   => 'array',
-    'default'     => ["image/gif", "image/jpeg", "image/png"],
+    'default'     => ['image/gif', 'image/jpeg', 'image/png'],
     'options'     => [
-        "bmp"  => "image/bmp",
-        "gif"  => "image/gif",
-        "jpeg" => "image/pjpeg",
-        "jpeg" => "image/jpeg",
-        "jpg"  => "image/jpeg",
-        "jpe"  => "image/jpeg",
-        "png"  => "image/png",
+        'bmp'  => 'image/bmp',
+        'gif'  => 'image/gif',
+        'jpeg' => 'image/pjpeg',
+        'jpeg' => 'image/jpeg',
+        'jpg'  => 'image/jpeg',
+        'jpe'  => 'image/jpeg',
+        'png'  => 'image/png',
     ],
 ];
 

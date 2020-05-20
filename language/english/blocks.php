@@ -18,14 +18,14 @@
  * @version         $Id: $
  */
 
-define("_MB_SLIDESHOW_OP1", "<b>Slideshow width</b>");
-define("_MB_SLIDESHOW_OP2", "<b>Slideshow height</b>");
-define("_MB_SLIDESHOW_OP3", "<b>Image width</b>");
-define("_MB_SLIDESHOW_OP4", "<b>Image height</b>");
-define("_MB_SLIDESHOW_OP5", "<b>Select Slideshow category</b>");
-define("_MB_SLIDESHOW_OP6", "<b>Select Slideshow type</b>");
-define("_MB_SLIDESHOW_OP7", "<b>Limit</b>");
-define("_MB_SLIDESHOW_OP8", "<b>Display Caption?</b>");
-define("_MB_SLIDESHOW_NIVOSLIDER", "Nivo Slideshow");
-define("_MB_SLIDESHOW_SLICKSLIDER", "Slick Slideshow");
-define("_MB_SLIDESHOW_STYLE", "<b>Use module style, if it set to no you must add all styles and java in your theme</b>");
+define('_MB_SLIDESHOW_OP1', '<b>Slideshow width</b>');
+define('_MB_SLIDESHOW_OP2', '<b>Slideshow height</b>');
+define('_MB_SLIDESHOW_OP3', '<b>Image width</b>');
+define('_MB_SLIDESHOW_OP4', '<b>Image height</b>');
+define('_MB_SLIDESHOW_OP5', '<b>Select Slideshow category</b>');
+define('_MB_SLIDESHOW_OP6', '<b>Select Slideshow type</b>');
+define('_MB_SLIDESHOW_OP7', '<b>Limit</b>');
+define('_MB_SLIDESHOW_OP8', '<b>Display Caption?</b>');
+define('_MB_SLIDESHOW_NIVOSLIDER', 'Nivo Slideshow');
+define('_MB_SLIDESHOW_SLICKSLIDER', 'Slick Slideshow');
+define('_MB_SLIDESHOW_STYLE', '<b>Use module style, if it set to no you must add all styles and java in your theme</b>');

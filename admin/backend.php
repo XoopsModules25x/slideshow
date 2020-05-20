@@ -151,7 +151,7 @@ switch ($op) {
 }
 
 // Redirect page
-redirect_header("slideshow.php", 3, _AM_SLIDESHOW_MSG_NOTINFO);
+redirect_header('slideshow.php', 3, _AM_SLIDESHOW_MSG_NOTINFO);
 // Include footer
 xoops_cp_footer();
 exit();

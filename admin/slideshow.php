@@ -50,7 +50,7 @@ switch ($op) {
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             // Prompt message
-            xoops_confirm(["item_id" => $item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
+            xoops_confirm(['item_id' => $item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
             xoops_cp_footer();
         }
         break;

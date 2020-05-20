@@ -45,7 +45,7 @@ switch ($op) {
         $category_id = slideshow_CleanVars($_REQUEST, 'category_id', 0, 'int');
         if ($category_id > 0) {
             // Prompt message
-            xoops_confirm(["category_id" => $category_id], 'backend.php?op=deletecategory', _AM_SLIDESHOW_MSG_DELETE);
+            xoops_confirm(['category_id' => $category_id], 'backend.php?op=deletecategory', _AM_SLIDESHOW_MSG_DELETE);
             xoops_cp_footer();
         }
         break;
