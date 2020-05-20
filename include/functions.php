@@ -36,7 +36,7 @@ function slideshow_CleanVars($global, $key, $default = '', $type = 'int')
             $ret = (isset($global[$key])) ? filter_var($global[$key], FILTER_SANITIZE_NUMBER_INT) : $default;
             break;
     }
-    if ($ret === false) {
+    if (false === $ret) {
         return $default;
     }
     return $ret;
