@@ -4,6 +4,7 @@ CREATE TABLE `slideshow_item` (
 	`item_caption` text,
 	`item_category` int(11) NOT NULL,
 	`item_link` varchar(255) NOT NULL,
+	`item_linktarget`  TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
 	`item_status` tinyint(1) NOT NULL,
 	`item_create` int (10) NOT NULL,
 	`item_uid` int(11) NOT NULL,

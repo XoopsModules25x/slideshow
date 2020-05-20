@@ -109,9 +109,11 @@ switch ($op) {
 		   $obj = $item_handler->get ($item_id);
 			$obj->setVars ( $_REQUEST );
 			$obj->setVar ( 'item_order', $item_handler->setitemorder() );
+		    $obj->setVar ( 'item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
+            $obj->setVar ( 'item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));
 		
 			if (! $item_handler->insert ( $obj )) {
-				redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
+				//redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
 				xoops_cp_footer ();
 				exit ();
 			}

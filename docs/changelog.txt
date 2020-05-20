@@ -1,5 +1,5 @@
 <h5>Slideshow 2.0 </h5>  Dev: Xoops 2.5.10, PHP 7.2.0
-
+- add item link target (liomj)
 - add item language code (liomj)
 - add item start date and end date (liomj)
 - rename item_text to item_caption (liomj)

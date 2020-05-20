@@ -27,6 +27,7 @@ class slideshow_item extends \XoopsObject {
 		$this->initVar ( 'item_caption', XOBJ_DTYPE_TXTAREA, '' );
 		$this->initVar ( 'item_category', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_link', XOBJ_DTYPE_TXTBOX );
+		$this->initVar ( 'item_linktarget', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_status', XOBJ_DTYPE_INT , '1');
 		$this->initVar ( 'item_create', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_uid', XOBJ_DTYPE_INT );
@@ -78,6 +79,9 @@ class slideshow_item extends \XoopsObject {
 		
 		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_CAPTION, 'item_caption', $this->getVar ( 'item_caption', 'e' ), 5, 80 ) );
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
+		$link_select = new XoopsFormSelect(_AM_SLIDESHOW_TARGET, 'item_linktarget', $this->getVar('item_linktarget','e'));
+        $link_select->addOptionArray([0 => _AM_SLIDESHOW_TARGET_0, 1 => _AM_SLIDESHOW_TARGET_1]);
+        $form->addElement($link_select);
 		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ),true);
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
         $form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))),true);

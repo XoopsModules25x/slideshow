@@ -10,7 +10,7 @@
     <tr class="odd" id="mod_<{$category.category_id}>">
         <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$category.category_id}></td>
         <td class="txtcenter width35 bold">
-	        <a href="<{$category.category_showtype}>.php?category=<{$category.category_id}>"><{$category.category_title}></a>
+	        <{$category.category_title}>
         </td>
         <td class="txtcenter width10 xo-actions">
             <a href="category.php?op=edit_category&amp;category_id=<{$category.category_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>

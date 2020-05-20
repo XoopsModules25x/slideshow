@@ -4,6 +4,8 @@
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ID}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_IMG}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_TITLE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_CAPTION}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_LINK}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ORDER}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
@@ -21,6 +23,17 @@
         </td>
 		<td class="txtcenter bold">
 	        <{$item.item_title}>
+        </td>
+		<td class="txtcenter bold">
+			<{if $item.item_caption}>
+            <{$item.item_caption}>       
+			<{else}>-<{/if}>
+        </td>
+		<td class="txtcenter bold">
+			<{if $item.item_link}>
+            <a href="<{$item.item_link}> "><{$item.item_link}></a>       
+			<{else}>-<{/if}>
+			<{if $item.item_linktarget==1}>*<{/if}>
         </td>
         <td class="txtcenter bold">
 	        <a title="<{$item.categorytitle}>" href="slideshow.php?category=<{$item.item_category}>"><{$item.categorytitle}></a>
