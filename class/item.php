@@ -34,12 +34,11 @@ class slideshow_item extends \XoopsObject {
 		$this->initVar ( 'item_order', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_img', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'item_type', XOBJ_DTYPE_TXTBOX );
-	    $this->initVar ( 'item_languagecode', XOBJ_DTYPE_TXTBOX );
+	    $this->initVar ( 'item_languagecode', XOBJ_DTYPE_TXTBOX ); 
 		$this->initVar ( 'item_startdate', XOBJ_DTYPE_TIMESTAMP);
 		$this->initVar ( 'item_enddate', XOBJ_DTYPE_TIMESTAMP);
 		$this->initVar ( 'dohtml', XOBJ_DTYPE_INT, 1 );
 		$this->initVar ( 'dobr', XOBJ_DTYPE_INT, 1 );
-		
 		$this->db = $GLOBALS ['xoopsDB'];
 		$this->table = $this->db->prefix ( 'slideshow_item' );
 	}
@@ -83,8 +82,10 @@ class slideshow_item extends \XoopsObject {
         $link_select->addOptionArray([0 => _AM_SLIDESHOW_TARGET_0, 1 => _AM_SLIDESHOW_TARGET_1]);
         $form->addElement($link_select);
 		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ),true);
+		//if (xoops_isActiveModule('xlanguage')) {
 		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
-        $form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))),true);
+		//}
+		$form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))),true);
 		$form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))),true);
 	  
       // Button 
