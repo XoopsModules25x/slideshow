@@ -18,7 +18,7 @@
  * @version         $Id: $
  */
  
-$modversion = array(
+$modversion = [
     // Main setting
     'name' => _MI_SLIDESHOW_TITLE,
     'description' => _MI_SLIDESHOW_DESC,
@@ -58,7 +58,7 @@ $modversion = array(
 	'dirmoduleadmin' => 'Frameworks/moduleclasses',
 	 'icons16' => 'Frameworks/moduleclasses/icons/16',
 	 'icons32' => 'Frameworks/moduleclasses/icons/32'
-);
+];
 
 // sql
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
@@ -108,43 +108,48 @@ $modversion['config'][] = [
 ];
 
 // conf
-$modversion['config'][] = array(
+$modversion['config'][] = [
     'name' => 'img_mime',
     'title' => '_MI_SLIDESHOW_IMAGE_MIME',
     'description' => '_MI_SLIDESHOW_IMAGE_MIME_DESC',
     'formtype' => 'select_multi',
     'valuetype' => 'array',
-    'default' => array("image/gif", "image/jpeg", "image/png"),
-    'options' => array(
+    'default' => ["image/gif", "image/jpeg", "image/png"],
+    'options' => [
         "bmp" => "image/bmp",
         "gif" => "image/gif",
         "jpeg" => "image/pjpeg",
         "jpeg" => "image/jpeg",
         "jpg" => "image/jpeg",
         "jpe" => "image/jpeg",
-        "png" => "image/png"));
+        "png" => "image/png"
+    ]
+];
         
-$modversion['config'][] = array(
+$modversion['config'][] = [
     'name' => 'img_size',
     'title' => '_MI_SLIDESHOW_IMAGE_SIZE',
     'description' => '_MI_SLIDESHOW_IMAGE_SIZE_DESC',
     'formtype' => 'textbox',
     'valuetype' => 'text',
-    'default' => '5242880');
+    'default' => '5242880'
+];
     
-$modversion['config'][] = array(
+$modversion['config'][] = [
     'name' => 'img_maxwidth',
     'title' => '_MI_SLIDESHOW_IMAGE_MAXWIDTH',
     'description' => '_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC',
     'formtype' => 'textbox',
     'valuetype' => 'text',
-    'default' => '1200');
+    'default' => '1200'
+];
 
-$modversion['config'][] = array(
+$modversion['config'][] = [
     'name' => 'img_maxheight',
     'title' => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT',
     'description' => '_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC',
     'formtype' => 'textbox',
     'valuetype' => 'text',
-    'default' => '1200');                
+    'default' => '1200'
+];
 ?>

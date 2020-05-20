@@ -53,7 +53,7 @@ class slideshow_category extends \XoopsObject {
 	}
 	
 	public function toArray() {
-		$ret = array ();
+		$ret = [];
 		$vars = $this->getVars ();
 		foreach ( array_keys ( $vars ) as $i ) {
 			$ret [$i] = $this->getVar ( $i );
@@ -69,7 +69,7 @@ class slideshowCategoryHandler extends \XoopsPersistableObjectHandler {
 	}
 	
 	public function categoryList($info) {
-		$ret = array ();
+		$ret = [];
 		$criteria = new CriteriaCompo ();
       $criteria->setSort ( $info ['category_sort'] );
 		$criteria->setOrder ( $info ['category_order'] );
@@ -79,7 +79,7 @@ class slideshowCategoryHandler extends \XoopsPersistableObjectHandler {
 		$obj = $this->getObjects ( $criteria, false );
 		if ($obj) {
 			foreach ( $obj as $root ) {
-				$tab = array ();
+				$tab = [];
 				$tab = $root->toArray ();
 				$ret [] = $tab;
 			}	

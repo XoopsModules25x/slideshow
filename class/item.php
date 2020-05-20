@@ -100,7 +100,7 @@ class slideshow_item extends \XoopsObject {
 	}
 	
 	public function toArray() {
-		$ret = array ();
+		$ret = [];
 		$vars = $this->getVars ();
 		foreach ( array_keys ( $vars ) as $i ) {
 			$ret [$i] = $this->getVar ( $i );
@@ -156,7 +156,7 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 	}
 	
 	public function itemSAdminList($info) {
-		$ret = array ();
+		$ret = [];
 		$criteria = new CriteriaCompo ();
 		if($info ['category']) {
 		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
@@ -170,7 +170,7 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 		$obj = $this->getObjects ( $criteria, false );
 		if ($obj) {
 			foreach ( $obj as $root ) {
-				$tab = array ();
+				$tab = [];
 				$tab = $root->toArray ();
 				
 				if(is_array($info['allcategories'])) {
@@ -195,7 +195,7 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 	}
 	
 	public function itemBlockList($info) {
-		$ret = array ();
+		$ret = [];
 		$criteria = new CriteriaCompo ();
 		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
 		//$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
@@ -205,7 +205,7 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 		$obj = $this->getObjects ( $criteria, false );
 		if ($obj) {
 			foreach ( $obj as $root ) {
-				$tab = array ();
+				$tab = [];
 				$tab = $root->toArray ();
 				$tab ['imgurl'] = XOOPS_URL . '/uploads/slideshow/image/' . $root->getVar ( 'item_img' );
 				$ret [] = $tab;

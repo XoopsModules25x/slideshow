@@ -52,7 +52,7 @@ switch ($op)
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             // Prompt message
-            xoops_confirm(array("item_id"=>$item_id), 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
+            xoops_confirm(["item_id" =>$item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
 				xoops_cp_footer();
         } 
         break; 
@@ -90,7 +90,7 @@ switch ($op)
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
   
-        $info = array();
+        $info = [];
         $info['item_sort'] = 'item_order';
         $info['item_order'] = 'DESC';
         

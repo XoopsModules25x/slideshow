@@ -13,12 +13,12 @@ Warning:
 // ##########################################################
 //    Define your mapping here
 // ##########################################################
-$patterns = array(
+$patterns = [
     // first one must be module directory name
     'slideshow' => 'newname',
     'SLIDESHOW' => 'NEWNAME',
     'Slideshow' => 'Newname',
-);
+];
 
 $patKeys   = array_keys($patterns);
 $patValues = array_values($patterns);

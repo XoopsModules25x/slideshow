@@ -20,7 +20,7 @@
  
 function nivoslider_list_show($options) {
 	 global $xoTheme;
-	 $block = array();
+	 $block = [];
 	 $block['slidewidth'] = $options[0];
      $block['slideheight'] = $options[1];
      $block['imagewidth'] = $options[2];

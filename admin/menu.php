@@ -19,18 +19,21 @@
  */
  
 $i = 1;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_HOME,
     'link' => 'admin/index.php',
-	 'icon' => 'assets/images/home.png');
+	 'icon' => 'assets/images/home.png'
+];
 $i++;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_CATEGORY,
     'link' => 'admin/category.php',
-	 'icon' => 'assets/images/category.png');
+	 'icon' => 'assets/images/category.png'
+];
 $i++;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_SLIDESHOW,
     'link' => 'admin/slideshow.php',
-	 'icon' => 'assets/images/item.png');
+	 'icon' => 'assets/images/item.png'
+];
 ?>
