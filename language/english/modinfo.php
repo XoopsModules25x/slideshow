@@ -28,7 +28,6 @@ define("_AM_SLIDESHOW_CATEGORY","Slideshow Category");
 define("_AM_SLIDESHOW_SLIDESHOW","Slideshow Images");
 
 // block
-define("_MI_SLIDESHOW_MARQUEESLIDER","Marquee Slider Slideshow");
 define("_MI_SLIDESHOW_NIVOSLIDER","Nivo Slider Slideshow");
 define("_MI_SLIDESHOW_SLICKSLIDER","Slick Slider Slideshow");
 

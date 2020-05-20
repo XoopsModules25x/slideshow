@@ -85,11 +85,8 @@ function nivoslider_list_edit($options) {
         $category->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
     }
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
-    
-    $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-    $type->addOption('nivo',_MB_SLIDESHOW_NIVOSLIDER);
-    $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
-    $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
+    $form .= "<input name=\"options[5]\" value=\"nivo\" type=\"hidden\"/>";
+	$form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
     
     if ($options[7] == false){
 		  $checked_yes = '';

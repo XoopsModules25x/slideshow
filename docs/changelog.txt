@@ -5,7 +5,7 @@
 - rename item_text to item_caption (liomj)
 - fix deprecated constructor (liomj)
 - add nivo slider and slick slider (liomj)
-- remove sliderkit and slider scrollable (liomj)
+- remove marquee slider,sliderkit, slider scrollable (liomj)
 - remove redundant block (liomj) 
 - remove item_default (liomj)
 - fix admin after crud redirection (liomj) 

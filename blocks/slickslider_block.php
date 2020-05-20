@@ -83,9 +83,7 @@ function slickslider_list_edit($options) {
     }
     $form .= _MB_SLIDESHOW_OP5 . " : " . $category->render() . '<br />';
     
-    $type = new XoopsFormSelect(_MB_SLIDESHOW_OP6, 'options[5]', $options[5]);
-	$type->addOption('slick',_MB_SLIDESHOW_SLICKSLIDER);
-    $form .= _MB_SLIDESHOW_OP6 . " : " . $type->render() . '<br />';
+    $form .= "<input name=\"options[5]\" value=\"slick\" type=\"hidden\"/>";
     $form .=   _MB_SLIDESHOW_OP7 . ":&nbsp;&nbsp;<input type=\"text\" name=\"options[6]\" value=\"" . $options[6] . "\" /><br />";
     
     if ($options[7] == false){

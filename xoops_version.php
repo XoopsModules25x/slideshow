@@ -71,7 +71,6 @@ $modversion['templates'] = [
 	['file' => 'admin/slideshow_footer.tpl', 'description' => ''],
     ['file' => 'admin/slideshow_slideshow.tpl', 'description' => ''],
     ['file' => 'blocks/slideshow_item.tpl', 'description' => ''],
-	['file' => 'blocks/slideshow_marqueeslider.tpl', 'description' => ''],
     ['file' => 'blocks/slideshow_nivoslider.tpl', 'description' => ''],
     ['file' => 'blocks/slideshow_slickslider.tpl', 'description' => ''],
 ];
@@ -96,17 +95,7 @@ $modversion['blocks'][] = [
     'options' => '1200|400|1200|400|1|slick|10|1',
     'template' => 'slideshow_slickslider.tpl',
 ];   
-
-$modversion['blocks'][] = [
-    'file' => 'marqueeslider_block.php',
-    'name' => _MI_SLIDESHOW_MARQUEESLIDER,
-    'description' => '',
-    'show_func' => 'marqueeslider_list_show',
-    'edit_func' => 'marqueeslider_list_edit',
-    'options' => '1200|400|1200|400|1|marquee|10|1',
-    'template' => 'slideshow_marqueeslider.tpl',
-];   
-
+ 
 // ------------------- Config Options -----------------------------//
 $modversion['config'][] = [
     'name'        => 'slideshow_configs',
