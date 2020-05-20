@@ -18,24 +18,26 @@
  * @version         $Id: $
  */
 
+$moduleDirName      = basename(__DIR__);
+$moduleDirNameUpper = mb_strtoupper($moduleDirName);
+
 $modversion = [
     // Main setting
+    'version'             => 2.01,
+    'module_status'       => 'Alpha 1',
+    'release_date'        => '2020/05/20',
     'name'                => _MI_SLIDESHOW_TITLE,
     'description'         => _MI_SLIDESHOW_DESC,
     'version'             => 2.0,
     'author'              => 'Hossein Azizabadi, Michael Beck, Lio MJ,',
-    'credits'             => 'Mohtava Project',
-    'Nivo Slider',
-    'Slick Slider',
+    'credits'             => 'Mohtava Project', 'Nivo Slider', 'Slick Slider',
     'license'             => 'GNU GPL 2.0',
     'license_url'         => 'www.gnu.org/licenses/gpl-2.0.html/',
     'image'               => 'assets/images/logo.png',
-    'dirname'             => 'slideshow',
-    'release_date'        => '2020/09/01',
+    'dirname'             => $moduleDirName,
     'module_website_url'  => 'https://www.xoops.org/',
     'module_website_name' => 'XOOPS Project',
     'help'                => 'help',
-    'module_status'       => 'Alpha',
     // Admin things
     'system_menu'         => 1,
     'hasAdmin'            => 1,
@@ -56,16 +58,14 @@ $modversion = [
     'min_db'              => [
         'mysql' => '5.5',
     ],
-    // for module admin class
-    'dirmoduleadmin'      => 'Frameworks/moduleclasses',
-    'icons16'             => 'Frameworks/moduleclasses/icons/16',
-    'icons32'             => 'Frameworks/moduleclasses/icons/32',
+    // ------------------- Mysql -----------------------------
+    'sqlfile'             => ['mysql' => 'sql/mysql.sql'],
+    // ------------------- Tables ----------------------------
+    'tables'              => [
+        $moduleDirName . '_' . 'item',
+        $moduleDirName . '_' . 'category',
+    ],
 ];
-
-// sql
-$modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
-$modversion['tables'][1]        = 'slideshow_item';
-$modversion['tables'][2]        = 'slideshow_category';
 
 $modversion['templates'] = [
     ['file' => 'admin/slideshow_category.tpl', 'description' => ''],
