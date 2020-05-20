@@ -107,7 +107,17 @@ $modversion['blocks'][] = [
     'template' => 'slideshow_marqueeslider.tpl',
 ];   
 
-          
+// ------------------- Config Options -----------------------------//
+$modversion['config'][] = [
+    'name'        => 'slideshow_configs',
+    'title'       => '_MI_SLIDESHOW_CONFCAT_IMAGE',
+    'description' => '_MI_SLIDESHOW_CONFCAT_IMAGE_DSC',
+    'formtype'    => 'line_break',
+    'valuetype'   => 'textbox',
+    'default'     => 'odd',
+    'category'    => 'group_header',
+];
+
 // conf
 $modversion['config'][] = array(
     'name' => 'img_mime',

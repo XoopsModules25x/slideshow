@@ -47,36 +47,11 @@ function marqueeslider_list_show($options) {
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee-setting.js');
 			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
 				 break;
-				 
-			 case 'nivo':
-				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/nivo/jquery.nivo.slider.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/nivo/nivo-setting.js');
-			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/nivo-slider.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/default/default.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/light/light.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/dark/dark.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/bar/bar.css');
-			    break;
-				 
-			case 'slick':
-				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick.min.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick-setting.js');
-			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick-theme.css');
-				break; 
 		 }
 	 } else {
 		 switch($block['showtype']) {
 			 case 'marquee':
 				 break;
-
-			 case 'nivo':
-				 break; 
-				 
-			 case 'slick':
-				 break; 
 		 }
 	 }	
 	 

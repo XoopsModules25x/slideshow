@@ -22,13 +22,13 @@ function nivoslider_list_show($options) {
 	 global $xoTheme;
 	 $block = array();
 	 $block['slidewidth'] = $options[0];
-    $block['slideheight'] = $options[1];
-    $block['imagewidth'] = $options[2];
-    $block['imageheight'] = $options[3];
-    $info['category'] = $options[4];
-    $block['showtype'] = $options[5];
-    $info['limit'] = $options[6];
-    $block['style'] = $options[7];
+     $block['slideheight'] = $options[1];
+     $block['imagewidth'] = $options[2];
+     $block['imageheight'] = $options[3];
+     $info['category'] = $options[4];
+     $block['showtype'] = $options[5];
+     $info['limit'] = $options[6];
+     $block['style'] = $options[7];
     
     array_shift($options);
     array_shift($options);
@@ -40,14 +40,7 @@ function nivoslider_list_show($options) {
 	 array_shift($options);
 	 
 	 if($block['style']) {
-		 switch($block['showtype']) {
-			 case 'marquee':
-			    //$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/marquee/marquee-setting.js');
-			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/marquee/marquee.css');
-				 break;
-				 
+		 switch($block['showtype']) {		 
 			 case 'nivo':
 				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
 			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/nivo/jquery.nivo.slider.js');
@@ -58,24 +51,10 @@ function nivoslider_list_show($options) {
 				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/dark/dark.css');
 				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/nivo/bar/bar.css');
 			    break;
-				 
-			case 'slick':
-				//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick.min.js');
-			    $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/slick/slick-setting.js');
-			    $xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick.css');
-				$xoTheme->addStylesheet(XOOPS_URL . '/modules/slideshow/assets/css/slick/slick-theme.css');
-				break; 
 		 }
 	 } else {
 		 switch($block['showtype']) {
-			 case 'marquee':
-				 break;
-
 			 case 'nivo':
-				 break; 
-				 
-			 case 'slick':
 				 break; 
 		 }
 	 }	
