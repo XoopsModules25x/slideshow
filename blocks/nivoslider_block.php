@@ -61,7 +61,7 @@ function nivoslider_list_show($options) {
 		 }
 	 }	
 	 
-	 $item_handler = xoops_getmodulehandler('item', 'slideshow');
+	 $item_handler = xoops_getModuleHandler('item', 'slideshow');
     $block['items'] = $item_handler->itemBlockList($info);
 	 
 	 return $block;
@@ -69,7 +69,7 @@ function nivoslider_list_show($options) {
 
 function nivoslider_list_edit($options) {
 	
-	 $category_handler = xoops_getmodulehandler('category', 'slideshow');
+	 $category_handler = xoops_getModuleHandler('category', 'slideshow');
 
     $criteria = new CriteriaCompo();
     $criteria->setSort("category_id");

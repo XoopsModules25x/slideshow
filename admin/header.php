@@ -36,7 +36,7 @@ if ( file_exists($GLOBALS['xoops']->path('/Frameworks/moduleclasses/moduleadmin/
 xoops_load('xoopsformloader');
  
  
-$item_handler = xoops_getmodulehandler('item', 'slideshow');
-$category_handler = xoops_getmodulehandler('category', 'slideshow');
+$item_handler = xoops_getModuleHandler('item', 'slideshow');
+$category_handler = xoops_getModuleHandler('category', 'slideshow');
  
 ?>
