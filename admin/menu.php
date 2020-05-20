@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -9,7 +10,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright       XOOPS Project (https://xoops.org)
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @package         module
  * @since           2.5.0
@@ -17,20 +18,21 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
 $i = 1;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_HOME,
     'link' => 'admin/index.php',
-	 'icon' => 'assets/images/home.png');
+    'icon' => 'assets/images/home.png',
+];
 $i++;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_CATEGORY,
     'link' => 'admin/category.php',
-	 'icon' => 'assets/images/category.png');
+    'icon' => 'assets/images/category.png',
+];
 $i++;
-$adminmenu[$i] = array(
+$adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_SLIDESHOW,
     'link' => 'admin/slideshow.php',
-	 'icon' => 'assets/images/item.png');
-?>
+    'icon' => 'assets/images/item.png',
+];

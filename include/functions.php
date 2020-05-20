@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -9,32 +10,36 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright       XOOPS Project (https://xoops.org)
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @package         module
  * @since           2.5.0
  * @author          Mohtava Project <http://www.mohtava.com>
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
+ * @param        $global
+ * @param        $key
+ * @param string $default
+ * @param string $type
+ * @return mixed|string
  */
- 
-function slideshow_CleanVars($global, $key, $default = '', $type = 'int') {
-
+function slideshow_CleanVars($global, $key, $default = '', $type = 'int')
+{
     switch ($type) {
         case 'string':
             //$ret = (isset($global[$key])) ? $global[$key] : $default;
-            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_MAGIC_QUOTES ) : $default;
+            $ret = isset($global[$key]) ? filter_var($global[$key], FILTER_SANITIZE_ADD_SLASHES) : $default;
             break;
         case 'int':
         default:
             //$ret = (isset($global[$key])) ? intval($global[$key]) : intval($default);
-            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_NUMBER_INT ) : $default;
+            $ret = isset($global[$key]) ? filter_var($global[$key], FILTER_SANITIZE_NUMBER_INT) : $default;
             break;
     }
-    if ($ret === false) {
+
+    if (false === $ret) {
         return $default;
     }
+
     return $ret;
 }
-
-?>

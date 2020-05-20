@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XOOPS slideshow module
  *
@@ -9,7 +10,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright       XOOPS Project (https://xoops.org)
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @package         module
  * @since           2.5.0
@@ -17,11 +18,9 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
 require '../../mainfile.php';
-include XOOPS_ROOT_PATH.'/header.php';
+include XOOPS_ROOT_PATH . '/header.php';
 
-redirect_header ( XOOPS_URL, 1, _NOPERM );
+redirect_header(XOOPS_URL, 1, _NOPERM);
 
-include XOOPS_ROOT_PATH.'/footer.php';
-?>
+include XOOPS_ROOT_PATH . '/footer.php';
