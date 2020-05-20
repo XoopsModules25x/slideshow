@@ -139,7 +139,7 @@ switch ($op) {
     case 'item_status':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
-            $obj = &$item_handler->get($item_id);
+            $obj = $item_handler->get($item_id);
             $old = $obj->getVar('item_status');
             $obj->setVar('item_status', !$old);
             if ($item_handler->insert($obj)) {
