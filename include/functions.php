@@ -16,6 +16,11 @@
  * @author          Mohtava Project <http://www.mohtava.com>
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
+ * @param        $global
+ * @param        $key
+ * @param string $default
+ * @param string $type
+ * @return mixed|string
  */
 
 function slideshow_CleanVars($global, $key, $default = '', $type = 'int')

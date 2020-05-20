@@ -16,6 +16,8 @@
  * @author          Mohtava Project <http://www.mohtava.com>
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
+ * @param $options
+ * @return array
  */
 
 function nivoslider_list_show($options)
@@ -68,6 +70,10 @@ function nivoslider_list_show($options)
     return $block;
 }
 
+/**
+ * @param $options
+ * @return string
+ */
 function nivoslider_list_edit($options)
 {
     $category_handler = xoops_getModuleHandler('category', 'slideshow');

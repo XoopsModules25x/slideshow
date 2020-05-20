@@ -101,6 +101,9 @@ class slideshow_item extends \XoopsObject
         $form->display();
     }
 
+    /**
+     * @return array
+     */
     public function toArray()
     {
         $ret  = [];
@@ -112,13 +115,23 @@ class slideshow_item extends \XoopsObject
     }
 }
 
+/**
+ * Class slideshowItemHandler
+ */
 class slideshowItemHandler extends \XoopsPersistableObjectHandler
 {
+    /**
+     * slideshowItemHandler constructor.
+     * @param \XoopsDatabase $db
+     */
     public function __construct(\XoopsDatabase $db)
     {
         parent::__construct($db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title');
     }
 
+    /**
+     * @return int
+     */
     public function setitemorder()
     {
         $criteria = new CriteriaCompo();
@@ -133,6 +146,10 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler
         return $order;
     }
 
+    /**
+     * @param $image
+     * @return string
+     */
     public function uploadimg($image)
     {
         include_once XOOPS_ROOT_PATH . "/class/uploader.php";
@@ -157,6 +174,10 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler
         return '';
     }
 
+    /**
+     * @param $info
+     * @return array
+     */
     public function itemSAdminList($info)
     {
         $ret      = [];
@@ -191,6 +212,10 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler
         return $ret;
     }
 
+    /**
+     * @param null $info
+     * @return int
+     */
     public function itemCount($info = null)
     {
         $criteria = new CriteriaCompo();
@@ -198,6 +223,10 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler
         return $this->getCount($criteria);
     }
 
+    /**
+     * @param $info
+     * @return array
+     */
     public function itemBlockList($info)
     {
         $ret      = [];

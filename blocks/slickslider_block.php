@@ -16,6 +16,8 @@
  * @author          Mohtava Project <http://www.mohtava.com>
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
+ * @param $options
+ * @return array
  */
 
 function slickslider_list_show($options)
@@ -65,6 +67,10 @@ function slickslider_list_show($options)
     return $block;
 }
 
+/**
+ * @param $options
+ * @return string
+ */
 function slickslider_list_edit($options)
 {
     $category_handler = xoops_getModuleHandler('category', 'slideshow');

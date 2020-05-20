@@ -54,6 +54,9 @@ class slideshow_category extends \XoopsObject
         $form->display();
     }
 
+    /**
+     * @return array
+     */
     public function toArray()
     {
         $ret  = [];
@@ -65,13 +68,24 @@ class slideshow_category extends \XoopsObject
     }
 }
 
+/**
+ * Class slideshowCategoryHandler
+ */
 class slideshowCategoryHandler extends \XoopsPersistableObjectHandler
 {
+    /**
+     * slideshowCategoryHandler constructor.
+     * @param \XoopsDatabase $db
+     */
     public function __construct(\XoopsDatabase $db)
     {
         parent::__construct($db, 'slideshow_category', 'slideshow_category', 'category_id', 'category_title');
     }
 
+    /**
+     * @param $info
+     * @return array
+     */
     public function categoryList($info)
     {
         $ret      = [];
@@ -93,6 +107,9 @@ class slideshowCategoryHandler extends \XoopsPersistableObjectHandler
         return $ret;
     }
 
+    /**
+     * @return int
+     */
     public function categoryCount()
     {
         $criteria = new CriteriaCompo();
