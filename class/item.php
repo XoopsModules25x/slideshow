@@ -17,67 +17,32 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-class slideshow_item extends XoopsObject {
+
+class slideshow_item extends \XoopsObject {
 	
-	public function slideshow_item() {
+	public function __construct() {
+		parent::__construct();
 		$this->initVar ( 'item_id', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_title', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_text', XOBJ_DTYPE_TXTAREA, '' );
-		$this->initVar ( 'item_topic', XOBJ_DTYPE_INT );
+		$this->initVar ( 'item_caption', XOBJ_DTYPE_TXTAREA, '' );
+		$this->initVar ( 'item_category', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_link', XOBJ_DTYPE_TXTBOX );
+		$this->initVar ( 'item_linktarget', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_status', XOBJ_DTYPE_INT , '1');
 		$this->initVar ( 'item_create', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_uid', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_order', XOBJ_DTYPE_INT );
 		$this->initVar ( 'item_img', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_thumb', XOBJ_DTYPE_TXTBOX );
-		$this->initVar ( 'item_default', XOBJ_DTYPE_INT , '0');
 		$this->initVar ( 'item_type', XOBJ_DTYPE_TXTBOX );
+	    $this->initVar ( 'item_languagecode', XOBJ_DTYPE_TXTBOX ); 
+		$this->initVar ( 'item_startdate', XOBJ_DTYPE_TIMESTAMP);
+		$this->initVar ( 'item_enddate', XOBJ_DTYPE_TIMESTAMP);
 		$this->initVar ( 'dohtml', XOBJ_DTYPE_INT, 1 );
 		$this->initVar ( 'dobr', XOBJ_DTYPE_INT, 1 );
-		
 		$this->db = $GLOBALS ['xoopsDB'];
 		$this->table = $this->db->prefix ( 'slideshow_item' );
 	}
-		
-	public function getMarqueeForm() {	
-		$form = new XoopsThemeForm ( _AM_SLIDESHOW_ITEM_FORM, 'item', 'backend.php', 'post' );
-		$form->setExtra ( 'enctype="multipart/form-data"' );
-		if ($this->isNew ()) {
-			$form->addElement ( new XoopsFormHidden ( 'op', 'additem' ) );
-			$form->addElement ( new XoopsFormHidden ( 'item_uid', $GLOBALS ['xoopsUser']->getVar ( 'uid' ) ) );
-		} else {
-			$form->addElement ( new XoopsFormHidden ( 'op', 'edititem' ) );
-		}
-		$form->addElement ( new XoopsFormHidden ( 'item_id', $this->getVar ( 'item_id', 'e' ) ) );
-		$form->addElement ( new XoopsFormHidden ( 'item_type', 'marquee' ) );
-		// Topic
-		$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
-		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'topic_showtype', 'marquee' ) );
-		$topics = $topic_handler->getObjects ( $criteria );
-	   $topic_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_TOPIC, 'item_topic', $this->getVar ( 'item_topic' ));
-      $i = 1;
-      foreach (array_keys($topics) as $i) {
-         $topic_sel->addOption($topics[$i]->getVar("topic_id"), $topics[$i]->getVar("topic_title") . ' - ' . $topics[$i]->getVar("topic_showtype"));
-      }
-		$form->addElement($topic_sel);
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
-      // Button 
-		$button_tray = new XoopsFormElementTray ( '', '' );
-		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );
-		$button_tray->addElement ( $submit_btn );
-		$cancel_btn = new XoopsFormButton ( '', 'cancel', _CANCEL, 'cancel' );
-		$cancel_btn->setExtra ( 'onclick="javascript:history.go(-1);"' );
-		$button_tray->addElement ( $cancel_btn );
-		$form->addElement ( $button_tray );
-		$form->display ();
-	}
-			
+				
 	public function getSlideshowForm() {	
 		$form = new XoopsThemeForm ( _AM_SLIDESHOW_ITEM_FORM, 'item', 'backend.php', 'post' );
 		$form->setExtra ( 'enctype="multipart/form-data"' );
@@ -89,40 +54,40 @@ class slideshow_item extends XoopsObject {
 		}
 		$form->addElement ( new XoopsFormHidden ( 'item_id', $this->getVar ( 'item_id', 'e' ) ) );
 		$form->addElement ( new XoopsFormHidden ( 'item_type', 'slideshow' ) );
-		// Topic
-		$topic_handler = xoops_getmodulehandler('topic', 'slideshow');
+		// Category
+		$category_handler = xoops_getmodulehandler('category', 'slideshow');
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'topic_showtype', 'slideshow' ) );
-		$topics = $topic_handler->getObjects ( $criteria );
-	   $topic_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_TOPIC, 'item_topic', $this->getVar ( 'item_topic' ));
+		$categories = $category_handler->getObjects ( $criteria );
+	   $category_sel = new XoopsFormSelect(_AM_SLIDESHOW_ITEM_CATEGORY, 'item_category', $this->getVar ( 'item_category' ));
       $i = 1;
-      foreach (array_keys($topics) as $i) {
-         $topic_sel->addOption($topics[$i]->getVar("topic_id"), $topics[$i]->getVar("topic_title") . ' - ' . $topics[$i]->getVar("topic_showtype"));
+      foreach (array_keys($categories) as $i) {
+         $category_sel->addOption($categories[$i]->getVar("category_id"), $categories[$i]->getVar("category_title"));
       }
-		$form->addElement($topic_sel);
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true );
-		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_TEXT, 'item_text', $this->getVar ( 'item_text', 'e' ), 5, 80 ) );
-		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ), true );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ) );
-		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_DEFAULT, 'item_default', $this->getVar ( 'item_default', 'e' ) ) );
-      // Image
+		$form->addElement($category_sel);
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_TITLE, 'item_title', 50, 255, $this->getVar ( 'item_title', 'e' ) ), true);
+		
+	  // Image
       $item_img = $this->getVar ( 'item_img' ) ? $this->getVar ( 'item_img' ) : 'blank.gif';
 		$imgdir = '/uploads/slideshow/image/';
 		$fileseltray_item_img = new XoopsFormElementTray ( _AM_SLIDESHOW_ITEM_IMG, '<br />' );
 		$fileseltray_item_img->addElement ( new XoopsFormLabel ( '', "<img style='max-width: 500px; max-height: 500px;' src='" . XOOPS_URL . $imgdir . $item_img . "' name='image_item' id='image_item' alt='' />" ) );
 		if ($this->isNew ()) {
-			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
+			$fileseltray_item_img->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_img', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), true );
 		}
 		$form->addElement ( $fileseltray_item_img );
-		// thumb
-      $item_thumb = $this->getVar ( 'item_thumb' ) ? $this->getVar ( 'item_thumb' ) : 'blank.gif';
-		$thumbdir = '/uploads/slideshow/thumb/';
-		$fileseltray_item_thumb = new XoopsFormElementTray ( _AM_SLIDESHOW_ITEM_THUMB, '<br />' );
-		$fileseltray_item_thumb->addElement ( new XoopsFormLabel ( '', "<img style='max-width: 200px; max-height: 200px;' src='" . XOOPS_URL . $thumbdir . $item_thumb . "' name='image_item' id='image_item' alt='' />" ) );
-		if ($this->isNew ()) {
-			$fileseltray_item_thumb->addElement ( new XoopsFormFile ( _AM_SLIDESHOW_ITEM_FORMUPLOAD, 'item_thumb', xoops_getModuleOption ( 'img_size', 'slideshow' )  ), false );
-		}
-		$form->addElement ( $fileseltray_item_thumb );
+		
+		$form->addElement ( new XoopsFormTextArea ( _AM_SLIDESHOW_ITEM_CAPTION, 'item_caption', $this->getVar ( 'item_caption', 'e' ), 5, 80 ) );
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LINK, 'item_link', 50, 255, $this->getVar ( 'item_link', 'e' ) ));
+		$link_select = new XoopsFormSelect(_AM_SLIDESHOW_TARGET, 'item_linktarget', $this->getVar('item_linktarget','e'));
+        $link_select->addOptionArray([0 => _AM_SLIDESHOW_TARGET_0, 1 => _AM_SLIDESHOW_TARGET_1]);
+        $form->addElement($link_select);
+		$form->addElement ( new XoopsFormRadioYN ( _AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar ( 'item_status', 'e' ) ),true);
+		//if (xoops_isActiveModule('xlanguage')) {
+		$form->addElement ( new XoopsFormText ( _AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar ( 'item_languagecode', 'e' ) ) );
+		//}
+		$form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_STARTDATE, 'item_startdate', '', strtotime($this->getVar('item_startdate'))),true);
+		$form->addElement ( new XoopsFormDateTime(_AM_SLIDESHOW_ITEM_ENDDATE, 'item_enddate', '', strtotime($this->getVar('item_enddate'))),true);
+	  
       // Button 
 		$button_tray = new XoopsFormElementTray ( '', '' );
 		$submit_btn = new XoopsFormButton ( '', 'post', _SUBMIT, 'submit' );
@@ -144,10 +109,10 @@ class slideshow_item extends XoopsObject {
 	}
 }
 
-class slideshowItemHandler extends XoopsPersistableObjectHandler {
+class slideshowItemHandler extends \XoopsPersistableObjectHandler {
 	
-	public function slideshowItemHandler($db) {
-		parent::XoopsPersistableObjectHandler ( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );
+	public function __construct(\XoopsDatabase $db) {
+		parent::__construct( $db, 'slideshow_item', 'slideshow_item', 'item_id', 'item_title' );
 	}
 	
 	public function setitemorder() {
@@ -190,38 +155,11 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 		return '';
 	}
 	
-	public function uploadthumb($obj, $thumb) {
-		include_once XOOPS_ROOT_PATH . "/class/uploader.php";
-		$uploader_img = new XoopsMediaUploader ( 
-			XOOPS_ROOT_PATH . '/uploads/slideshow/thumb/', 
-			xoops_getModuleOption ( 'img_mime', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_size', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_maxwidth', 'slideshow' ), 
-			xoops_getModuleOption ( 'img_maxheight', 'slideshow' ) 
-		);
-		if ($uploader_img->fetchMedia ( 'item_thumb' )) {
-			 $uploader_img->setPrefix ( 'slideshow_' );
-			 $uploader_img->fetchMedia ( 'item_thumb' );
-			 if (! $uploader_img->upload ()) {
-				 redirect_header ( 'slideshow.php?op=new_item', 1, $uploader_img->getErrors ());
-				 xoops_cp_footer ();
-			    exit ();
-			 } else {
-				 return $uploader_img->getSavedFileName ();
-			 }
-		} else {
-			 if (isset ( $image )) {
-				 return $image;
-			 }	
-		}
-		return '';
-	}
-	
 	public function itemSAdminList($info) {
 		$ret = array ();
 		$criteria = new CriteriaCompo ();
-		if($info ['topic']) {
-		$criteria->add ( new Criteria ( 'item_topic', $info ['topic'] ) );
+		if($info ['category']) {
+		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
 		}
 		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
       $criteria->setSort ( $info ['item_sort'] );
@@ -235,14 +173,14 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				
-				if(is_array($info['alltopics'])) {
-					foreach ( array_keys ( $info['alltopics'] ) as $i ) {
-						$list [$i] ['topic_title'] = $info['alltopics'] [$i]->getVar ( "topic_title" );
-						$list [$i] ['topic_id'] = $info['alltopics'] [$i]->getVar ( "topic_id" );
+				if(is_array($info['allcategories'])) {
+					foreach ( array_keys ( $info['allcategories'] ) as $i ) {
+						$list [$i] ['category_title'] = $info['allcategories'] [$i]->getVar ( "category_title" );
+						$list [$i] ['category_id'] = $info['allcategories'] [$i]->getVar ( "category_id" );
 					}
 				}
 				$tab ['imgurl'] = XOOPS_URL . '/uploads/slideshow/image/' . $root->getVar ( 'item_img' );
-				$tab ['topictitle'] = $list [$root->getVar ( 'item_topic' )] ['topic_title'];
+				$tab ['categorytitle'] = $list [$root->getVar ( 'item_category' )] ['category_title'];
 				$ret [] = $tab;
 			}	
 		}
@@ -252,15 +190,15 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 	
 	public function itemCount($info = null) {
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
+		//$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
 		return $this->getCount ( $criteria );
 	}
 	
 	public function itemBlockList($info) {
 		$ret = array ();
 		$criteria = new CriteriaCompo ();
-		$criteria->add ( new Criteria ( 'item_topic', $info ['topic'] ) );
-		$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
+		$criteria->add ( new Criteria ( 'item_category', $info ['category'] ) );
+		//$criteria->add ( new Criteria ( 'item_type', $info ['type'] ) );
 		$criteria->add ( new Criteria ( 'item_status', '1' ) );
 		$criteria->setSort ( 'item_order' );
 		$criteria->setOrder ( 'DESC' );
@@ -270,7 +208,6 @@ class slideshowItemHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				$tab ['imgurl'] = XOOPS_URL . '/uploads/slideshow/image/' . $root->getVar ( 'item_img' );
-				$tab ['thumburl'] = XOOPS_URL . '/uploads/slideshow/thumb/' . $root->getVar ( 'item_thumb' );
 				$ret [] = $tab;
 			}		
 		}	

@@ -22,20 +22,15 @@ $i = 1;
 $adminmenu[$i] = array(
     'title' => _AM_SLIDESHOW_HOME,
     'link' => 'admin/index.php',
-	 'icon' => 'images/home.png');
+	 'icon' => 'assets/images/home.png');
 $i++;
 $adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_TOPIC,
-    'link' => 'admin/topic.php',
-	 'icon' => 'images/topic.png');
+    'title' => _AM_SLIDESHOW_CATEGORY,
+    'link' => 'admin/category.php',
+	 'icon' => 'assets/images/category.png');
 $i++;
 $adminmenu[$i] = array(
     'title' => _AM_SLIDESHOW_SLIDESHOW,
     'link' => 'admin/slideshow.php',
-	 'icon' => 'images/item.png');
-$i++;
-$adminmenu[$i] = array(
-    'title' => _AM_SLIDESHOW_MARQUEE,
-    'link' => 'admin/marquee.php',
-	 'icon' => 'images/item.png');
+	 'icon' => 'assets/images/item.png');
 ?>

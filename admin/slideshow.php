@@ -26,9 +26,17 @@ $op = slideshow_CleanVars($_REQUEST, 'op', '', 'string');
 switch ($op)
 {
 	 case 'new_item':
-        $obj = $item_handler->create();
-		  $obj->getSlideshowForm();
-        break;
+	 	if (!$totalCategories = $category_handler->categoryCount() ) {
+		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
+		xoops_cp_footer();
+		exit();
+		}
+		else
+		{
+		$obj = $item_handler->create();
+		$obj->getSlideshowForm();
+        break;	
+		}
 
     case 'edit_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
@@ -67,12 +75,17 @@ switch ($op)
         break;   
      
       default:     
+		  if (!$totalCategories = $category_handler->categoryCount() ) {
+		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
+		xoops_cp_footer();
+		exit();
+		}
       
         // Define scripts
 		  $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
 		  $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/order.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/js/admin.js');
+		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/order.js');
+		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/admin.js');
 		  // Add module stylesheet
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
 		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
@@ -81,11 +94,11 @@ switch ($op)
         $info['item_sort'] = 'item_order';
         $info['item_order'] = 'DESC';
         
-        // get item from topic
-        if (isset($_REQUEST['topic'])) {
-            $info['topic'] = $_REQUEST['topic'];
+        // get item from category
+        if (isset($_REQUEST['category'])) {
+            $info['category'] = $_REQUEST['category'];
         } else {
-            $info['topic'] = null;
+            $info['category'] = null;
         }
         
         // get limited information
@@ -103,7 +116,7 @@ switch ($op)
         }
         
         $info ['type'] = 'slideshow';
-        $info['alltopics'] = $topic_handler->getall();
+        $info['allcategories'] = $category_handler->getall();
         $items = $item_handler->itemSAdminList($info);
         $item_numrows = $item_handler->itemCount($info);
 
@@ -118,7 +131,7 @@ switch ($op)
         $xoopsTpl->assign('item_pagenav', $item_pagenav);
         
 		  // Call template file
-		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_slideshow.html');
+		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_slideshow.tpl');
 		  break; 
 }        
 
