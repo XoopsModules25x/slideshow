@@ -43,8 +43,13 @@ function slickslider_list_show($options)
     $block['style'] = $options[7];
 
     $block['displaycaption'] = $options[8];
+	
+	$block['sliderstyle'] = $options[9];
 
     array_shift($options);
+
+	array_shift($options);
+
 
     array_shift($options);
 
@@ -153,8 +158,18 @@ function slickslider_list_edit($options)
     }
 
     $form .= "&nbsp;<input type='radio' name='options[8]' value='0'" . $chk . ' >' . _NO . '<br>';
-
+	
+	$sliderstyle = new XoopsFormSelect(_MB_SLIDESHOW_OP9, 'options[9]', $options[9]);
+    $sliderstyle->addOption('single-item','single-item');
+    $sliderstyle->addOption('one-time','one-time');
+	$sliderstyle->addOption('responsive','responsive');
+	$sliderstyle->addOption('multiple-items','multiple-items');
+    $sliderstyle->addOption('variable-width','variable-width');
+    $form .= _MB_SLIDESHOW_OP9 . " : " . $sliderstyle->render() . '<br />';
+	
     array_shift($options);
+	
+	array_shift($options);
 
     array_shift($options);
 

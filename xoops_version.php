@@ -94,7 +94,7 @@ $modversion['blocks'][] = [
     'description' => '',
     'show_func' => 'slickslider_list_show',
     'edit_func' => 'slickslider_list_edit',
-    'options' => '1200|400|1200|400|1|slick|10|1|1',
+    'options' => '1200|400|1200|400|1|slick|10|1|1|single-item',
     'template' => 'slideshow_slickslider.tpl',
 ];
 
