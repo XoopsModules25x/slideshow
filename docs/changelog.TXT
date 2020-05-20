@@ -1,0 +1,38 @@
+2.11 Beta 1       2014-04-23
+=================================
+- moved all images, CSS, and JS files to /assets (mamba)
+- renamed .html Smarty templates to .tpl (mamba)
+
+2.10 RC         2011/01/11
+=================================
+- rename spotlight to slideshow (kris_fr)
+
+
+2.10 beta           2011/01/07:
+=================================
+- rename spotlight to slideshow (kris_fr)
+- redesign administration (kris_fr)
+- adapt administration for xoops 2.5.x (kris_fr)
+- add help and about page in administration (kris_fr)
+- add module description in administration index page (kris_fr)
+- add xoops editors for page edition (kris_fr)
+- cleaning for flash object for some template.html (kris_fr)
+- replace admin template in folder /templates/admin/ (kris_fr)
+- rename admin file (kris_fr)
+- rename templates files (kris_fr)
+- add more blocks (same initial) (kris_fr)
+- change table db name (more easy for clone process) (kris_fr)
+- add upgrade rename db table script for previous version (kris_fr)
+- finish internationalization (kris_fr)
+- add php script (extras folder) for rename this module (kris_fr)
+- cleaning define language unused (kris_fr)
+- fix bug in new5/template.html (lunchboxwu)
+
+2.01                2011/01/02:
+=================================
+- Internationalization (Mamba)
+
+
+2.00 Beta - 2010/05/09:
+=================================
+- Original release (spotlight module)
