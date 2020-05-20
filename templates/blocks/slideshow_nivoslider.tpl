@@ -13,7 +13,7 @@
 				<{/if}>
 			<{/if}>
 			
-			<{if $item.item_caption}>
+			<{if $displaycaption == 1 && $item.item_caption}>
 					<img title="#<{$item.item_id}>" class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
 			<{else}>
 					<img class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />

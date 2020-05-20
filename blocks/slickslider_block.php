@@ -22,13 +22,14 @@ function slickslider_list_show($options) {
 	 global $xoTheme;
 	 $block = array();
 	 $block['slidewidth'] = $options[0];
-    $block['slideheight'] = $options[1];
-    $block['imagewidth'] = $options[2];
-    $block['imageheight'] = $options[3];
-    $info['category'] = $options[4];
-    $block['showtype'] = $options[5];
-    $info['limit'] = $options[6];
-    $block['style'] = $options[7];
+     $block['slideheight'] = $options[1];
+     $block['imagewidth'] = $options[2];
+     $block['imageheight'] = $options[3];
+     $info['category'] = $options[4];
+     $block['showtype'] = $options[5];
+     $info['limit'] = $options[6];
+     $block['style'] = $options[7];
+	 $block['displaycaption'] = $options[8];
     
     array_shift($options);
     array_shift($options);
@@ -36,8 +37,9 @@ function slickslider_list_show($options) {
     array_shift($options);
     array_shift($options);
     array_shift($options);
-	 array_shift($options);
-	 array_shift($options);
+	array_shift($options);
+	array_shift($options);
+	array_shift($options);
 	 
 	 if($block['style']) {
 		 switch($block['showtype']) {
@@ -95,16 +97,27 @@ function slickslider_list_edit($options) {
 	 }
 	 $form .= _MB_SLIDESHOW_STYLE . " : <input name=\"options[7]\" value=\"1\" type=\"radio\" " . $checked_yes . "/>" . _YES . "&nbsp;\n";
 	 $form .= "<input name=\"options[7]\" value=\"0\" type=\"radio\" " . $checked_no . "/>" . _NO . "<br />\n";
+	 $form .= _MB_SLIDESHOW_OP8 . '&nbsp;';
+    if (1 == $options[8]) {
+        $chk = " checked='checked'";
+    }
+    $form .= "<input type='radio' name='options[8]' value='1'" . $chk . ' >&nbsp;' . _YES . '';
+    $chk  = '';
+    if (0 == $options[8]) {
+        $chk = " checked='checked'";
+    }
+    $form .= "&nbsp;<input type='radio' name='options[8]' value='0'" . $chk . ' >' . _NO . '<br>';
+  
+    array_shift($options);
+    array_shift($options);
+    array_shift($options);
+    array_shift($options);
+    array_shift($options);
+    array_shift($options);
+	array_shift($options);
+	array_shift($options);
+    array_shift($options); 
 	
-    array_shift($options);
-    array_shift($options);
-    array_shift($options);
-    array_shift($options);
-    array_shift($options);
-    array_shift($options);
-	 array_shift($options);
-	 array_shift($options);
-        
     return $form;
 }	
  
