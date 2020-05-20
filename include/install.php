@@ -17,17 +17,18 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-function xoops_module_install_slideshow() {
-	$dir = XOOPS_ROOT_PATH."/uploads/slideshow";
-	if(!is_dir($dir)) {
-		mkdir($dir, 0777);	   chmod($dir, 0777);
-	}
-	
-	$dir = XOOPS_ROOT_PATH."/uploads/slideshow/image";
-	if(!is_dir($dir)) {
-		mkdir($dir, 0777);	   chmod($dir, 0777);
-	}
-	
+
+function xoops_module_install_slideshow()
+{
+    $dir = XOOPS_ROOT_PATH . "/uploads/slideshow";
+    if (!is_dir($dir)) {
+        mkdir($dir, 0777);
+        chmod($dir, 0777);
+    }
+
+    $dir = XOOPS_ROOT_PATH . "/uploads/slideshow/image";
+    if (!is_dir($dir)) {
+        mkdir($dir, 0777);
+        chmod($dir, 0777);
+    }
 }
-?>

@@ -17,23 +17,22 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-$i = 1;
+
+$i             = 1;
 $adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_HOME,
-    'link' => 'admin/index.php',
-	 'icon' => 'assets/images/home.png'
+    'link'  => 'admin/index.php',
+    'icon'  => 'assets/images/home.png',
 ];
 $i++;
 $adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_CATEGORY,
-    'link' => 'admin/category.php',
-	 'icon' => 'assets/images/category.png'
+    'link'  => 'admin/category.php',
+    'icon'  => 'assets/images/category.png',
 ];
 $i++;
 $adminmenu[$i] = [
     'title' => _AM_SLIDESHOW_SLIDESHOW,
-    'link' => 'admin/slideshow.php',
-	 'icon' => 'assets/images/item.png'
+    'link'  => 'admin/slideshow.php',
+    'icon'  => 'assets/images/item.png',
 ];
-?>

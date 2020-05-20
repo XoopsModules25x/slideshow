@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  * XOOPS slideshow module
  *
  * You may not change or alter any portion of this comment or credits
@@ -16,7 +17,11 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-function xoops_module_update_slideshow() {	$db = Database::getInstance();	$sql = "ALTER TABLE `" . $db->prefix('slideshow_item') . "` ADD `item_img` varchar(255) NOT NULL;";	$db->query($sql);
-	return true;}
-?>
+
+function xoops_module_update_slideshow()
+{
+    $db  = Database::getInstance();
+    $sql = "ALTER TABLE `" . $db->prefix('slideshow_item') . "` ADD `item_img` varchar(255) NOT NULL;";
+    $db->query($sql);
+    return true;
+}

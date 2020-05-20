@@ -17,144 +17,141 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
+
 require 'header.php';
 
-$op = slideshow_CleanVars ( $_REQUEST, 'op', 'new', 'string' );
+$op = slideshow_CleanVars($_REQUEST, 'op', 'new', 'string');
 // Admin header
-xoops_cp_header ();
+xoops_cp_header();
 // Redirect to content page
-if (! isset ( $_REQUEST )) {
-	
-	redirect_header("slideshow.php", 3, _AM_SLIDESHOW_MSG_NOTINFO);
-	// Include footer
-	xoops_cp_footer ();
-	exit ();
+if (!isset($_REQUEST)) {
+    redirect_header("slideshow.php", 3, _AM_SLIDESHOW_MSG_NOTINFO);
+    // Include footer
+    xoops_cp_footer();
+    exit();
 }
- 
+
 switch ($op) {
-	case 'addcategory' :
-	   $obj = $category_handler->create ();
-		$obj->setVars ( $_REQUEST );
-		$obj->setVar ( 'category_created', time () );
-		
-		if (! $category_handler->insert ( $obj )) {
-			redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
-			xoops_cp_footer ();
-			exit ();
-		}
-		
-		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;
-		
-	case 'editcategory' :
-		$category_id = slideshow_CleanVars ( $_REQUEST, 'category_id', 0, 'int' );
-		if ($category_id > 0) {
-			$obj = $category_handler->get ( $category_id );
-			$obj->setVars ( $_POST );
-			
-			if (! $category_handler->insert ( $obj )) {
-				redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
-				xoops_cp_footer ();
-				exit ();
-			}
-		}	
-		
-		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;
-	
-	case 'deletecategory' :
-	   $category_id = slideshow_CleanVars ( $_REQUEST, 'category_id', 0, 'int' );
-	   $obj = $category_handler->get ( $category_id );
-		if (! $category_handler->delete ( $obj )) {
-			echo $obj->getHtmlErrors ();
-		}
-		
-		// Redirect page
-		redirect_header ( 'category.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;
-		
-	case 'additem' :
-		$obj = $item_handler->create ();
-		$obj->setVars ( $_POST );
-		$obj->setVar ( 'item_create', time () );
-		$obj->setVar ( 'item_order', $item_handler->setitemorder() );
-		$obj->setVar ( 'item_img', $item_handler->uploadimg ( $_POST ['item_img'] ) );
-		$obj->setVar ( 'item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
-        $obj->setVar ( 'item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));
-		
-		if (! $item_handler->insert ( $obj )) {
-			redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
-			xoops_cp_footer ();
-			exit ();
-		}
-		
-		// Redirect page
-		redirect_header ( 'slideshow.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;
-		
-	case 'edititem' :
-	   $item_id = slideshow_CleanVars ( $_REQUEST, 'item_id', 0, 'int' );
-		if ($item_id > 0) {
-		   $obj = $item_handler->get ($item_id);
-			$obj->setVars ( $_REQUEST );
-			$obj->setVar ( 'item_order', $item_handler->setitemorder() );
-		    $obj->setVar ( 'item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
-            $obj->setVar ( 'item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));
-		
-			if (! $item_handler->insert ( $obj )) {
-				//redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
-				xoops_cp_footer ();
-				exit ();
-			}
-		}
-		// Redirect page
-		redirect_header ( 'slideshow.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;	
-		
-	case 'deleteitem' :
-	   $item_id = slideshow_CleanVars ( $_REQUEST, 'item_id', 0, 'int' );
-	   $obj = $item_handler->get ( $item_id );
-	   unlink(XOOPS_URL . '/uploads/slideshow/image/' .$obj->getVar ( 'item_img'));
-		if (! $item_handler->delete ( $obj )) {
-			echo $obj->getHtmlErrors ();
-		}
-		// Redirect page
-		redirect_header ( 'slideshow.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS );
-		xoops_cp_footer ();
-		exit ();
-		break;	
-		
-	 case 'item_status' :
-		$item_id = slideshow_CleanVars ( $_REQUEST, 'item_id', 0, 'int' );
-		if ($item_id > 0) {
-			$obj = & $item_handler->get ( $item_id );
-			$old = $obj->getVar ( 'item_status' );
-			$obj->setVar ( 'item_status', ! $old );
-			if ($item_handler->insert ( $obj )) {
-				exit ();
-			}
-			echo $obj->getHtmlErrors ();
-		}
-		break;
-			
+    case 'addcategory':
+        $obj = $category_handler->create();
+        $obj->setVars($_REQUEST);
+        $obj->setVar('category_created', time());
+
+        if (!$category_handler->insert($obj)) {
+            redirect_header('onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR);
+            xoops_cp_footer();
+            exit();
+        }
+
+        // Redirect page
+        redirect_header('category.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'editcategory':
+        $category_id = slideshow_CleanVars($_REQUEST, 'category_id', 0, 'int');
+        if ($category_id > 0) {
+            $obj = $category_handler->get($category_id);
+            $obj->setVars($_POST);
+
+            if (!$category_handler->insert($obj)) {
+                redirect_header('onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR);
+                xoops_cp_footer();
+                exit();
+            }
+        }
+
+        // Redirect page
+        redirect_header('category.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'deletecategory':
+        $category_id = slideshow_CleanVars($_REQUEST, 'category_id', 0, 'int');
+        $obj         = $category_handler->get($category_id);
+        if (!$category_handler->delete($obj)) {
+            echo $obj->getHtmlErrors();
+        }
+
+        // Redirect page
+        redirect_header('category.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'additem':
+        $obj = $item_handler->create();
+        $obj->setVars($_POST);
+        $obj->setVar('item_create', time());
+        $obj->setVar('item_order', $item_handler->setitemorder());
+        $obj->setVar('item_img', $item_handler->uploadimg($_POST ['item_img']));
+        $obj->setVar('item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
+        $obj->setVar('item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));
+
+        if (!$item_handler->insert($obj)) {
+            redirect_header('onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR);
+            xoops_cp_footer();
+            exit();
+        }
+
+        // Redirect page
+        redirect_header('slideshow.php', 1, _AM_SLIDESHOW_MSG_INSERTSUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'edititem':
+        $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
+        if ($item_id > 0) {
+            $obj = $item_handler->get($item_id);
+            $obj->setVars($_REQUEST);
+            $obj->setVar('item_order', $item_handler->setitemorder());
+            $obj->setVar('item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
+            $obj->setVar('item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));
+
+            if (!$item_handler->insert($obj)) {
+                //redirect_header ( 'onclick="javascript:history.go(-1);"', 1, _AM_SLIDESHOW_MSG_ERROR );
+                xoops_cp_footer();
+                exit();
+            }
+        }
+        // Redirect page
+        redirect_header('slideshow.php', 1, _AM_SLIDESHOW_MSG_EDITSUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'deleteitem':
+        $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
+        $obj     = $item_handler->get($item_id);
+        unlink(XOOPS_URL . '/uploads/slideshow/image/' . $obj->getVar('item_img'));
+        if (!$item_handler->delete($obj)) {
+            echo $obj->getHtmlErrors();
+        }
+        // Redirect page
+        redirect_header('slideshow.php', 1, _AM_SLIDESHOW_MSG_DELETESUCCESS);
+        xoops_cp_footer();
+        exit();
+        break;
+
+    case 'item_status':
+        $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
+        if ($item_id > 0) {
+            $obj = &$item_handler->get($item_id);
+            $old = $obj->getVar('item_status');
+            $obj->setVar('item_status', !$old);
+            if ($item_handler->insert($obj)) {
+                exit();
+            }
+            echo $obj->getHtmlErrors();
+        }
+        break;
 }
 
 // Redirect page
 redirect_header("slideshow.php", 3, _AM_SLIDESHOW_MSG_NOTINFO);
 // Include footer
-xoops_cp_footer ();
-exit ();
-?>
+xoops_cp_footer();
+exit();

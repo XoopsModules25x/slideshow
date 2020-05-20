@@ -17,21 +17,21 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
+
 require 'header.php';
 xoops_cp_header();
 // Add module stylesheet
 $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
 // module admin
 $index_admin = new ModuleAdmin();
-$folder = [
-	XOOPS_ROOT_PATH . '/uploads/slideshow/',
+$folder      = [
+    XOOPS_ROOT_PATH . '/uploads/slideshow/',
 ];
 $index_admin = new ModuleAdmin();
 $index_admin->addInfoBox(_AM_SLIDESHOW_INDEX_INFO);
 $index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_CATEGORIES, $category_handler->categoryCount());
 $index_admin->addInfoBoxLine(_AM_SLIDESHOW_INDEX_INFO, _AM_SLIDESHOW_INDEX_ITEMS, $item_handler->itemCount());
-foreach (array_keys( $folder) as $i) {
+foreach (array_keys($folder) as $i) {
     $index_admin->addConfigBoxLine($folder[$i], 'folder');
     $index_admin->addConfigBoxLine([$folder[$i], '777'], 'chmod');
 }
@@ -40,4 +40,3 @@ $xoopsTpl->assign('renderindex', $index_admin->renderIndex());
 $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_index.tpl');
 // footer
 xoops_cp_footer();
-?>

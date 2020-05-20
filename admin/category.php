@@ -25,37 +25,36 @@ $op = slideshow_CleanVars($_REQUEST, 'op', '', 'string');
 
 $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
 
-switch ($op)
-{
+switch ($op) {
     case 'new_category':
         $obj = $category_handler->create();
-		  $obj->getCategoryForm();
+        $obj->getCategoryForm();
         break;
 
     case 'edit_category':
         $category_id = slideshow_CleanVars($_REQUEST, 'category_id', 0, 'int');
         if ($category_id > 0) {
             $obj = $category_handler->get($category_id);
-			   $obj->getCategoryForm();
+            $obj->getCategoryForm();
         } else {
             redirect_header('category.php', 1, _AM_SLIDESHOW_MSG_EDIT_ERROR);
         }
-        break; 
-        
-     case 'delete_category':
+        break;
+
+    case 'delete_category':
         $category_id = slideshow_CleanVars($_REQUEST, 'category_id', 0, 'int');
         if ($category_id > 0) {
             // Prompt message
-            xoops_confirm(["category_id" =>$category_id], 'backend.php?op=deletecategory', _AM_SLIDESHOW_MSG_DELETE);
-				xoops_cp_footer();
-        } 
-        break; 
-       
-      default:
-        $info = [];
-        $info['category_sort'] = 'category_id';
+            xoops_confirm(["category_id" => $category_id], 'backend.php?op=deletecategory', _AM_SLIDESHOW_MSG_DELETE);
+            xoops_cp_footer();
+        }
+        break;
+
+    default:
+        $info                   = [];
+        $info['category_sort']  = 'category_id';
         $info['category_order'] = 'DESC';
-	     // get limited information
+        // get limited information
         if (isset($_REQUEST['limit'])) {
             $info['category_limit'] = slideshow_CleanVars($_REQUEST, 'limit', 0, 'int');
         } else {
@@ -68,25 +67,24 @@ switch ($op)
         } else {
             $info['category_start'] = 0;
         }
-        
-        $categories = $category_handler->categoryList($info);
+
+        $categories       = $category_handler->categoryList($info);
         $category_numrows = $category_handler->categoryCount();
 
         if ($category_numrows > $info['category_limit']) {
-            $category_pagenav = new XoopsPageNav($category_numrows,  $info['category_limit'], $info['category_start'], 'start', 'limit=' . $info['category_limit']);
+            $category_pagenav = new XoopsPageNav($category_numrows, $info['category_limit'], $info['category_start'], 'start', 'limit=' . $info['category_limit']);
             $category_pagenav = $category_pagenav->renderNav(4);
         } else {
             $category_pagenav = '';
         }
-        
+
         $xoopsTpl->assign('categories', $categories);
         $xoopsTpl->assign('category_pagenav', $category_pagenav);
-        
+
         // Call template file
-		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_category.tpl');
-	     break;     
-}        
+        $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_category.tpl');
+        break;
+}
 
 // footer
 xoops_cp_footer();
-?>

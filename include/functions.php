@@ -17,18 +17,18 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
-function slideshow_CleanVars($global, $key, $default = '', $type = 'int') {
 
+function slideshow_CleanVars($global, $key, $default = '', $type = 'int')
+{
     switch ($type) {
         case 'string':
             //$ret = (isset($global[$key])) ? $global[$key] : $default;
-            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_ADD_SLASHES ) : $default;
+            $ret = (isset($global[$key])) ? filter_var($global[$key], FILTER_SANITIZE_ADD_SLASHES) : $default;
             break;
         case 'int':
         default:
             //$ret = (isset($global[$key])) ? intval($global[$key]) : intval($default);
-            $ret = ( isset( $global[$key] ) ) ? filter_var( $global[$key], FILTER_SANITIZE_NUMBER_INT ) : $default;
+            $ret = (isset($global[$key])) ? filter_var($global[$key], FILTER_SANITIZE_NUMBER_INT) : $default;
             break;
     }
     if ($ret === false) {
@@ -36,5 +36,3 @@ function slideshow_CleanVars($global, $key, $default = '', $type = 'int') {
     }
     return $ret;
 }
-
-?>

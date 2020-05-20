@@ -17,11 +17,10 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
+
 require '../../mainfile.php';
-include XOOPS_ROOT_PATH.'/header.php';
+include XOOPS_ROOT_PATH . '/header.php';
 
-redirect_header ( XOOPS_URL, 1, _NOPERM );
+redirect_header(XOOPS_URL, 1, _NOPERM);
 
-include XOOPS_ROOT_PATH.'/footer.php';
-?>
+include XOOPS_ROOT_PATH . '/footer.php';

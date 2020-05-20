@@ -17,47 +17,45 @@
  * @author          Hossein Azizabadi <djvoltan@gmail.com>
  * @version         $Id: $
  */
- 
+
 require 'header.php';
 xoops_cp_header();
 
 $op = slideshow_CleanVars($_REQUEST, 'op', '', 'string');
 
-switch ($op)
-{
-	 case 'new_item':
-	 	if (!$totalCategories = $category_handler->categoryCount() ) {
-		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
-		xoops_cp_footer();
-		exit();
-		}
-		else
-		{
-		$obj = $item_handler->create();
-		$obj->getSlideshowForm();
-        break;	
-		}
+switch ($op) {
+    case 'new_item':
+        if (!$totalCategories = $category_handler->categoryCount()) {
+            xoops_error(_AM_SLIDESHOW_CATEGORY_EMPTY);
+            xoops_cp_footer();
+            exit();
+        } else {
+            $obj = $item_handler->create();
+            $obj->getSlideshowForm();
+            break;
+        }
 
+    // no break
     case 'edit_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             $obj = $item_handler->get($item_id);
-			   $obj->getSlideshowForm();
+            $obj->getSlideshowForm();
         } else {
             redirect_header('item.php', 1, _AM_SLIDESHOW_MSG_EDIT_ERROR);
         }
         break;
-    
+
     case 'delete_item':
         $item_id = slideshow_CleanVars($_REQUEST, 'item_id', 0, 'int');
         if ($item_id > 0) {
             // Prompt message
-            xoops_confirm(["item_id" =>$item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
-				xoops_cp_footer();
-        } 
-        break; 
-        
-     case 'order':
+            xoops_confirm(["item_id" => $item_id], 'backend.php?op=deleteitem', _AM_SLIDESHOW_MSG_DELETE);
+            xoops_cp_footer();
+        }
+        break;
+
+    case 'order':
         if (isset($_POST['mod'])) {
             $i = 1;
             foreach ($_POST['mod'] as $order) {
@@ -72,35 +70,35 @@ switch ($op)
             }
         }
         exit;
-        break;   
-     
-      default:     
-		  if (!$totalCategories = $category_handler->categoryCount() ) {
-		xoops_error( _AM_SLIDESHOW_CATEGORY_EMPTY);
-		xoops_cp_footer();
-		exit();
-		}
-      
+        break;
+
+    default:
+        if (!$totalCategories = $category_handler->categoryCount()) {
+            xoops_error(_AM_SLIDESHOW_CATEGORY_EMPTY);
+            xoops_cp_footer();
+            exit();
+        }
+
         // Define scripts
-		  $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
-		  $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/order.js');
-		  $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/admin.js');
-		  // Add module stylesheet
-		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
-		  $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
-  
-        $info = [];
-        $info['item_sort'] = 'item_order';
+        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+        $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
+        $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/order.js');
+        $xoTheme->addScript(XOOPS_URL . '/modules/slideshow/assets/js/admin.js');
+        // Add module stylesheet
+        $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
+        $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/admin.css');
+
+        $info               = [];
+        $info['item_sort']  = 'item_order';
         $info['item_order'] = 'DESC';
-        
+
         // get item from category
         if (isset($_REQUEST['category'])) {
             $info['category'] = $_REQUEST['category'];
         } else {
             $info['category'] = null;
         }
-        
+
         // get limited information
         if (isset($_REQUEST['limit'])) {
             $info['item_limit'] = slideshow_CleanVars($_REQUEST, 'limit', 0, 'int');
@@ -114,27 +112,26 @@ switch ($op)
         } else {
             $info['item_start'] = 0;
         }
-        
-        $info ['type'] = 'slideshow';
+
+        $info ['type']         = 'slideshow';
         $info['allcategories'] = $category_handler->getall();
-        $items = $item_handler->itemSAdminList($info);
-        $item_numrows = $item_handler->itemCount($info);
+        $items                 = $item_handler->itemSAdminList($info);
+        $item_numrows          = $item_handler->itemCount($info);
 
         if ($item_numrows > $info['item_limit']) {
-            $item_pagenav = new XoopsPageNav($item_numrows,  $info['item_limit'], $info['item_start'], 'start', 'limit=' . $info['item_limit']);
+            $item_pagenav = new XoopsPageNav($item_numrows, $info['item_limit'], $info['item_start'], 'start', 'limit=' . $info['item_limit']);
             $item_pagenav = $item_pagenav->renderNav(4);
         } else {
             $item_pagenav = '';
         }
-        
+
         $xoopsTpl->assign('items', $items);
         $xoopsTpl->assign('item_pagenav', $item_pagenav);
-        
-		  // Call template file
-		  $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_slideshow.tpl');
-		  break; 
-}        
+
+        // Call template file
+        $xoopsTpl->display(XOOPS_ROOT_PATH . '/modules/slideshow/templates/admin/slideshow_slideshow.tpl');
+        break;
+}
 
 // footer
 xoops_cp_footer();
-?>
