@@ -4,10 +4,10 @@ function item_setStatus(data, img, file) {
             function(reponse, textStatus) {
                 if (textStatus == 'success') {
                     // Change image src
-                    if ($('img#' + img).attr("src") == "../images/ok.png") {
-                        $('img#' + img).attr("src", "../images/cancel.png");
+                    if ($('img#' + img).attr("src") == "../assets/images/ok.png") {
+                        $('img#' + img).attr("src", "../assets/images/cancel.png");
                     } else {
-                        $('img#' + img).attr("src", "../images/ok.png");
+                        $('img#' + img).attr("src", "../assets/images/ok.png");
                     }
                 }
             });
@@ -18,12 +18,12 @@ function item_setDefault(data, img, file) {
     $.post(file, data,
             function(reponse, textStatus) {
                 if (textStatus == 'success') {
-                    $('.xo-defaultimg').attr("src", "../images/cancel.png");
+                    $('.xo-defaultimg').attr("src", "../assets/images/cancel.png");
                     // Change image src
-                    if ($('img#' + img).attr("src") == "../images/ok.png") {
-                        $('img#' + img).attr("src", "../images/cancel.png");
+                    if ($('img#' + img).attr("src") == "../assets/images/ok.png") {
+                        $('img#' + img).attr("src", "../assets/images/cancel.png");
                     } else {
-                        $('img#' + img).attr("src", "../images/ok.png");
+                        $('img#' + img).attr("src", "../assets/images/ok.png");
                     }
                 }
             });

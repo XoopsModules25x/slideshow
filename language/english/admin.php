@@ -47,7 +47,8 @@ define('_AM_SLIDESHOW_ITEM_ACTION', 'Action');
 define('_AM_SLIDESHOW_ITEM_FORM', 'Add new item');
 define('_AM_SLIDESHOW_ITEM_CAPTION', 'Caption');
 define('_AM_SLIDESHOW_ITEM_LINK', 'Link');
-define('_AM_SLIDESHOW_ITEM_STATUS', 'Active');
+define('_AM_SLIDESHOW_ITEM_ACTIVE', 'Active');
+define('_AM_SLIDESHOW_ITEM_STATUS', 'Status');
 define('_AM_SLIDESHOW_ITEM_FORMUPLOAD', 'Select your image');
 define('_AM_SLIDESHOW_ITEM_LANGUAGECODE', 'Language Code');
 define('_AM_SLIDESHOW_ITEM_STARTDATE', 'Start Date');
@@ -55,6 +56,10 @@ define('_AM_SLIDESHOW_ITEM_ENDDATE', 'End Date');
 define('_AM_SLIDESHOW_TARGET', 'Open Link in');
 define('_AM_SLIDESHOW_TARGET_0', 'Same Window');
 define('_AM_SLIDESHOW_TARGET_1', 'New Window');
+define('_AM_SLIDESHOW_UPCOMING', 'Upcoming');
+define('_AM_SLIDESHOW_EXPIRED', 'Expired');
+define('_AM_SLIDESHOW_RUNNING', 'Running');
+define('_AM_SLIDESHOW_INACTIVE', 'Inactive');
 
 // Msg
 define('_AM_SLIDESHOW_MSG_EDIT_ERROR', 'Error in edit');
