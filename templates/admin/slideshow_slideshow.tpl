@@ -8,16 +8,17 @@
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_LINK}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_CATEGORY}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ORDER}></th>
-    <th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
+    <th><{$smarty.const._AM_SLIDESHOW_ITEM_ACTIVE}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_STARTDATE}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_ENDDATE}></th>
+	<th><{$smarty.const._AM_SLIDESHOW_ITEM_STATUS}></th>
 	<th><{$smarty.const._AM_SLIDESHOW_ITEM_LANGUAGECODE}></th>
     <th><{$smarty.const._AM_SLIDESHOW_ITEM_ACTION}></th>
     </thead>
     <tbody class="xo-item">
     <{foreach item=item from=$items}>
     <tr class="odd" id="mod_<{$item.item_id}>">
-        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$item.item_id}></td>
+        <td class="width5 txtcenter"><img src="../assets/images/puce.png" alt=""/><{$item.item_id}></td>
                 <td class="txtcenter bold">
 		        <img style="max-width: 100px; max-height: 100px;" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
         </td>
@@ -48,6 +49,19 @@
 		<td class="txtcenter width5 bold">
 	        <{$item.item_enddate}>
         </td>
+		<td class="txtcenter width5 bold">
+		
+		<{if $item.item_status==0}>
+			<{$smarty.const._AM_SLIDESHOW_INACTIVE}>
+		<{else}>
+	        <{if $item.item_startdate|date_format:"%Y/%m/%d %H:%M:%S" <= $smarty.now|date_format:"%Y/%m/%d %H:%M:%S" AND $smarty.now|date_format:"%Y/%m/%d %H:%M:%S" <= $item.item_enddate|date_format:"%Y/%m/%d %H:%M:%S" }>
+						<strong><{$smarty.const._AM_SLIDESHOW_RUNNING}></strong>
+						<{else}>
+						<strong><span style="color:red"><{$smarty.const._AM_SLIDESHOW_EXPIRED}></span></strong>
+            <{/if}>		
+        <{/if}>		
+        
+		</td>
 		<td class="txtcenter width5 bold">
 	        <{if $item.item_languagecode}>
             <{$item.item_languagecode}>        
