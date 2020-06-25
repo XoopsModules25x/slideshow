@@ -115,7 +115,7 @@ switch ($op) {
 
             $obj->setVars($_REQUEST);
 
-            $obj->setVar('item_order', $item_handler->setitemorder());
+            //$obj->setVar('item_order', $item_handler->setitemorder());
 
             $obj->setVar('item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
 
