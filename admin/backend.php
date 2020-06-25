@@ -90,7 +90,7 @@ switch ($op) {
         $obj = $item_handler->create();
         $obj->setVars($_POST);
         $obj->setVar('item_create', time());
-        $obj->setVar('item_order', $item_handler->setitemorder());
+        //$obj->setVar('item_order', $item_handler->setitemorder());
         $obj->setVar('item_img', $item_handler->uploadimg($_POST['item_img']));
         $obj->setVar('item_startdate', date('Y-m-d H:i:s', strtotime($_POST['item_startdate']['date']) + $_POST['item_startdate']['time']));
         $obj->setVar('item_enddate', date('Y-m-d H:i:s', strtotime($_POST['item_enddate']['date']) + $_POST['item_enddate']['time']));

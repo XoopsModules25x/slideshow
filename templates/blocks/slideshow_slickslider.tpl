@@ -14,7 +14,7 @@
 			<{/if}>
 					<img title="<{$item.item_title}>" class="img-fluid" width="<{$block.imagewidth}>" height="<{$block.imageheight}>" src="<{$item.imgurl}>" alt="<{$item.item_title}>" />
 			<{if $item.item_link}></a><{/if}>
-				<{if $displaycaption == 1 && $item.item_caption}><br><{$item.item_caption}><{/if}>
+				<{if $block.displaycaption == 1 && $item.item_caption}><br><{$item.item_caption}><{/if}>
 				</div>
 		<{if $item.item_languagecode}>[/<{$item.item_languagecode}>]<{/if}>	
 	<{/if}>
