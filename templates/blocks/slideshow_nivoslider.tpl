@@ -1,5 +1,5 @@
 <{if $block.showtype == 'nivo'}>
-<div class="slider-wrapper theme-light">
+<div class="slider-wrapper theme-<{$block.sliderstyle}>">
 <div id="slider" class="nivoSlider">
 <{foreach item=item from=$block.items}>
 <{if $smarty.now|date_format:"%Y-%m-%d %H:%M:%S" >= $item.item_startdate AND $smarty.now|date_format:"%Y-%m-%d %H:%M:%S" <= $item.item_enddate}>

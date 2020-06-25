@@ -44,7 +44,11 @@ function nivoslider_list_show($options)
 
     $block['displaycaption'] = $options[8];
 
+	$block['sliderstyle'] = $options[9];
+	
     array_shift($options);
+	
+	array_shift($options);
 
     array_shift($options);
 
@@ -157,6 +161,13 @@ function nivoslider_list_edit($options)
 
     $form .= "&nbsp;<input type='radio' name='options[8]' value='0'" . $chk . ' >' . _NO . '<br>';
 
+	$sliderstyle = new XoopsFormSelect(_MB_SLIDESHOW_OP9, 'options[9]', $options[9]);
+    $sliderstyle->addOption('light','light');
+    $sliderstyle->addOption('dark','dark');
+	$sliderstyle->addOption('bar','bar');
+	$sliderstyle->addOption('default','default');
+    $form .= _MB_SLIDESHOW_OP9 . " : " . $sliderstyle->render() . '<br />';
+	
     array_shift($options);
 
     array_shift($options);
@@ -174,6 +185,8 @@ function nivoslider_list_edit($options)
     array_shift($options);
 
     array_shift($options);
+	
+	array_shift($options);
 
     return $form;
 }
