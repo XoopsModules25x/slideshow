@@ -129,6 +129,8 @@ class slideshow_item extends \XoopsObject
 
         $form->addElement(new XoopsFormRadioYN(_AM_SLIDESHOW_ITEM_STATUS, 'item_status', $this->getVar('item_status', 'e')), true);
 
+		$form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_ORDER, 'item_order', 3, 3, $this->getVar('item_order', 'e')));
+
         //if (xoops_isActiveModule('xlanguage')) {
 
         $form->addElement(new XoopsFormText(_AM_SLIDESHOW_ITEM_LANGUAGECODE, 'item_languagecode', 2, 2, $this->getVar('item_languagecode', 'e')));
@@ -333,7 +335,7 @@ class slideshowItemHandler extends \XoopsPersistableObjectHandler
 
         $criteria->setSort('item_order');
 
-        $criteria->setOrder('DESC');
+        $criteria->setOrder('ASC');
 
         $obj = $this->getObjects($criteria, false);
 
