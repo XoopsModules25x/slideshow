@@ -23,9 +23,9 @@ $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
 $modversion = [
     // Main setting
-    'version' => 2.01,
-    'module_status' => 'Alpha 1',
-    'release_date' => '2020/05/20',
+    'version' => 2.10,
+    'module_status' => 'Beta 1',
+    'release_date' => '2025/06/01',
     'name' => _MI_SLIDESHOW_TITLE,
     'description' => _MI_SLIDESHOW_DESC,
     'version' => 2.0,
@@ -75,6 +75,12 @@ $modversion['templates'] = [
     ['file' => 'blocks/slideshow_item.tpl', 'description' => ''],
     ['file' => 'blocks/slideshow_nivoslider.tpl', 'description' => ''],
     ['file' => 'blocks/slideshow_slickslider.tpl', 'description' => ''],
+    ['file' => 'blocks/slideshow_swiperslider.tpl',   'description' => ''],
+    ['file' => 'blocks/slideshow_thumbnailrail.tpl',  'description' => ''],
+    ['file' => 'blocks/slideshow_kenburns.tpl',       'description' => ''],
+    ['file' => 'blocks/slideshow_sidebarcard.tpl',    'description' => ''],
+    ['file' => 'blocks/slideshow_gridmosaic.tpl',     'description' => ''],
+    ['file' => 'blocks/slideshow_ticker.tpl',         'description' => ''],
 ];
 
 // blocks
@@ -96,6 +102,66 @@ $modversion['blocks'][] = [
     'edit_func' => 'slickslider_list_edit',
     'options' => '1200|400|1200|400|1|slick|10|1|1|single-item',
     'template' => 'slideshow_slickslider.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'swiperslider_block.php',
+    'name'        => _MI_SLIDESHOW_SWIPERSLIDER,
+    'description' => '',
+    'show_func'   => 'swiperslider_list_show',
+    'edit_func'   => 'swiperslider_list_edit',
+    'options'     => '1200|500|1200|500|1|10|1|1|slide|1|4000|1|1|1',
+    'template'    => 'slideshow_swiperslider.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'thumbnailrail_block.php',
+    'name'        => _MI_SLIDESHOW_THUMBNAILRAIL,
+    'description' => 'Sol büyük slider + sağ dikey thumbnail rail',
+    'show_func'   => 'thumbnailrail_list_show',
+    'edit_func'   => 'thumbnailrail_list_edit',
+    'options'     => '800|450|160|100|1|8|1|4000|1|1',
+    'template'    => 'slideshow_thumbnailrail.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'kenburns_block.php',
+    'name'        => _MI_SLIDESHOW_KENBURNS,
+    'description' => 'Ken Burns zoom+pan hero banner, başlık + CTA butonu',
+    'show_func'   => 'kenburns_list_show',
+    'edit_func'   => 'kenburns_list_edit',
+    'options'     => '500|1|6|5000|dark|1|Devamını Oku|1',
+    'template'    => 'slideshow_kenburns.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'sidebarcard_block.php',
+    'name'        => _MI_SLIDESHOW_SIDEBARCARD,
+    'description' => 'Sidebar için dikey kart slider — thumb + başlık + açıklama',
+    'show_func'   => 'sidebarcard_list_show',
+    'edit_func'   => 'sidebarcard_list_edit',
+    'options'     => '300|80|1|6|1|3500|1|#e74c3c|1',
+    'template'    => 'slideshow_sidebarcard.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'gridmosaic_block.php',
+    'name'        => _MI_SLIDESHOW_GRIDMOSAIC,
+    'description' => 'Statik fotoğraf grid mozaik, hover overlay',
+    'show_func'   => 'gridmosaic_list_show',
+    'edit_func'   => 'gridmosaic_list_edit',
+    'options'     => '3|2|180|1|1|#e74c3c|6',
+    'template'    => 'slideshow_gridmosaic.tpl',
+];
+
+$modversion['blocks'][] = [
+    'file'        => 'ticker_block.php',
+    'name'        => _MI_SLIDESHOW_TICKER,
+    'description' => 'Yatay kayan haber bandı — sadece metin + link',
+    'show_func'   => 'ticker_list_show',
+    'edit_func'   => 'ticker_list_edit',
+    'options'     => 'SON HABERLER|40|#1a1a2e|#ffffff|#e74c3c| ◆ |1|10|38|1',
+    'template'    => 'slideshow_ticker.tpl',
 ];
 
 // ------------------- Config Options -----------------------------//

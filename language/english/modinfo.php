@@ -43,3 +43,13 @@ define('_MI_SLIDESHOW_IMAGE_MAXWIDTH', 'Max width');
 define('_MI_SLIDESHOW_IMAGE_MAXWIDTH_DESC', 'Set max image widht');
 define('_MI_SLIDESHOW_IMAGE_MAXHEIGHT', 'Max height');
 define('_MI_SLIDESHOW_IMAGE_MAXHEIGHT_DESC', 'Set max image height');
+
+// Swiper block
+define('_MI_SLIDESHOW_SWIPERSLIDER',    'Swiper Slider Slideshow');
+
+// Yeni bloklar
+define('_MI_SLIDESHOW_THUMBNAILRAIL',   'Thumbnail Rail Slider');
+define('_MI_SLIDESHOW_KENBURNS',        'Ken Burns Hero Banner');
+define('_MI_SLIDESHOW_SIDEBARCARD',     'Sidebar Card Slider');
+define('_MI_SLIDESHOW_GRIDMOSAIC',      'Grid Mozaik');
+define('_MI_SLIDESHOW_TICKER',          'Haber Ticker Bandı');

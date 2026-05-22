@@ -1,34 +1,43 @@
-<h5>2.01 Alpha 1   [WORK IN PROGRESS - NOT RELEASED]</h5>  Dev: XOOPS 2.5.11, PHP 7.4.6
-<hr>
-- cosmetics (mamba)
-- Add slideshow image status in admin (liomj)
-- Add new options for blocks (liomj) 
-- Fix Block Item Order (liomj)
-- Fix Block Item Caption (liomj)
-- Update Nivo and Slick JS Settings (liomj)
-- Fix Smarty Errors (liomj)
-- Set Default for Item Order, StartEnd Date, Link Target Backend (liomj)
+XOOPS Slideshow Module — Changelog
+===================================
 
+v2.10 (2025-06-01)
+------------------
+BUGFIXES
+  - deleteitem: XOOPS_URL → XOOPS_ROOT_PATH; file deletion now works
+  - edititem / addcategory: switched to $_POST (was $_REQUEST)
+  - edititem: image re-upload now works during edit; existing image kept if
+    no new file is provided
+  - itemBlockList(): date-range filter now applied at DB level; expired /
+    future-scheduled slides no longer shown in blocks
+  - Normalised item_type default to 'image'; old 'slideshow' values migrated
+  - TIMESTAMP columns no longer use ON UPDATE (dates were reset on every save)
+  - MyISAM → InnoDB for both tables
+  - Category loop re-written with direct object iteration (was broken when
+    category IDs were non-sequential)
+  - include/update.php: migration is now idempotent (column-existence checks)
 
-<h5>Slideshow 2.0 </h5>  Dev: Xoops 2.5.10, PHP 7.2.0
-- add item link target (liomj)
-- add item language code (liomj)
-- add item start date and end date (liomj)
-- rename item_text to item_caption (liomj)
-- fix deprecated constructor (liomj)
-- add nivo slider and slick slider (liomj)
-- remove marquee slider,sliderkit, slider scrollable (liomj)
-- remove redundant block (liomj) 
-- remove item_default (liomj)
-- fix admin after crud redirection (liomj) 
-- update redirection message language (liomj)
-- fix Notice: Should call parent::__construct (liomj)
-- fix empty category drop down (liomj)
-- disable slideshowform if no category created (liomj)
-- remove item_thumb (liomj)
-- remove category showType(liomj)
-- remove marquee from admin (liomj)
-- rename topic to category (liomj)
-- move images,css,js to asssets folder (liomj)
-- change html templates to tpl templates (liomj)
+NEW FEATURES
+  - VIDEO SUPPORT: new item_type values 'youtube' and 'vimeo'
+      * New DB column: item_video_url (varchar 500)
+      * Admin form: Item Type selector + Video URL field
+      * parseVideoUrl() handles all common YouTube/Vimeo URL formats
+      * Nivo Slider, Slick Slider and Swiper blocks all render <iframe> embeds
+  - SWIPER.JS BLOCK (v11, CDN): swiperslider_block.php
+      * 6 transition effects: slide, fade, cube, coverflow, flip, cards
+      * Per-block settings: autoplay, autoplay speed, loop, navigation, pagination
+      * Unique per-instance DOM ID; multiple blocks on one page work correctly
+      * Video slide change resets iframe src to stop background playback
+  - Admin list: type badge (Image / YouTube / Vimeo), inline video preview
+  - Admin list: "Upcoming" status for future-scheduled slides
+  - lazy loading (loading="lazy") on all <img> tags
 
+v2.01 (2020-05-20)
+------------------
+  - Slick Slider block added
+  - Language code support
+  - Start/end date scheduling
+
+v2.00 (2019-01-01)
+------------------
+  - Initial release with Nivo Slider support

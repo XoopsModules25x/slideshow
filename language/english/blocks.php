@@ -30,3 +30,27 @@ define('_MB_SLIDESHOW_OP9', '<b>Slider Style Class</b>');
 define('_MB_SLIDESHOW_NIVOSLIDER', 'Nivo Slideshow');
 define('_MB_SLIDESHOW_SLICKSLIDER', 'Slick Slideshow');
 define('_MB_SLIDESHOW_STYLE', '<b>Use module style, if it set to no you must add all styles and java in your theme</b>');
+
+// Swiper block labels
+define('_MB_SLIDESHOW_SWIPERSLIDER',     'Swiper Slideshow');
+define('_MB_SWIPER_EFFECT',              '<b>Swiper Effect</b>');
+define('_MB_SWIPER_AUTOPLAY',            '<b>Autoplay?</b>');
+define('_MB_SWIPER_AUTOPLAYTIME',        '<b>Autoplay Speed (ms)</b>');
+define('_MB_SWIPER_LOOP',                '<b>Loop?</b>');
+define('_MB_SWIPER_NAVIGATION',          '<b>Show Navigation Arrows?</b>');
+define('_MB_SWIPER_PAGINATION',          '<b>Show Pagination Dots?</b>');
+
+// Thumbnail Rail block
+define('_MB_SLIDESHOW_THUMBNAILRAIL',    'Thumbnail Rail Slider');
+
+// Ken Burns block
+define('_MB_SLIDESHOW_KENBURNS',         'Ken Burns Hero Banner');
+
+// Sidebar Card block
+define('_MB_SLIDESHOW_SIDEBARCARD',      'Sidebar Card Slider');
+
+// Grid Mosaic block
+define('_MB_SLIDESHOW_GRIDMOSAIC',       'Grid Mozaik');
+
+// Ticker block
+define('_MB_SLIDESHOW_TICKER',           'Haber Ticker Bandı');

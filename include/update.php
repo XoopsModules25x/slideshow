@@ -21,10 +21,41 @@
 function xoops_module_update_slideshow()
 {
     $db = Database::getInstance();
+    $prefix = $db->prefix('slideshow_item');
 
-    $sql = 'ALTER TABLE `' . $db->prefix('slideshow_item') . '` ADD `item_img` varchar(255) NOT NULL;';
+    // v2.0 → add item_img if missing
+    $result = $db->query("SHOW COLUMNS FROM `{$prefix}` LIKE 'item_img'");
+    if ($db->getRowsNum($result) == 0) {
+        $db->query("ALTER TABLE `{$prefix}` ADD `item_img` varchar(255) NOT NULL DEFAULT ''");
+    }
 
-    $db->query($sql);
+    // v2.1 → add item_video_url for video support
+    $result = $db->query("SHOW COLUMNS FROM `{$prefix}` LIKE 'item_video_url'");
+    if ($db->getRowsNum($result) == 0) {
+        $db->query("ALTER TABLE `{$prefix}` ADD `item_video_url` varchar(500) NOT NULL DEFAULT '' AFTER `item_img`");
+    }
+
+    // v2.1 → add item_languagecode if missing
+    $result = $db->query("SHOW COLUMNS FROM `{$prefix}` LIKE 'item_languagecode'");
+    if ($db->getRowsNum($result) == 0) {
+        $db->query("ALTER TABLE `{$prefix}` ADD `item_languagecode` varchar(60) NOT NULL DEFAULT '' AFTER `item_enddate`");
+    }
+
+    // v2.1 → add item_startdate if missing
+    $result = $db->query("SHOW COLUMNS FROM `{$prefix}` LIKE 'item_startdate'");
+    if ($db->getRowsNum($result) == 0) {
+        $db->query("ALTER TABLE `{$prefix}` ADD `item_startdate` datetime NOT NULL DEFAULT '2026-01-01 00:00:00' AFTER `item_languagecode`");
+    }
+
+    // v2.1 → add item_enddate if missing
+    $result = $db->query("SHOW COLUMNS FROM `{$prefix}` LIKE 'item_enddate'");
+    if ($db->getRowsNum($result) == 0) {
+        $db->query("ALTER TABLE `{$prefix}` ADD `item_enddate` datetime NOT NULL DEFAULT '2038-01-19 03:14:07' AFTER `item_startdate`");
+    }
+
+    // v2.1 → fix item_type default and normalize old values
+    $db->query("ALTER TABLE `{$prefix}` MODIFY `item_type` varchar(60) NOT NULL DEFAULT 'image'");
+    $db->query("UPDATE `{$prefix}` SET `item_type` = 'image' WHERE `item_type` = '' OR `item_type` = 'slideshow'");
 
     return true;
 }

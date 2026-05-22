@@ -70,3 +70,10 @@ define('_AM_SLIDESHOW_MSG_WAIT', 'Please wait');
 define('_AM_SLIDESHOW_MSG_INSERTSUCCESS', 'Added Successfully');
 define('_AM_SLIDESHOW_MSG_EDITSUCCESS', 'Updated Successfully');
 define('_AM_SLIDESHOW_MSG_DELETESUCCESS', 'Deleted Successfully');
+
+// Item type (video support)
+define('_AM_SLIDESHOW_ITEM_TYPE',        'Item Type');
+define('_AM_SLIDESHOW_TYPE_IMAGE',       'Image');
+define('_AM_SLIDESHOW_TYPE_YOUTUBE',     'YouTube Video');
+define('_AM_SLIDESHOW_TYPE_VIMEO',       'Vimeo Video');
+define('_AM_SLIDESHOW_ITEM_VIDEO_URL',   'Video URL (YouTube or Vimeo)');
